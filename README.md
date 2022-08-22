@@ -4,4 +4,4 @@
 
 *Sites hospedados:*
 
-[Treino de Cabeçalho](http://ntn-ss.github.io/Header)
+[Treinos de Cabeçalhos](http://ntn-ss.github.io/Header)
