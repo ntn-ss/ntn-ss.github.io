@@ -55,14 +55,14 @@ header{
     padding: 0 60px;
     display: grid;
     grid-template-areas: 
-        "lg ... nav";
+        "lgo ... nav";
     grid-template-columns: auto 1fr auto;
     justify-content: center;
     align-content: center;
 }
 
 .logo {
-    grid-area: lg;
+    grid-area: lgo;
 }
 
 .logo img{
@@ -99,17 +99,13 @@ header{
     transition: all 0.4s ease-out;
 }
 
-.nav-bar a:hover {
-    color:rgb(250, 255, 53);
-}
-
 .max-nav a{
     font-size: 1em;
     color:rgb(251, 179, 0);
 }
 
-.min-nav a:hover{
-    color:white;
+.nav-bar a:hover {
+    color:rgb(250, 255, 53);
 }
 
 .min-nav a{
@@ -117,10 +113,130 @@ header{
     color:rgb(250, 255, 53);
 }
 
+.min-nav a:hover{
+    color:white;
+}
+
 .ghost{
     width: 100%;
     height: 100px;
     background-color:rgb(251, 179, 0);
+}
+
+@media (max-width: 1000px){
+
+    .max-header{
+        height: 180px;
+    }
+
+    .min-header{
+        height: 130px;
+    }
+
+    .container {
+        position: relative;
+        padding: 0 120px;
+        grid-template-areas: 
+        "lgo ... mnu";
+    }
+    
+    .max-logo img{
+        height: 110px;
+    }
+    
+    .min-logo img{
+        height: 100px;
+    }
+    
+    .menu{
+        grid-area: mnu;
+        display: grid;
+        align-content: center;
+    }
+
+    .hamburger {
+        position: relative;
+        width: 50px;
+        height: 5px;
+        transition: all 0.4s ease-out;
+    }
+    .hamburger::before {
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: all 0.4s ease-out;
+    }
+    .hamburger::after {
+        content: "";
+        position: absolute;
+        top: 20px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: all 0.4s ease-out;
+    }
+
+    .max-hamburger, .max-hamburger::before, .max-hamburger::after {
+        background-color: rgb(251, 179, 0);
+    }
+
+    .min-hamburger, .min-hamburger::before, .min-hamburger::after {
+        background-color: rgb(250, 255, 53);
+    }
+    
+    .close-btn{
+        width: 50px;
+        transform: rotateZ(45deg);
+    }
+    
+    .close-btn::before, .close-btn:after{
+        transform: rotateZ(90deg);
+        top: 0;
+    }
+
+    .nav-bar{
+        position: absolute;
+        left: 0px;
+        width: 100%;
+        transform: translateX(-100%);
+        transition: all 0.4s ease-out;
+    }
+
+    .max-nav{
+        top: 180px;
+        height: 100vh;
+        background-color: #133853;
+    }
+
+    .min-nav{
+        top: 129px;
+        height: 100vh;
+        background-color: rgb(161, 95, 6);
+    }
+
+    .menu-opened {
+        transform: translateX(0);
+    }
+
+    .nav-bar ul{
+        grid-auto-flow: row;
+        justify-content: center;
+        align-content: center;
+        grid-gap: 250px;
+        font-size: 70px;
+    }
+
+    .nav-bar li{
+        text-align: center;
+    }
+
+    .min-nav a{
+        font-size: 1em;
+        color: rgb(250, 255, 53);
+    }
 }
 
 main{
