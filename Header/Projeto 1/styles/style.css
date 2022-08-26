@@ -88,8 +88,43 @@ header{
 }
 
 .nav-bar a {
+    position: relative;
     font-size: 1em;
     transition: all 0.4s ease-out;
+}
+
+.nav-bar a::before {
+    position: absolute;
+    content:"";
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: all 0.2s ease-out;
+}
+
+.nav-bar a:hover::before {
+    transform: scaleX(1);
+}
+
+.nav-bar a::after {
+    position: absolute;
+    content:"";
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: all 0.2s ease-out;
+}
+
+.nav-bar a:hover::after {
+    transform: scaleX(1);
 }
 
 .max-nav a{
@@ -240,7 +275,7 @@ main section {
     display: grid;
     justify-content: center;
     align-content: center;
-    font-family: "Alice";
+    font-family: "Pacifico";
     font-size: 2em;
 }
 
