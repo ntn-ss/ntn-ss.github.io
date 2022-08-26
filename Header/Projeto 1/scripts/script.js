@@ -16,7 +16,7 @@ function toggleHeader(){
         $header.classList.remove("max-header");
         $header.classList.add("min-header");
         
-        $logo.firstElementChild.setAttribute('src','../imgs/Test4v2.png');
+        $logo.firstElementChild.setAttribute('src','../Projeto 1/imgs/Test4v2.png');
         $logo.classList.remove("max-logo");
         $logo.classList.add("min-logo");
 
@@ -30,7 +30,7 @@ function toggleHeader(){
         $header.classList.add("max-header");
         $header.classList.remove("min-header");
         
-        $logo.firstElementChild.setAttribute('src','../imgs/Test4.png');
+        $logo.firstElementChild.setAttribute('src','../Projeto 1/imgs/Test4.png');
         $logo.classList.add("max-logo");
         $logo.classList.remove("min-logo");
 
