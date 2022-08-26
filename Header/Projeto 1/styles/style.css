@@ -1,11 +1,11 @@
 @font-face {
-    src:url("/fonts/Pacifico-Regular.ttf");
+    src:url("../fonts/Pacifico-Regular.ttf");
     font-family: "Pacifico";
 }
 
 
 @font-face {
-    src:url("/fonts/Alice-Regular.ttf");
+    src:url("../fonts/Alice-Regular.ttf");
     font-family: "Alice";
 }
 
