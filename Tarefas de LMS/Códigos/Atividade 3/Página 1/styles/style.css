@@ -1,0 +1,112 @@
+body {
+    background-color: antiquewhite;
+    font-family: 'Trebuchet MS';
+    margin: 0;
+    color: brown;
+}
+
+header {
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    top: 0;
+    background-color: black;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 
+        "titulo ... nav";
+    text-align: center;
+}
+
+.dropdown-buttons {
+    display: none;
+    position: absolute;
+    width: 300px;
+}
+
+.dropdown-buttons p {
+    height: 100%;
+    padding: 20px;
+}
+
+.dropdown-buttons p:hover {
+    background-color: white;
+    cursor: pointer;
+}
+
+.dropdown:hover .dropdown-buttons {
+    display: block;
+    background-color: black;
+}
+
+#tituloPagina{
+    grid-area: titulo;
+    align-self: center;
+    cursor: pointer;
+    margin-left: 1vw;
+}
+
+#nav-bar{
+    grid-area: nav;
+    padding: 10px;
+    align-content: center;
+    justify-content: center;
+}
+
+#nav-bar ul {
+    text-transform: uppercase;    
+    display: grid;
+    align-content: center;
+    grid-gap: 20px;
+    grid-auto-flow: column;
+}
+
+#nav-bar li {
+    padding: 10px;
+    list-style: none;
+    cursor: pointer;
+}
+
+#nav-bar li:hover {
+    background-color: white;
+}
+
+#tituloPagina {
+    text-align: center;
+    font-size: 20pt;
+}
+
+#primeiroArtigo, #segundoArtigo {
+    margin: 100px;
+    padding: 20px;
+    display: grid;
+    border: 2px solid black;
+}
+
+#primeiroArtigo > h3, #segundoArtigo > h3 {
+    text-align: center;
+    font-size: 20pt;
+}
+
+#primeiroArtigo > p, #segundoArtigo > p {
+    text-align: justify;
+}
+
+#primeiroArtigo > img, #segundoArtigo > img {
+    height: 400px;
+    width: 300px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+#primeiroArtigo > footer, #segundoArtigo > footer {
+    font-size: 8pt;
+    text-align: right;
+}
+
+#elemento {
+    margin: auto;
+    width: 50vw;
+    height: 100vh;
+    background-color: black;
+}

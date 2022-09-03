@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="https://i.pinimg.com/736x/ba/9f/9f/ba9f9f53e830f093868a867961caaf93--logos-cunha.jpg" type="image/x-icon">
+    <meta charset="UTF-8">
+    
+    <style>
+        
+        ul{
+            display: inline-flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a{
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            border-right: 1px solid #bbb;
+        }
+
+        li:last-child{
+            border-right: none;
+        }
+        li a:hover{
+            background-color: #111;
+        }
+
+        li a:active{
+            background-color: #04AA6D;
+        }
+    </style>
+
+    <title>Atividade 2</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>UFC Quixadá</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="https://www.quixada.ufc.br/" target="_blank">Campus</a></li>
+            <li><a href="https://dd.quixada.ufc.br/" target="_blank">DD</a></li>
+            <a href="https://www.facebook.com/campusufcquixada" target="_blank"><img src="https://cdn.pixabay.com/photo/2018/05/08/18/25/facebook-3383596_1280.png" alt="Facebook" style="height: 20px; margin: 10px;"></a>
+        </ul>
+    </nav>
+
+    <br>
+
+    <section>
+        <table>
+        <th>Quixadá</th>
+        <tr>
+            <td><b>Célula 1</b></td>
+            <td>Célula 2</td>
+            <td>Célula 3</td>
+        </tr>
+        <tr>
+            <td>Célula 4</td>
+            <td><b>Célula 5</b></td>
+            <td>Célula 6</td>
+        </tr>
+        <tr>
+            <td>Célula 7</td>
+            <td>Célula 8</td>
+            <td><b>Célula 9</b></td>
+        </tr>
+        </table>
+    </section>
+
+    <br>
+
+    <footer>
+
+        <article>
+            <b>Formulário de Cadastro:</b>
+            <br>
+            <br>
+            
+            <form action="https://www.w3schools.com/action_page.php" method="get" style="font-weight: bold;">
+                Nome: <input type="text" name="nome" id="name" maxlength="15" size="15" required><br><br>
+                Nada: <input type="text" name="nada" id="nothing" readonly><br><br>
+                Número favorito entre 25.000 e 30.000: <input type="number" name="numeroFav" id="favNumber" min="25000" max="30000" oninput="this.value = this.value.slice (0, this.maxLength)" maxlength="5" value="20000" required><br><br>
+                Quais destas matérias você está cursando?<br><input type="checkbox" name="lms">LMS <input type="checkbox" name="direcaoDeArte">Direção de Arte <input type="checkbox" name="comunicacaoVisualII">Comunicação Visual II <input type="checkbox" name="avaliacaoIHC">Avaliação de IHC <input type="checkbox" name="projetoII">Projeto Integrado II<br><br>
+                Qual a sua espécie favorita dentre os bichos do campus?<br><input type="radio" name="bichos" id="cachorros" required>Cachorros <input type="radio" name="bichos" id="gatos">Gatos <input type="radio" name="bichos" id="cobras">Cobras <input type="radio" name="bichos" id="muricocas">Muriçocas<br><br>
+                <input type="submit" value="Enviar">
+            </form>
+        </article>
+        
+    </footer>
+
+</body>
+</html>
