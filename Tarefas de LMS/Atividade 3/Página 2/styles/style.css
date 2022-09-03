@@ -13,6 +13,10 @@ header {
     background-color: black;
 }
 
+main{
+    margin-left: 420px;
+}
+
 #textos{
     text-align: center;
     display: grid;
