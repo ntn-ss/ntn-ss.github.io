@@ -1,0 +1,101 @@
+html {
+    font-size: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+* {
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    padding: 0.8rem 1.6rem;
+    background-color:#b00b69;
+}
+
+nav > ul {
+    display: flex;
+    color: white;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+nav > ul > li {
+    padding: 0.8rem 1.6rem;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+
+nav > ul > li:hover{
+    background-color: aqua;
+    color: black;
+}
+
+main {
+    display: flex;
+}
+
+main > .center-content {
+    flex-grow: 3;
+}
+
+main > .menu-left {
+    width: 100%;
+    flex-shrink: 1;
+    height: 92vh;
+    max-width: 30rem;
+    background-color: antiquewhite;
+    text-align: center;
+}
+
+main > .menu-left > ul {
+    display: grid;
+    list-style: none;
+}
+
+main > .menu-left > h2 {
+    margin: 6rem 0;
+}
+
+main > .menu-left > ul > li { 
+    margin: 4rem 0;  
+}
+
+main > .menu-left > ul > li > a { 
+    text-decoration: none;
+    color: inherit;
+}
+
+main > .center-content > .all-imgs {
+    margin-top: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+main > .menu-right > p {
+    hyphens: auto;
+}
+
+main > .menu-right {
+    text-align: center;
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 1;
+}
+
+footer > .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100vw;
+    height: 5vh;
+    background-color: black;
+    color: white;
+}
