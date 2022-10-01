@@ -1,0 +1,131 @@
+@media (min-width: 768px) {
+    main .menu-left {
+        text-shadow: 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+    }
+
+    header .nav-bar{
+        text-shadow: 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+    }
+}
+
+@media (max-width: 760px) {
+    
+    /* Left menu style */
+
+    main .menu-left {
+        height: 40rem;
+        width: 100vw;
+    }
+
+    main .menu-left ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-content: center;
+    }
+
+    main .menu-left ul .left-menu-item {
+        display: flex;
+        align-self: center;
+        cursor: pointer;
+    }
+
+        /* Content style */
+
+    main .container {
+        display: grid;
+    }
+
+    main .kanban {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    main .kanban .first-line {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 80rem;
+    }
+
+    main .kanban .first-line .first-board {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 5rem;
+        background-color: yellow;
+        width: 100%;
+        flex-grow: 1;
+    }
+
+    main .kanban .first-line .second-board {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: green;
+        width: 100%;
+        flex-grow: 1;
+        max-height: 40rem;
+    }
+
+    main .kanban .first-line .second-board img {
+        height: 100%;
+        max-height: 100%;
+    }
+
+    main .kanban .second-line {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        top: 44rem;
+        height: 120rem;
+        width: 100vw;
+    }
+
+    main .kanban .second-line .third-board {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 5rem;
+        background-color: chocolate;
+        width: 100%;
+        flex-grow: 1;
+    }
+
+    main .kanban .second-line .fourth-board {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 5rem;
+        background-color: blueviolet;
+        width: 100%;
+        flex-grow: 1;
+    }
+
+    main .kanban .second-line .fifth-board {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 5rem;
+        background-color: darkblue;
+        width: 100%;
+        color:white;
+        flex-grow: 1;
+    }
+
+    @keyframes devede {
+        0% {
+            margin-top: 0vh;
+            margin-left: 0vw;
+        }
+        50% {
+            margin-top: 87vh;
+            margin-left: 50vw;
+        }
+        75% {
+            margin-top: 0vh;
+            margin-left: 82vw;
+        }
+    }
+}
