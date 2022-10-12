@@ -1,0 +1,12 @@
+.first-section {
+    .btn {
+        @include style-btn(180px, 90px, purple);
+        margin-bottom: 20px;
+    }
+}
+
+.second-section {
+    .btn {
+        @include style-btn(220px, 220px, aquamarine);
+    }
+}
