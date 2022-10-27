@@ -37,12 +37,48 @@ header {
       @include flex(row, center, center);
 
       font-size: 4rem;
-      color: $third;
       font-weight: bold;
       height: 20rem;
       gap: 5.4rem;
-      li {
+      li a {
+        color: $third;
         cursor: pointer;
+        position: relative;
+        transition: all 0.3s;
+        
+        &::before {
+          position: absolute;
+          content:"";
+          top: -5px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: currentColor;
+          transform-origin: left;
+          transform: scaleX(0);
+          transition: all 0.3s;
+        }
+        
+        &:hover::before {
+          transform: scaleX(1);
+        }
+        
+        &::after {
+          position: absolute;
+          content:"";
+          bottom: -5px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: currentColor;
+          transform-origin: right;
+          transform: scaleX(0);
+          transition: all 0.3s;
+        }
+        
+        &:hover::after {
+          transform: scaleX(1);
+        }
       }
     }
   }

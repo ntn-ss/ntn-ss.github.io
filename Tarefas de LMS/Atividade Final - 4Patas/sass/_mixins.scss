@@ -22,3 +22,9 @@
     align-items: $align;
     justify-content: $justify;
 }
+
+@mixin responsive($screenWidth) {
+    @media screen and (max-width: $screenWidth) {
+        @content;
+    }
+}
