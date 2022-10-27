@@ -1,0 +1,30 @@
+// Style First Section
+
+.first-sect {
+  #marca {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 96rem;
+    height: 119.9rem;
+  }
+  background-color: $first;
+  height: 100rem;
+  margin-top: 26rem;
+  padding-top: 19.9rem;
+  @include flex(column, center, center);
+  .container {
+    position: relative;
+    @include flex(column, center, center);
+    gap: 50px;
+    span {
+      font-size: 6.476rem;
+      color: $second;
+      font-weight: bold;
+    }
+    button {
+      @include style-btn(2rem, $third, $first);
+      font-family: "Fredoka", sans-serif;
+    }
+  }
+}
