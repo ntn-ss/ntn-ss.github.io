@@ -3,28 +3,56 @@
 .first-sect {
   #marca {
     position: absolute;
-    right: 0;
-    top: 0;
-    width: 96rem;
-    height: 119.9rem;
+    right: -1.4rem;
+    top: 3rem;
+    width: auto;
+    height: 90vh;
   }
   background-color: $first;
-  height: 100rem;
-  margin-top: 26rem;
-  padding-top: 19.9rem;
-  @include flex(column, center, center);
+  height: 80vh;
+  margin-top: 15.7rem;
+  padding-top: 2.23rem;
+  @include flex(row, center, center);
   .container {
+    @include flex(row, center, space-between);
     position: relative;
-    @include flex(column, center, center);
-    gap: 50px;
-    span {
-      font-size: 6.476rem;
-      color: $second;
-      font-weight: bold;
+    .text-area-first {
+      h1 {
+        font-size: 6.476rem;
+        font-weight: bold;
+        color: $third;
+      }
+      p {
+        color: $third;
+        margin-top: 3.25rem;
+        text-align: justify;
+        font-size: 2.4rem;
+        width: 100%;
+        max-width: 73.25rem;
+      }
     }
-    button {
-      @include style-btn(2rem, $third, $first);
-      font-family: "Fredoka", sans-serif;
+  }
+}
+
+//Style Section Cards
+.s-cards {
+  .container {
+    margin: 0 auto;
+    @include flex(row, center, space-between);
+    // position: absolute;
+    
+    .card {
+      @include flex(row, center, center);
+      border-radius: 3rem;
+      width: 30rem;
+      height: 30rem;
+      background-color: $clearFirst;
+    }
+    .text-card {
+      width: 100%;
+      font-size: 3rem;
+      text-align: center;
+      color: $second;
     }
   }
 }
