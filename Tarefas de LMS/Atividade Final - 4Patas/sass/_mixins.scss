@@ -1,18 +1,21 @@
 @mixin style-btn($size, $bg, $colorText) {
-    display: inline-block;
+    font-family: 'Fredoka', sans-serif;
     box-sizing: border-box;
     color: $colorText;
     font-size: $size;
     background-color: $bg;
     border-radius: 3rem;
-    padding: $size;
+    padding-top: calc($size/2);
+    padding-bottom: calc($size/2);
+    padding-left: $size;
+    padding-right: $size;
     font-weight: bold;
     cursor: pointer;
-    transition: all .3s;
+    transition: all .2s;
     &:hover {
         background-color: $colorText;
         color: $bg;
-        border: 4px solid;
+        border: calc($size/7) solid;
     }
 }
 

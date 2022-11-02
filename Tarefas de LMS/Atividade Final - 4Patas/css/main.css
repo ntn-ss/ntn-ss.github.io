@@ -12,6 +12,13 @@ img {
   max-width: 100%;
 }
 
+h2 {
+  text-align: center;
+  font-size: 7rem;
+  color: #5B4435;
+  margin-bottom: 6.875rem;
+}
+
 html {
   font-size: 62.5%;
   font-family: "Fredoka", sans-serif;
@@ -29,10 +36,10 @@ html {
 }
 
 header {
-  position: fixed;
+  position: relative;
   top: 0;
-  width: 100vw;
-  z-index: 1;
+  width: auto;
+  z-index: 2;
   background-color: #FFA124;
   box-shadow: 0px 1px 10px black;
 }
@@ -94,6 +101,7 @@ header {
   left: 0;
   width: 100%;
   height: 3px;
+  border-radius: 0.75rem;
   background-color: currentColor;
   transform-origin: left;
   transform: scaleX(0);
@@ -108,6 +116,7 @@ header {
   bottom: -5px;
   left: 0;
   width: 100%;
+  border-radius: 0.75rem;
   height: 3px;
   background-color: currentColor;
   transform-origin: right;
@@ -118,36 +127,35 @@ header {
   transform: scaleX(1);
 }
 
-.first-sect {
+.start-sect {
   background-color: #FFA124;
   height: 80vh;
-  margin-top: 15.7rem;
   padding-top: 2.23rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
-.first-sect #marca {
+.start-sect #marca {
   position: absolute;
-  right: -1.4rem;
-  top: 3rem;
+  z-index: 1;
+  top: 15.5rem;
+  right: 0rem;
   width: auto;
-  height: 90vh;
+  height: 80vh;
 }
-.first-sect .container {
+.start-sect .container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  position: relative;
 }
-.first-sect .container .text-area-first h1 {
+.start-sect .container .text-area-first h1 {
   font-size: 6.476rem;
   font-weight: bold;
   color: #5B4435;
 }
-.first-sect .container .text-area-first p {
+.start-sect .container .text-area-first p {
   color: #5B4435;
   margin-top: 3.25rem;
   text-align: justify;
@@ -157,7 +165,8 @@ header {
 }
 
 .s-cards .container {
-  margin: 0 auto;
+  padding-bottom: 15.125rem;
+  border-bottom: thin solid #5B4435;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -178,4 +187,213 @@ header {
   font-size: 3rem;
   text-align: center;
   color: #76562A;
+}
+
+.about-sect {
+  padding-top: 6rem;
+}
+.about-sect .container {
+  padding-bottom: 15.125rem;
+  border-bottom: thin solid #5B4435;
+  margin-bottom: 15rem;
+}
+.about-sect .container .text-about {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10.125rem;
+}
+.about-sect .container .text-about img {
+  background-color: gray;
+  width: 64.125rem;
+  height: 61.75rem;
+}
+.about-sect .container .text-about p {
+  font-size: 2.5rem;
+  text-align: justify;
+  color: #76562A;
+}
+
+.volunteer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.volunteer img {
+  border-radius: 5rem;
+  width: 100%;
+  max-width: 100vw;
+  height: 100%;
+  max-height: 65vh;
+  margin-bottom: 2.5rem;
+}
+.volunteer #instructions {
+  display: block;
+  font-size: 7rem;
+  color: #5B4435;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.volunteer p {
+  color: black;
+  text-align: justify;
+  font-size: 3rem;
+  margin-bottom: 10rem;
+}
+.volunteer #start {
+  display: block;
+  color: #5B4435;
+  text-align: center;
+  font-size: 5.2rem;
+}
+.volunteer .botao {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.volunteer .botao button {
+  font-family: "Fredoka", sans-serif;
+  box-sizing: border-box;
+  color: #FFA124;
+  font-size: 6rem;
+  background-color: #76562A;
+  border-radius: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: block;
+  align-self: center;
+}
+.volunteer .botao button:hover {
+  background-color: #FFA124;
+  color: #76562A;
+  border: 0.8571428571rem solid;
+}
+.volunteer .container {
+  padding-bottom: 15.125rem;
+  border-bottom: thin solid #5B4435;
+  margin-bottom: 15rem;
+}
+
+.sponsorship .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.sponsorship .container h2 {
+  margin-bottom: 5rem;
+}
+.sponsorship .container span {
+  display: block;
+  font-size: 7rem;
+  color: #5B4435;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.sponsorship .container .cards-sponsor {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.sponsorship .container .cards-sponsor .card-sponsor {
+  width: 100%;
+  height: 100%;
+  max-width: 42rem;
+  background-color: #FFA124;
+  border-radius: 5rem;
+  padding: 5rem;
+}
+.sponsorship .container .cards-sponsor .card-sponsor .card-sponsor-text h2 {
+  margin-bottom: 2.5rem;
+}
+.sponsorship .container .cards-sponsor .card-sponsor .card-sponsor-text p {
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: justify;
+  color: #5B4435;
+}
+.sponsorship .container #available-header {
+  margin-top: 16.25rem;
+  margin-bottom: 6.25rem;
+}
+.sponsorship .container .cards-animals {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.sponsorship .container .cards-animals .card-animal {
+  background-color: #FFA124;
+  border-radius: 5rem;
+  padding: 6.25rem;
+  width: 100%;
+  max-width: 45rem;
+}
+.sponsorship .container .cards-animals .card-animal .card-info .picture {
+  border-radius: 5rem;
+  width: 20rem;
+  height: 20rem;
+  background-color: #FFA733;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.sponsorship .container .cards-animals .card-animal .card-info .picture span {
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+.sponsorship .container .cards-animals .card-animal .card-info .info #nome {
+  margin-top: 2.5rem;
+  font-size: 4rem;
+  font-weight: bold;
+}
+.sponsorship .container .cards-animals .card-animal .card-info .info span {
+  font-size: 3rem;
+}
+.sponsorship .container .cards-animals .card-animal .card-info .info span:last-child {
+  margin-bottom: 0;
+}
+.sponsorship .container .cards-animals .button-animal {
+  box-sizing: border-box;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.sponsorship .container .cards-animals .button-animal button {
+  font-family: "Fredoka", sans-serif;
+  box-sizing: border-box;
+  color: #FFA124;
+  font-size: 4rem;
+  background-color: #76562A;
+  border-radius: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: block;
+}
+.sponsorship .container .cards-animals .button-animal button:hover {
+  background-color: #FFA124;
+  color: #76562A;
+  border: 0.5714285714rem solid;
 }
