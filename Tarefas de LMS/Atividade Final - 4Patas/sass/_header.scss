@@ -15,7 +15,6 @@ header {
   height: 4rem;
   ul {
     .container {
-      height: 4rem;
       @include flex(row, center, flex-end);
       gap: 3.8rem;
       li {

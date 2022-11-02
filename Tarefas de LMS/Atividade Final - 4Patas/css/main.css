@@ -52,7 +52,6 @@ header {
   height: 4rem;
 }
 .social ul .container {
-  height: 4rem;
   display: flex;
   flex-direction: row;
   align-items: center;
