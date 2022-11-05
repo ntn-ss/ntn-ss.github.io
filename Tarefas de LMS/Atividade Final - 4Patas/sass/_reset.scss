@@ -6,6 +6,11 @@
     outline: none;
     list-style: none;
     text-decoration: none;
+
+    &::selection {
+        color: $first;
+        background: $second;
+     }
 }
 
 img {
@@ -20,6 +25,8 @@ h2 {
   }
 
 html {
+    scroll-behavior: smooth;
+    background-color: $background;
     font-size: 62.5%;
     font-family: 'Fredoka', sans-serif;
     @include responsive (1500px) {

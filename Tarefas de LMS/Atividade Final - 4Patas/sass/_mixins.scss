@@ -1,4 +1,5 @@
 @mixin style-btn($size, $bg, $colorText) {
+    border: calc($size/7) solid $background;
     font-family: 'Fredoka', sans-serif;
     box-sizing: border-box;
     color: $colorText;
