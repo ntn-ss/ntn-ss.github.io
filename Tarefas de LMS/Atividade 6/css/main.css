@@ -58,8 +58,10 @@ header .container nav span:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 99;
 }
 .modal-overlay .modal {
+  position: static;
   background-color: white;
   border-radius: 4rem;
   padding: 4rem;
@@ -71,6 +73,7 @@ header .container nav span:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 100;
 }
 .modal-overlay .modal h2 {
   margin-bottom: 4rem;
