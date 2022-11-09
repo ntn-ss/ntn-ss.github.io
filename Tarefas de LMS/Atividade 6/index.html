@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://moodle2.quixada.ufc.br/pluginfile.php/1/theme_moove/favicon/1648151727/favicon.ico"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Atividade 6</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <img src="./img/logo.png" alt="Logo do Site" />
+          <span id="buttonPost">Postar</span>
+          <img src="./img/burger.png" alt="Menu" id="Menu" />
+        </nav>
+      </div>
+    </header>
+
+    <div class="hidden-stuff">
+      <div class="modal-overlay hidden" id="modal-overlay">
+        <div class="modal hidden" id="modal">
+          <h2>Novo post</h2>
+          <form action="#" id="formulary">
+            <span>Mensagem:</span> <textarea name="message" id="message" cols="30" rows="8" style="resize: none;" placeholder="Digite sua mensagem..."></textarea><br>
+            <span>Autor:</span> <input type="text" placeholder="Digite seu nome..." id="author"><br>
+            <input type="submit" id="submit" value="Enviar">
+          </form>
+        </div>
+      </div>
+      <div class="hidden-menu hidden" id="hidden-menu">
+        <div class="container">
+          <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+            <li>Item 5</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <div class="feed">
+        <div class="container" id="feed-container">
+          <div class="post">
+            <div class="post-text">
+              <span id="priority-header"><b>DESTAQUE</b></span>
+                <span id="priority-message">Texto destaque.</span>
+              <b id="priority-author">Autor destaque</b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="img-slider">
+        <div class="container">
+        <div class="navega">
+          <button onclick="goPrev()">Anterior</button>
+          <button onclick="goNext()">Próximo</button>
+        </div>
+        <img src="./img/img1.gif" alt="Slide 1" class="slide">
+        <img src="./img/img2.gif" alt="Slide 2" class="slide">
+        <img src="./img/img3.gif" alt="Slide 3" class="slide">
+        <img src="./img/img4.gif" alt="Slide 4" class="slide">
+        <img src="./img/img5.gif" alt="Slide 5" class="slide">
+      </div>
+    </div>
+    <script src="./script/script.js"></script>
+  </body>
+</html>
