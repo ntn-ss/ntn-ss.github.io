@@ -10,9 +10,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <link
+      href="https://fonts.cdnfonts.com/css/black-parade-personal-use"
+      rel="stylesheet"
+    />
+    /> />
     <!-- CSS Próprio -->
     <link rel="stylesheet" href="./css/main.css" />
   </head>
@@ -53,21 +59,33 @@
         </ul>
       </div>
       <div class="container">
-        <div class="nav-bar">
+        <div class="nav-bar" id="navBar">
           <nav>
             <a href="#"
               ><img
                 src="./img/marca-4patas.svg"
                 alt="Logo 4 Patas"
                 style="width: 28.9rem; height: 11.1rem"
+                id="logo-header"
             /></a>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#about-sect">Sobre nós</a></li>
-              <li><a href="#volunteer">Voluntário</a></li>
-              <li><a href="#">Contato</a></li>
-              <li><a href="#">Marca</a></li>
+              <li>
+                <a href="#about-sect" onclick="menuMobile()">Sobre nós</a>
+              </li>
+              <li>
+                <a href="#volunteer" onclick="menuMobile()">Voluntário</a>
+              </li>
+              <li><a href="#" onclick="menuMobile()">Contato</a></li>
+              <li><a href="marca.html" onclick="menuMobile()">Marca</a></li>
             </ul>
+            <div class="icon">
+              <img
+                src="./img/Burger.png"
+                alt="Ícone Menu"
+                id="iconeMenu"
+                onclick="menuMobile()"
+              />
+            </div>
           </nav>
         </div>
       </div>
@@ -107,16 +125,20 @@
             >
           </div>
         </div>
-        <div class="card">
-          <div class="text-card">
-            <span><b>Quero Apadrinhar</b></span>
+        <a href="#sponsorship">
+          <div class="card">
+            <div class="text-card">
+              <span><b>Quero Apadrinhar</b></span>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <div class="text-card">
-            <span><b>Quero Adotar</b></span>
+        </a>
+        <a href="#available-header">
+          <div class="card">
+            <div class="text-card">
+              <span><b>Quero Adotar</b></span>
+            </div>
           </div>
-        </div>
+        </a>
         <div class="card">
           <div class="text-card">
             <span
@@ -178,7 +200,7 @@
         </div>
       </div>
     </div>
-    <div class="sponsorship">
+    <div class="sponsorship" id="sponsorship">
       <div class="container">
         <h2>Apadrinhamento</h2>
         <span>Como funciona?</span>
@@ -222,7 +244,7 @@
         </div>
         <span id="available-header">Animais disponíveis</span>
         <div class="cards-animals">
-            <div class="an-animal">
+          <div class="an-animal">
             <div class="card-animal">
               <div class="card-info">
                 <div class="picture"><span>Foto</span></div>
@@ -236,10 +258,10 @@
               </div>
             </div>
             <div class="button-animal">
-                <button>Minha história</button>
+              <button>Minha história</button>
             </div>
           </div>
-            <div class="an-animal">
+          <div class="an-animal">
             <div class="card-animal">
               <div class="card-info">
                 <div class="picture"><span>Foto</span></div>
@@ -253,10 +275,10 @@
               </div>
             </div>
             <div class="button-animal">
-                <button>Minha história</button>
+              <button>Minha história</button>
             </div>
           </div>
-            <div class="an-animal">
+          <div class="an-animal">
             <div class="card-animal">
               <div class="card-info">
                 <div class="picture"><span>Foto</span></div>
@@ -270,10 +292,10 @@
               </div>
             </div>
             <div class="button-animal">
-                <button>Minha história</button>
+              <button>Minha história</button>
             </div>
           </div>
-            <div class="an-animal">
+          <div class="an-animal">
             <div class="card-animal">
               <div class="card-info">
                 <div class="picture"><span>Foto</span></div>
@@ -287,10 +309,10 @@
               </div>
             </div>
             <div class="button-animal">
-                <button>Minha história</button>
+              <button>Minha história</button>
             </div>
           </div>
-            <div class="an-animal">
+          <div class="an-animal">
             <div class="card-animal">
               <div class="card-info">
                 <div class="picture"><span>Foto</span></div>
@@ -304,10 +326,10 @@
               </div>
             </div>
             <div class="button-animal">
-                <button>Minha história</button>
+              <button>Minha história</button>
             </div>
           </div>
-            <div class="an-animal">
+          <div class="an-animal">
             <div class="card-animal">
               <div class="card-info">
                 <div class="picture"><span>Foto</span></div>
@@ -321,10 +343,10 @@
               </div>
             </div>
             <div class="button-animal">
-                <button>Minha história</button>
+              <button>Minha história</button>
             </div>
           </div>
-            <div class="an-animal">
+          <div class="an-animal">
             <div class="card-animal">
               <div class="card-info">
                 <div class="picture"><span>Foto</span></div>
@@ -338,10 +360,10 @@
               </div>
             </div>
             <div class="button-animal">
-                <button>Minha história</button>
+              <button>Minha história</button>
             </div>
           </div>
-            <div class="an-animal">
+          <div class="an-animal">
             <div class="card-animal">
               <div class="card-info">
                 <div class="picture"><span>Foto</span></div>
@@ -355,14 +377,20 @@
               </div>
             </div>
             <div class="button-animal">
-                <button>Minha história</button>
+              <button>Minha história</button>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <a href="#"><button class="toTop"><img src="./img/up-arrow.png" alt="Voltar ao Topo"></button></a>
-    <script src="./js/script.js"></script>
+    <!-- Back to top element -->
+    <a href="#"
+      ><button class="toTop">
+        <img src="./img/up-arrow.png" alt="Voltar ao Topo" /></button
+    ></a>
+
+    <script src="./js/botao.js"></script>
+    <script src="./js/responsive_header.js"></script>
   </body>
 </html>

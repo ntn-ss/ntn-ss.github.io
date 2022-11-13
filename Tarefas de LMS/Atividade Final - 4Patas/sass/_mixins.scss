@@ -1,4 +1,4 @@
-@mixin style-btn($size, $bg, $colorText) {
+@mixin style-btn1($size, $bg, $colorText) {
     border: calc($size/7) solid $background;
     font-family: 'Fredoka', sans-serif;
     box-sizing: border-box;
@@ -14,9 +14,36 @@
     cursor: pointer;
     transition: all .2s;
     &:hover {
-        background-color: $colorText;
-        color: $bg;
         border: calc($size/7) solid;
+        transform: scale(1.05);
+    }
+    
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+@mixin style-btn2($size, $colorBorder, $colorText) {
+    border: calc($size/7) solid $colorBorder;
+    font-family: 'Fredoka', sans-serif;
+    box-sizing: border-box;
+    color: $colorText;
+    font-size: $size;
+    background-color: $background;
+    border-radius: 3rem;
+    padding-top: calc($size/2);
+    padding-bottom: calc($size/2);
+    padding-left: $size;
+    padding-right: $size;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover {
+        background-color: $colorBorder;
+    }
+    &:active {
+        border-color: $colorText;
     }
 }
 

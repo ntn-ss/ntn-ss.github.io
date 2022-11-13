@@ -1,0 +1,57 @@
+@include responsive (1290px) {
+    .nav-bar {
+        nav {
+            ul {
+                li {
+                    display: none;
+                }
+            }
+            .icon {
+                float: right;
+                display: block;
+                position: absolute;
+                right: 3rem;
+            }
+        }
+    }
+    .nav-bar.responsive {
+        position: relative;
+        nav {
+            #logo-header{
+                display: none;
+            }
+            transition: .2s all;
+            overflow: auto;
+            position: fixed;
+            z-index: 10;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: $header;
+        }
+        
+        .icon {
+            position: absolute;
+            right: 4.5rem;
+            top: 12.5rem;
+        }
+        ul {
+            flex-direction: column;
+            height: 100vh;
+            width: 100vw;
+            text-align: left;
+            li {
+                width: 100vw;
+                margin-left: 40vw;
+                display: block;
+                a {
+                    color: white;
+                    &:active, &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

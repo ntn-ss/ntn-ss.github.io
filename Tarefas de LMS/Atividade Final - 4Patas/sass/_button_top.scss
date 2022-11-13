@@ -1,0 +1,36 @@
+//Botão para o Topo
+
+.toTop {
+    box-sizing: border-box;
+    background-color: $second;
+    position: fixed;
+    z-index: 99;
+    bottom: -4rem;
+    right: 4rem;
+    max-width: 6rem;
+    padding: 1rem;
+    border-radius: 50%;
+    @include flex(row, center, center);
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s;
+}
+
+.toTop.active {
+    transition: all .3s;
+    padding: 1rem;
+    bottom: 2rem;
+    pointer-events: auto;
+    cursor: pointer;
+    opacity: 1;
+    border: 0.5rem solid $borderButtonTop;
+    &:hover{
+        transition: all .3s;
+        border: 0.7rem solid $borderButtonTop;
+    }
+    &:active {
+        transition: all .3s;
+        padding: 1.5rem;
+        border: none;
+    }
+}

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4Patas - Marca</title>
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.cdnfonts.com/css/black-parade-personal-use"
+      rel="stylesheet"
+    />
+    <!-- CSS Próprio -->
+    <link rel="stylesheet" href="./css/marca.css" />
+  </head>
+  <body>
+    <header>
+      <div class="social">
+        <ul>
+          <div class="container">
+            <li>
+              <a
+                href="https://pt-br.facebook.com/4patasquixada/"
+                target="_blank"
+                ><img
+                  src="./img/icons8-facebook-novo-50.png"
+                  alt="Facebook"
+                  style="width: auto; height: 3.125rem"
+              /></a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/4_patas_quixada/"
+                target="_blank"
+                ><img
+                  src="./img/icons8-instagram-velho-50.png"
+                  alt="Instagram"
+                  style="width: auto; height: 4rem"
+              /></a>
+            </li>
+            <li>
+              <a href="https://web.whatsapp.com/" target="_blank"
+                ><img
+                  src="./img/icons8-whatsapp-50.png"
+                  alt="WhatsApp"
+                  style="width: auto; height: 3.125rem"
+              /></a>
+            </li>
+          </div>
+        </ul>
+      </div>
+      <div class="container">
+        <div class="nav-bar" id="navBar">
+          <nav>
+            <a href="index.html"
+              ><img
+                src="./img/marca-4patas.svg"
+                alt="Logo 4 Patas"
+                style="width: 28.9rem; height: 11.1rem"
+                id="logo-header"
+            /></a>
+            <ul>
+              <li>
+                <a href="index.html" onclick="menuMobile()">Página Inicial</a>
+              </li>
+              <li><a href="#design-grid" onclick="menuMobile()">Malha</a></li>
+              <li><a href="#symbol" onclick="menuMobile()">Símbolo</a></li>
+              <li><a href="#logo" onclick="menuMobile()">Logo</a></li>
+              <li><a href="#colors" onclick="menuMobile()">Cores</a></li>
+              <li>
+                <a href="#typography" onclick="menuMobile()">Tipografia</a>
+              </li>
+            </ul>
+            <div class="icon">
+              <img
+                src="./img/Burger.png"
+                alt="Ícone Menu"
+                id="iconeMenu"
+                onclick="menuMobile()"
+              />
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="slider fade" id="sliderBg">
+        <div class="container">
+          <img
+            src="img/slide-arrow.png"
+            alt="Para a Esquerda"
+            id="arrowLeft"
+            onclick="plusSlides(-1)"
+          />
+          <div class="slidepage switch">
+            <img src="img/slider1.png" alt="4Patas Cor 1" id="marca1" />
+          </div>
+          <div class="slidepage switch">
+            <img src="img/slider2.png" alt="4Patas Cor 2" id="marca2" />
+          </div>
+          <img
+            src="img/slide-arrow.png"
+            alt="Para a Direita"
+            id="arrowRight"
+            onclick="plusSlides(1)"
+          />
+        </div>
+      </div>
+      <div class="design-grid" id="design-grid">
+        <div class="container">
+          <h2>Malha de Construção</h2>
+          <img src="./img/malha-grid.png" alt="Malha de Construção" />
+        </div>
+      </div>
+      <div class="symbol" id="symbol">
+        <div class="container">
+          <h2>Símbolo</h2>
+          <div class="cards-symbol">
+            <div class="card">
+              <img src="./img/card-symbol1.png" alt="Coração" id="heart" />
+              <div class="text-area-card">
+                <span class="card-title">Coração</span>
+                <p class="card-body">
+                  Representa a empatia, o amor, o carinho e o zelo que nós temos
+                  com os pets acolhidos.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="./img/card-symbol2.png" alt="Triângulo Arredondado" />
+              <div class="text-area-card">
+                <span class="card-title"
+                  >Triângulo com bordas arredondadas</span
+                >
+                <p class="card-body">
+                  Representa o equilíbrio que nós temos como uma associação, em
+                  relação a gestão de recursos e administração em si.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="./img/card-symbol3.png" alt="Pata de Cachorro" />
+              <div class="text-area-card">
+                <span class="card-title">Pata de Cachorro</span>
+                <p class="card-body">
+                  Representa a paixão que nós temos pela causa animal e o quanto
+                  estamos dispostos a batalhar por ela.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="logo" id="logo">
+        <div class="container">
+          <h2>Logo</h2>
+          <img src="img/logo4Patas.png" alt="Logo do 4 Patas" id="logoPreta" />
+          <img
+            src="./img/mosaicoLogo4Patas.png"
+            alt="Mosaico Logo do 4 Patas"
+            id="mosaicoLogo"
+          />
+          <p>
+            Esse é o design proposto para nossa marca, trazendo uma grande
+            padronização entre os elementos e conceitos e o símbolo, como já
+            mostrado acima. Com a letra "S" alinhada com a letra "P", e também
+            pela dinamicidade que transmite por causa de suas circunferências,
+            ela se transforma em uma representação de um rabinho de gato e o
+            símbolo é a representação da pata de um cachorro, assim conseguimos
+            trazer na nossa logo os dois tipos de animais que cuidamos e
+            acolhemos.
+          </p>
+        </div>
+      </div>
+      <div class="colors" id="colors">
+        <div class="container">
+          <h2>Cores</h2>
+        </div>
+        <div class="colors-all">
+          <div class="first-row">
+            <div class="color no1">
+              <div class="text-color">
+                <span id="color-codes"
+                  >CMYK 0% 45% 88% 0%<br />RGB 255, 161, 36<br />#FFA124</span
+                >
+                <span id="color-main1">Otimismo/Alegria</span>
+              </div>
+            </div>
+            <div class="color no2">
+              <div class="text-color">
+                <span id="color-codes"
+                  >CMYK 37% 54% 83% 43%<br />RGB 91, 68, 53<br />#5B4435</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="second-row">
+            <div class="color no3">
+              <div class="text-color">
+                <span id="color-codes"
+                  >CMYK 23% 36% 59% 10%<br />RGB 191, 156, 109<br />#BF9C6D</span
+                >
+              </div>
+            </div>
+            <div class="color no4">
+              <div class="text-color">
+                <span id="color-codes"
+                  >CMYK 37% 54% 83% 43%<br />RGB 118, 86, 42<br />#76562A</span
+                >
+                <span id="color-main4">Acolhimento</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <p>
+            Nossa paleta de cores tem como cor predominante o laranja, que traz
+            um ar de otimismo, alegria e, nesse tom um pouco pastel, também
+            representa um pouco de carinho e fofura. Além disso, nós escolhemos
+            o laranja pelo fato de o Abril Laranja ser o mês de prevenção contra
+            a crueldade animal, fortalecendo a ligação com a nossa identidade e
+            nossos valores. Junto ao laranja, temos o marrom. Ele foi escolhido
+            aqui porque a combinação dessas duas cores transmite a sensação de
+            acolhimento, e essas outras duas também são tons de marrom e vêm
+            para representar a variação de cores dos pelos dos nossos bichinhos.
+          </p>
+        </div>
+      </div>
+      <div class="typography" id="typography">
+        <div class="container">
+          <h2>Tipografia</h2>
+          <img src="img/marca-d'agua2.png" alt="Marca d'água" />
+          <div class="texts">
+            <div class="fredoka-texts">
+              <span id="fredokaName">Fredoka (Bold)</span>
+              <span id="fredokaSemibold">Semibold</span>
+              <span id="fredokaMedium">Medium</span>
+              <span id="fredokaRegular">Regular</span>
+              <span id="fredokaLight">Light</span>
+            </div>
+
+            <div class="black-parade-texts">
+              <span id="blackParadeName">(Black Parade)</span>
+              <span id="blackParadeletters">Aa Bb Cc Dd Ee Ff Gg</span>
+              <span id="blackParadeNumbers">0 1 2 3 4 5 6 7 8 9</span>
+              <span id="blackParadeSigns">@ # $ % & ! * / ?</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer">
+        <span>teste.</span>
+      </div>
+    </footer>
+    <!-- Back to top element -->
+    <a href="#"
+      ><button class="toTop">
+        <img src="./img/up-arrow.png" alt="Voltar ao Topo" /></button
+    ></a>
+
+    <script src="./js/botao.js"></script>
+    <script src="./js/slides.js"></script>
+    <script src="./js/responsive_header.js"></script>
+  </body>
+</html>

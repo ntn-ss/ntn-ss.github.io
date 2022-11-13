@@ -27,9 +27,13 @@ header {
 
 .nav-bar {
   nav {
+    overflow: hidden;
     width: 100%;
     height: 20vh;
     @include flex(row, center, space-between);
+    .icon {
+      display: none;
+    }
     img {
       cursor: pointer;
     }
