@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://moodle2.quixada.ufc.br/pluginfile.php/1/theme_moove/favicon/1648151727/favicon.ico"/>
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Atividade 7</title>
+</head>
+<body>
+    <div class="modal new-group hidden" id="modalGroup">
+        <div class="modal-info">
+            <span>Insira o nome do grupo:</span>
+            <input type="text" placeholder="Nome do grupo" id="groupName">
+            <div class="buttons">
+                <input type="submit" value="Criar" id="create" style="padding: 1rem; border-radius: .5rem;" onclick="newGroup()">
+                <button id="cancelCreate" style="padding: 1rem; border-radius: .5rem;">Cancelar</button>
+            </div>
+            
+        </div>
+    </div>
+    <div class="modal username" id="modalUser">
+            <div class="modal-info">
+                <span>Insira seu nome de usuário:</span>
+                <input type="text" placeholder="Nome de usuário" id="username">
+                <div class="buttons">
+                    <input type="submit" value="Entrar" id="login" style="padding: 1rem; border-radius: .5rem;">
+                    <button id="cancel" style="padding: 1rem; border-radius: .5rem;" class="hidden">Cancelar</button>
+                </div>
+                
+            </div>
+        </div>
+    <div class="page">
+        <header>
+            <a href="#"><img src="./img/logo.png" alt="Logo UatizApe"></a>
+            <div class="user">
+                <span>E aí, <b id="name">usuário  não logado</b>!</span>
+                <button id="returnModal">Trocar nome de usuário</button>
+            </div>
+        </header>
+        <main>
+            <div class="groups">
+                <h2>Grupos</h2>
+            </div>
+            <div class="messages">
+                <h2>Mensagens</h2>
+                <p style="text-align: center; margin-top: 1rem;" id="customText">Selecione um grupo à esquerda para bater um papo!</span>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/request.js"></script>
+</body>
+</html>

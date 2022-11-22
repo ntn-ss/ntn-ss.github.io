@@ -1,0 +1,146 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  font-family: "Comic Sans MS", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #eeeeee;
+}
+
+body {
+  background-color: rgb(0, 0, 80);
+  display: flex;
+  font-size: 1.6rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.modal {
+  position: fixed;
+  width: 100%;
+  max-width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal .modal-info {
+  border-radius: 3rem;
+  background-color: #eeeeee;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 30vw;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.modal .modal-info * {
+  color: black;
+}
+
+.page {
+  margin: auto;
+  width: 100%;
+  max-width: 90rem;
+  background-color: darkblue;
+  height: 100vh;
+}
+
+header {
+  padding: 1rem 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  max-height: 7vh;
+}
+header a, header a > img {
+  max-height: 7vh;
+}
+header span {
+  margin-right: 1rem;
+}
+header button {
+  padding: 0.5rem;
+  background-color: #000000;
+  border-radius: 1rem;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .groups {
+  background-color: darkcyan;
+  width: 100%;
+  max-width: 20vw;
+  height: calc(93vh - 2rem);
+  text-align: center;
+  overflow: auto;
+}
+main .group {
+  margin-top: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .group img {
+  margin-right: 1rem;
+}
+main .new-group {
+  cursor: pointer;
+  margin-top: 1rem;
+}
+main .messages {
+  overflow: auto;
+  box-sizing: border-box;
+  background-color: mediumaquamarine;
+  width: 100%;
+  max-width: 46vw;
+  height: calc(93vh - 2rem);
+  padding: 2rem;
+}
+main .messages h2 {
+  text-align: center;
+}
+main .message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+main .message .first-line {
+  display: flex;
+  align-items: center;
+}
+main .message .first-line img {
+  margin-right: 1rem;
+}
+main .message:nth-child(2) {
+  margin-top: 2rem;
+}
+main .message:not(:last-child) {
+  margin-bottom: 2rem;
+}
+main .new-message #messageWrite {
+  width: 100%;
+  max-width: 80%;
+  height: 5vh;
+  margin-right: 1rem;
+}
+main .new-message #messageWrite, main .new-message #sendMessage {
+  color: black;
+}
+main .new-message #sendMessage {
+  height: 5vh;
+  width: 100%;
+  max-width: 10%;
+}
