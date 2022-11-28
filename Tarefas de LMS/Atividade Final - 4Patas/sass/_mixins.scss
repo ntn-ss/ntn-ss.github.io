@@ -1,61 +1,61 @@
 @mixin style-btn1($size, $bg, $colorText) {
-    border: calc($size/7) solid $background;
-    font-family: 'Fredoka', sans-serif;
-    box-sizing: border-box;
-    color: $colorText;
-    font-size: $size;
-    background-color: $bg;
-    border-radius: 3rem;
-    padding-top: calc($size/2);
-    padding-bottom: calc($size/2);
-    padding-left: $size;
-    padding-right: $size;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all .2s;
-    &:hover {
-        border: calc($size/7) solid;
-        transform: scale(1.05);
-    }
-    
-    &:active {
-        transform: scale(0.98);
-    }
+  border: calc($size/7) solid $background;
+  font-family: "Fredoka", sans-serif;
+  box-sizing: border-box;
+  color: $colorText;
+  font-size: $size;
+  background-color: $bg;
+  border-radius: 3rem;
+  padding-top: calc($size/2);
+  padding-bottom: calc($size/2);
+  padding-left: $size;
+  padding-right: $size;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover {
+    border: calc($size/7) solid;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
 }
 
 @mixin style-btn2($size, $colorBorder, $colorText) {
-    border: calc($size/7) solid $colorBorder;
-    font-family: 'Fredoka', sans-serif;
-    box-sizing: border-box;
-    color: $colorText;
-    font-size: $size;
-    background-color: $background;
-    border-radius: 3rem;
-    padding-top: calc($size/2);
-    padding-bottom: calc($size/2);
-    padding-left: $size;
-    padding-right: $size;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all .2s;
+  border: calc($size/7) solid $colorBorder;
+  font-family: "Fredoka", sans-serif;
+  box-sizing: border-box;
+  color: $colorText;
+  font-size: $size;
+  background-color: $background;
+  border-radius: 3rem;
+  padding-top: calc($size/2);
+  padding-bottom: calc($size/2);
+  padding-left: $size;
+  padding-right: $size;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
 
-    &:hover {
-        background-color: $colorBorder;
-    }
-    &:active {
-        border-color: $colorText;
-    }
+  &:hover {
+    background-color: $colorBorder;
+  }
+  &:active {
+    border-color: $colorText;
+  }
 }
 
 @mixin flex($direction, $align, $justify) {
-    display: flex;
-    flex-direction: $direction;
-    align-items: $align;
-    justify-content: $justify;
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
 }
 
 @mixin responsive($screenWidth) {
-    @media screen and (max-width: $screenWidth) {
-        @content;
-    }
+  @media screen and (max-width: $screenWidth) {
+    @content;
+  }
 }

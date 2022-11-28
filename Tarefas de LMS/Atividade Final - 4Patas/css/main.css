@@ -23,6 +23,13 @@ h2 {
   margin-bottom: 6.875rem;
 }
 
+h3 {
+  text-align: center;
+  font-size: 5rem;
+  color: #5B4435;
+  margin-bottom: 4rem;
+}
+
 html {
   scroll-behavior: smooth;
   background-color: #FFFFFF;
@@ -263,6 +270,7 @@ header {
 .about-sect .container .text-about p {
   font-size: 2.5rem;
   text-align: justify;
+  font-weight: 500;
   color: #76562A;
 }
 
@@ -353,6 +361,11 @@ header {
   text-align: center;
   margin-bottom: 5rem;
 }
+.sponsorship .container .container {
+  padding-bottom: 10rem;
+  border-bottom: thin solid #5B4435;
+  margin-bottom: 15rem;
+}
 .sponsorship .container .cards-sponsor {
   display: flex;
   flex-direction: row;
@@ -364,6 +377,7 @@ header {
   width: 100%;
   height: 100%;
   max-width: 42rem;
+  min-height: 288px;
   background-color: #FFA124;
   border-radius: 5rem;
   padding: 5rem;
@@ -377,66 +391,78 @@ header {
   text-align: justify;
   color: #5B4435;
 }
-.sponsorship .container #available-header {
-  margin-top: 16.25rem;
-  margin-bottom: 6.25rem;
+.sponsorship .container .end-sponsor {
+  width: 100%;
 }
-.sponsorship .container .cards-animals {
+.sponsorship .container .end-sponsor p {
+  font-size: 4rem;
+  text-align: center;
+  color: #5B4435;
+  margin-top: 12.8rem;
+  margin-bottom: 3rem;
+}
+.sponsorship .container .end-sponsor button {
+  border: 0.8571428571rem solid #FFFFFF;
+  font-family: "Fredoka", sans-serif;
+  box-sizing: border-box;
+  color: #FFA124;
+  font-size: 6rem;
+  background-color: #76562A;
+  border-radius: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: block;
+  align-self: center;
+}
+.sponsorship .container .end-sponsor button:hover {
+  border: 0.8571428571rem solid;
+  transform: scale(1.05);
+}
+.sponsorship .container .end-sponsor button:active {
+  transform: scale(0.98);
+}
+
+.donate .container {
+  padding-bottom: 15.125rem;
+  border-bottom: thin solid #5B4435;
+  margin-bottom: 15rem;
+}
+.donate h3 {
+  margin-bottom: 4rem;
+}
+.donate .cards-donate {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-bottom: 10rem;
+}
+.donate .cards-donate .card {
   width: 100%;
+  width: calc(33.3333333333% - 2.5rem);
+  position: relative;
+  background-color: #BE9C6E;
+  padding: 5rem;
+  border-radius: 80px;
+  margin-bottom: 9rem;
 }
-.sponsorship .container .cards-animals .card-animal {
-  background-color: #FFA124;
-  border-radius: 5rem;
-  padding: 6.25rem;
-  width: 100%;
-  max-width: 45rem;
-}
-.sponsorship .container .cards-animals .card-animal .card-info .picture {
-  border-radius: 5rem;
-  width: 20rem;
-  height: 20rem;
-  background-color: #FFA733;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-.sponsorship .container .cards-animals .card-animal .card-info .picture span {
-  font-size: 3rem;
-  margin-bottom: 0;
-}
-.sponsorship .container .cards-animals .card-animal .card-info .info #nome {
-  margin-top: 2.5rem;
-  font-size: 4rem;
-  font-weight: bold;
-}
-.sponsorship .container .cards-animals .card-animal .card-info .info span {
-  font-size: 3rem;
-}
-.sponsorship .container .cards-animals .card-animal .card-info .info span:last-child {
-  margin-bottom: 0;
-}
-.sponsorship .container .cards-animals .button-animal {
+.donate .cards-donate .card button {
   box-sizing: border-box;
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-.sponsorship .container .cards-animals .button-animal button {
-  border: 0.5714285714rem solid #FFA124;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: absolute;
+  border: 0.5714285714rem solid #FFFFFF;
   font-family: "Fredoka", sans-serif;
   box-sizing: border-box;
   color: #76562A;
   font-size: 4rem;
-  background-color: #FFFFFF;
+  background-color: #FFA124;
   border-radius: 3rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -445,13 +471,206 @@ header {
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s;
+  border: none;
   display: block;
+  align-self: center;
+  bottom: -6rem;
+  left: 33%;
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
 }
-.sponsorship .container .cards-animals .button-animal button:hover {
+.donate .cards-donate .card button:hover {
+  border: 0.5714285714rem solid;
+  transform: scale(1.05);
+}
+.donate .cards-donate .card button:active {
+  transform: scale(0.98);
+}
+.donate .cards-donate .card button:hover {
+  transform: scale(1.1);
+  border: none;
+}
+.donate .cards-donate .card button:active {
+  transform: scale(0.9);
+}
+.donate .cards-donate .card .card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.donate .cards-donate .card .card-text .card-donate-title {
+  font-size: 6rem;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.donate .cards-donate .card .card-text .card-donate-subtitle {
+  font-size: 6rem;
+  font-weight: bold;
+  color: #5B4435;
+}
+.donate .cards-donate .card .card-text .card-donate-longtext {
+  color: #5B4435;
+  font-size: 2rem;
+  font-weight: 400;
+}
+.donate p#textDonate {
+  margin-top: 7rem;
+  font-size: 4rem;
+  color: #5B4435;
+  text-align: center;
+}
+.donate .container2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.donate button#buttonDonate {
+  border: 0.7142857143rem solid #BE9C6E;
+  font-family: "Fredoka", sans-serif;
+  box-sizing: border-box;
+  color: #5B4435;
+  font-size: 5rem;
+  background-color: #FFFFFF;
+  border-radius: 3rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 7rem;
+}
+.donate button#buttonDonate:hover {
+  background-color: #BE9C6E;
+}
+.donate button#buttonDonate:active {
+  border-color: #5B4435;
+}
+
+.adopt .container .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10rem;
+  border-bottom: thin solid #5B4435;
+  margin-bottom: 15rem;
+}
+.adopt .container p {
+  font-weight: 500;
+  font-size: 3rem;
+  text-align: center;
+  color: #5B4435;
+  margin-top: 3rem;
+  margin-bottom: 7rem;
+}
+.adopt .container .cards-adoption {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.adopt .container .cards-adoption .card-adoption {
+  width: 100%;
+  height: 34.8rem;
+  max-width: 42rem;
   background-color: #FFA124;
+  border-radius: 5rem;
+  padding: 5rem;
 }
-.sponsorship .container .cards-animals .button-animal button:active {
-  border-color: #76562A;
+.adopt .container .cards-adoption .card-adoption .card-adoption-text h2 {
+  margin-bottom: 2.5rem;
+}
+.adopt .container .cards-adoption .card-adoption .card-adoption-text p {
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: justify;
+  color: #5B4435;
+}
+.adopt .container .end-adoption {
+  width: 100%;
+}
+.adopt .container .end-adoption p {
+  font-size: 4rem;
+  text-align: center;
+  color: #5B4435;
+  margin-top: 12.8rem;
+  margin-bottom: 3rem;
+}
+.adopt .container .end-adoption button {
+  border: 0.8571428571rem solid #FFFFFF;
+  font-family: "Fredoka", sans-serif;
+  box-sizing: border-box;
+  color: #FFA124;
+  font-size: 6rem;
+  background-color: #76562A;
+  border-radius: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: block;
+  align-self: center;
+}
+.adopt .container .end-adoption button:hover {
+  border: 0.8571428571rem solid;
+  transform: scale(1.05);
+}
+.adopt .container .end-adoption button:active {
+  transform: scale(0.98);
+}
+
+.rescue .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15rem;
+}
+.rescue .container img {
+  margin-top: 9rem;
+  max-width: 70rem;
+  margin-bottom: 9rem;
+}
+.rescue .container p#bottomPic {
+  margin-bottom: 9rem;
+  width: 100%;
+  font-size: 3rem;
+  color: #5B4435;
+  text-align: center;
+}
+.rescue .container ol {
+  font-weight: 500;
+  position: relative;
+  left: 3.5%;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.rescue .container ol li {
+  list-style: decimal;
+  width: 100%;
+  font-size: 5rem;
+  color: #5B4435;
+  text-align: left;
+}
+.rescue .container ol li:not(:last-child) {
+  margin-bottom: 3rem;
+}
+.rescue .container ol li p {
+  width: 100%;
+  max-width: 95%;
+  text-align: justify;
+  font-size: 2rem;
 }
 
 @media screen and (max-width: 1290px) {
@@ -503,4 +722,61 @@ header {
   .nav-bar.responsive ul li a:active, .nav-bar.responsive ul li a:hover {
     color: white;
   }
+}
+footer {
+  background-color: #5B4435;
+  height: 35vh;
+}
+footer a, footer a:visited {
+  color: inherit;
+}
+footer .container {
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #FFA124;
+}
+footer .container img {
+  width: 100%;
+  max-width: 20vw;
+}
+footer .container .footer-text {
+  color: #FFA124;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5vw;
+}
+footer .container .footer-text ol {
+  font-weight: 600;
+  font-size: 2rem;
+}
+footer .container .footer-text ol:last-child a, footer .container .footer-text ol:last-child li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+footer .container .footer-text ol li {
+  font-weight: 400;
+  margin-top: 2rem;
+}
+footer .container .footer-text ol li img {
+  width: 100%;
+  max-width: 1.5vw;
+  margin-right: 0.5vw;
+}
+footer .container2 {
+  height: 10vh;
+  background-color: #5B4435;
+  color: #FFA124;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 500;
 }

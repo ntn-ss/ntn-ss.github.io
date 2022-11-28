@@ -23,6 +23,13 @@ h2 {
   margin-bottom: 6.875rem;
 }
 
+h3 {
+  text-align: center;
+  font-size: 5rem;
+  color: #5B4435;
+  margin-bottom: 4rem;
+}
+
 html {
   scroll-behavior: smooth;
   background-color: #FFFFFF;
@@ -500,20 +507,7 @@ header {
 }
 
 main {
-  margin-bottom: 130rem;
-}
-
-.footer {
-  height: 50rem;
-  background-color: #5B4435;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-.footer span {
-  color: white;
-  font-size: 5rem;
+  margin-bottom: 122rem;
 }
 
 @media screen and (max-width: 1290px) {
@@ -565,4 +559,61 @@ main {
   .nav-bar.responsive ul li a:active, .nav-bar.responsive ul li a:hover {
     color: white;
   }
+}
+footer {
+  background-color: #5B4435;
+  height: 35vh;
+}
+footer a, footer a:visited {
+  color: inherit;
+}
+footer .container {
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #FFA124;
+}
+footer .container img {
+  width: 100%;
+  max-width: 20vw;
+}
+footer .container .footer-text {
+  color: #FFA124;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5vw;
+}
+footer .container .footer-text ol {
+  font-weight: 600;
+  font-size: 2rem;
+}
+footer .container .footer-text ol:last-child a, footer .container .footer-text ol:last-child li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+footer .container .footer-text ol li {
+  font-weight: 400;
+  margin-top: 2rem;
+}
+footer .container .footer-text ol li img {
+  width: 100%;
+  max-width: 1.5vw;
+  margin-right: 0.5vw;
+}
+footer .container2 {
+  height: 10vh;
+  background-color: #5B4435;
+  color: #FFA124;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 500;
 }

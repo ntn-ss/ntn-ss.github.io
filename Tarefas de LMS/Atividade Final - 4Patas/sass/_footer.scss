@@ -1,0 +1,47 @@
+footer {
+    a, a:visited {
+        color: inherit;
+    }
+    background-color: $third;
+    height: 35vh;
+    .container {
+        height: inherit;
+        @include flex(row, center, space-between);
+        border-bottom: 2px solid $first;
+        img {
+            width: 100%;
+            max-width: 20vw;
+        }
+        .footer-text {
+            color: $first;
+            @include flex(row, flex-start, center);
+            gap: 5vw;
+            ol {
+                font-weight: 600;
+                font-size: 2rem;
+                &:last-child {
+                    a, li {
+                        @include flex(row, center, flex-start);
+                    }
+                }
+                li {
+                    font-weight: 400;
+                    margin-top: 2rem;
+                    img {
+                        width: 100%;
+                        max-width: 1.5vw;
+                        margin-right: 0.5vw;
+                    }
+                }
+            }
+        }
+    }   
+    .container2 {
+        height: 10vh;
+        background-color: $third;
+        color: $first;
+        @include flex(row, center, center);
+        font-size: 2rem;
+        font-weight: 500;
+    }
+}

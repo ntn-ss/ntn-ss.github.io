@@ -305,17 +305,7 @@
   }
 }
 
-//Footer style
-
+//Footer margin
 main {
-  margin-bottom: 130rem;
-}
-.footer {
-  height: 50rem;
-  background-color: $third;
-  @include flex(row, center, center);
-  span {
-    color: white;
-    font-size: 5rem;
-  }
+  margin-bottom: 122rem;
 }
