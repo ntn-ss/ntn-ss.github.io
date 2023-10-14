@@ -73,7 +73,7 @@ h4 {
 .card-depoimento {
   width: 100%;
   max-width: 38.4rem;
-  background-color: rgba(241, 240, 245, 0.555);
+  background-color: #F1F0F5;
   border-radius: 8px;
   height: 20.9rem;
   padding: 3.7rem 3.2rem 2.3rem 3.2rem;
@@ -108,6 +108,9 @@ h4 {
   border-radius: 12.2rem;
   font-weight: 600;
   font-size: 1.6rem;
+}
+.btn-primary:hover, .btn-secondary:hover {
+  cursor: pointer;
 }
 
 .btn-primary {
@@ -175,6 +178,140 @@ header ul li a {
 }
 header ul li a:hover {
   color: #FFC800;
+}
+
+footer {
+  background-color: #0073CE;
+  padding-top: 4.9rem;
+}
+footer .top, footer .main {
+  border-bottom: 1px solid rgba(73, 195, 253, 0.2);
+}
+footer .top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 4.8rem;
+  margin-bottom: 5.7rem;
+}
+footer .top .share {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+footer .top .share span {
+  font-size: 1.4rem;
+  line-height: 125%;
+  text-align: right;
+  color: #FFF;
+  opacity: 0.7;
+}
+footer .top .share ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-left: 3rem;
+}
+footer .top .share ul li:not(:first-child) {
+  margin-left: 3rem;
+}
+footer .main {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 6.2rem;
+  margin-bottom: 3.9rem;
+}
+footer .main nav {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 86rem;
+}
+footer .main nav .item strong {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 125%;
+  color: #FFF;
+  display: inline-block;
+  margin-bottom: 2.5rem;
+}
+footer .main nav .item ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+footer .main nav .item ul li a {
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: #FFF;
+  opacity: 0.7;
+  transition: opacity 0.1s;
+}
+footer .main nav .item ul li a:not(:last-child) {
+  margin-bottom: 2.9rem;
+}
+footer .main nav .item ul li a:hover {
+  opacity: 1;
+}
+footer .main .btn-area {
+  width: 100%;
+  max-width: 28rem;
+}
+footer .main .btn-area button {
+  background-color: rgba(0, 165, 240, 0.23);
+  width: 100%;
+  height: 7.6rem;
+  border-radius: 0.6rem;
+  display: flex;
+  align-items: center;
+  padding-left: 2.5rem;
+  transition: 0.2s background-color;
+}
+footer .main .btn-area button:not(:last-child) {
+  margin-bottom: 2.4rem;
+}
+footer .main .btn-area button:hover {
+  background-color: rgba(0, 164, 240, 0.5);
+}
+footer .main .btn-area button .info {
+  margin-left: 2.4rem;
+}
+footer .main .btn-area button .info strong, footer .main .btn-area button .info span {
+  display: block;
+  color: #FFF;
+  font-size: 1.4rem;
+  line-height: 150%;
+}
+footer .main .btn-area button .info strong {
+  text-align: left;
+  font-weight: bold;
+}
+footer .msg {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  border-bottom: 4px solid #FFC800;
+  padding-bottom: 3.4rem;
+}
+footer .msg .icon {
+  font-size: 1.8rem;
+}
+footer .msg p {
+  width: 100%;
+  max-width: 66rem;
+  margin-left: 2.5rem;
+  font-size: 1.4rem;
+  line-height: 150%;
+  color: #FFF;
 }
 
 .s-hero {
@@ -264,4 +401,299 @@ header ul li a:hover {
 .s-hero .area-image .image .circle {
   top: 2.8rem;
   right: 4.3rem;
+}
+
+.s-card-neon {
+  padding-top: 12.9rem;
+}
+.s-card-neon .container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.s-card-neon .left-area {
+  width: 100%;
+  max-width: 25.7rem;
+}
+.s-card-neon .left-area .ilust-mockup {
+  position: relative;
+  width: 100%;
+  max-width: 27.7rem;
+  margin-bottom: 12.997rem;
+}
+.s-card-neon .left-area .ilust-mockup .circle {
+  max-width: 37.7rem;
+  position: absolute;
+  z-index: -1;
+  top: 8.7rem;
+  left: -21.4rem;
+}
+.s-card-neon .left-area .text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.s-card-neon .left-area .text .icon {
+  position: relative;
+}
+.s-card-neon .left-area .text .icon::before {
+  content: "";
+  background: url("../assets/points.svg") no-repeat center;
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  margin-left: -0.25rem;
+  width: 0.5rem;
+  height: 8.3rem;
+  top: -10.4rem;
+}
+.s-card-neon .left-area .text .info-txt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.s-card-neon .left-area .text .info-txt h3, .s-card-neon .left-area .text .info-txt p {
+  text-align: center;
+}
+.s-card-neon .left-area .text .info-txt h3 {
+  margin-top: 3.6rem;
+  color: #33303E;
+}
+.s-card-neon .left-area .text .info-txt p {
+  font-size: 1.8rem;
+  line-height: 150%;
+  color: #5F5C6B;
+  opacity: 0.8;
+  margin-bottom: 2.6rem;
+}
+.s-card-neon .left-area .text .info-txt ul li:not(:last-child) {
+  margin-bottom: 2.6rem;
+}
+.s-card-neon .right-area {
+  width: 100%;
+  max-width: 80rem;
+}
+.s-card-neon .right-area .main-text {
+  margin-bottom: 14.4rem;
+}
+.s-card-neon .right-area .main-text h2 {
+  max-width: 48.8rem;
+  color: #33303E;
+  margin-bottom: 4.9rem;
+}
+.s-card-neon .right-area .main-text ul {
+  margin-bottom: 3.2rem;
+}
+.s-card-neon .right-area .main-text ul li {
+  border-bottom: 2px solid rgba(255, 224, 231, 0.9);
+  padding: 3.3rem 0rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.s-card-neon .right-area .main-text ul li:first-child {
+  padding-top: 0;
+}
+.s-card-neon .right-area .main-text ul li .info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.s-card-neon .right-area .main-text ul li .info .txt {
+  margin-left: 4.3rem;
+}
+.s-card-neon .right-area .main-text ul li .info .txt h3, .s-card-neon .right-area .main-text ul li .info .txt p {
+  color: #5F5C6B;
+}
+.s-card-neon .right-area .main-text ul li .info .txt p {
+  font-size: 1.8rem;
+  line-height: 150%;
+}
+.s-card-neon .right-area .main-text .btn {
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+  color: #0073CE;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 112%;
+  letter-spacing: -0.05rem;
+  position: relative;
+}
+.s-card-neon .right-area .main-text .btn:after {
+  content: "";
+  position: absolute;
+  right: -1.8rem;
+  bottom: 0;
+  width: 1rem;
+  height: 0.3rem;
+  background-color: #FFC800;
+}
+.s-card-neon .right-area .box-card {
+  width: 100%;
+  height: 41rem;
+  background: url("../assets/bg-box-card-neon.svg") no-repeat center center;
+  border-radius: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 5.9rem;
+}
+.s-card-neon .right-area .box-card .text-area {
+  width: 100%;
+  max-width: 38rem;
+}
+.s-card-neon .right-area .box-card .text-area h2 {
+  margin-bottom: 1.1rem;
+}
+.s-card-neon .right-area .box-card .text-area h3 {
+  max-width: 32.7rem;
+  margin-bottom: 0.8rem;
+}
+.s-card-neon .right-area .box-card .text-area p {
+  font-size: 1.6rem;
+  line-height: 150%;
+  margin-bottom: 3.1rem;
+}
+.s-card-neon .right-area .box-card .text-area h2, .s-card-neon .right-area .box-card .text-area h3, .s-card-neon .right-area .box-card .text-area p {
+  color: #FFF;
+}
+.s-card-neon .right-area .box-card .btn-area {
+  display: flex;
+  align-items: center;
+}
+.s-card-neon .right-area .box-card .btn-area button:not(:first-child) {
+  margin-left: 1.6rem;
+}
+.s-card-neon .right-area .box-card .image {
+  margin-right: -3rem;
+}
+
+.s-depoimentos {
+  padding-top: 13.4rem;
+}
+.s-depoimentos .top {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+.s-depoimentos .top h2 span {
+  color: #C6C5CE;
+  display: block;
+  margin-bottom: 1.4rem;
+}
+.s-depoimentos .top .swiper-pagination {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.s-depoimentos .top .swiper-pagination-bullet, .s-depoimentos .top .swiper-pagination-bullet-active {
+  background: #FFC800;
+}
+.s-depoimentos .top .swiper-pagination-bullet {
+  border-radius: 1.2rem;
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+.s-depoimentos .top .swiper-pagination-bullet:not(:first-child) {
+  margin-left: 0.4rem;
+}
+.s-depoimentos .top .swiper-pagination-bullet-active {
+  width: 1.722rem;
+  opacity: 1;
+}
+.s-depoimentos .slider-depoimentos {
+  overflow: hidden;
+}
+
+.s-conta-digital {
+  padding-top: 12.7rem;
+  padding-bottom: 8.5rem;
+}
+.s-conta-digital .container {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  justify-content: center;
+}
+.s-conta-digital .text {
+  width: 100%;
+  max-width: 54.2rem;
+}
+.s-conta-digital .text h2 {
+  color: #33303E;
+  margin-bottom: 4.5rem;
+}
+.s-conta-digital .text h2 span {
+  display: block;
+  color: rgba(198, 197, 206, 0.8);
+  margin-bottom: 0.9rem;
+}
+.s-conta-digital .text ul {
+  margin-bottom: 6.1rem;
+}
+.s-conta-digital .text ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.s-conta-digital .text ul li:not(:last-child) {
+  margin-bottom: 4.5rem;
+}
+.s-conta-digital .text ul li .icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 4.5rem;
+  height: 4.5rem;
+  background-color: #00D7D7;
+  border-radius: 8px;
+  margin-right: 2.6rem;
+}
+.s-conta-digital .text ul li .info h4 {
+  margin-bottom: 0.4rem;
+  color: #5F5C6B;
+}
+.s-conta-digital .text ul li .info p {
+  font-size: 1.8rem;
+  line-height: 150%;
+  color: #7A7786;
+}
+.s-conta-digital .image {
+  margin-right: -3.8rem;
+  left: 17rem;
+  position: relative;
+  width: 100%;
+  max-width: 71.2rem;
+  height: 59.8rem;
+}
+.s-conta-digital .image img {
+  position: absolute;
+}
+.s-conta-digital .image img.circle {
+  bottom: 0;
+  right: 0;
+}
+.s-conta-digital .image img.mockup-01 {
+  left: 0;
+  bottom: 4.7rem;
+}
+.s-conta-digital .image img.mockup-02 {
+  top: 0.3rem;
+  left: 25.8rem;
+  bottom: 12.9rem;
+  right: 23.8rem;
 }/*# sourceMappingURL=main.css.map */

@@ -80,3 +80,277 @@
         }
     }
 }
+
+.s-card-neon {
+    padding-top: 12.9rem;
+    .container {
+        @include flex(row, flex-start, space-between);
+    }
+    .left-area{
+        width: 100%;
+        max-width: 25.7rem;
+        .ilust-mockup {
+            position: relative;
+            width: 100%;
+            max-width: 27.7rem;
+            margin-bottom: 12.997rem;
+            .circle {
+                max-width: 37.7rem;
+                position: absolute;
+                z-index: -1;
+                top: 8.7rem;
+                left: -21.4rem;
+            }
+        }
+        .text {
+            width: 100%;
+            @include flex(column, center, center);
+            .icon {
+                position: relative;
+                &::before {
+                    content: "";
+                    background: url('../assets/points.svg') no-repeat center;
+                    display: inline-block;
+                    position: absolute;
+                    left: 50%;
+                    margin-left: -0.25rem;
+                    width: 0.5rem;
+                    height: 8.3rem;
+                    top: -10.4rem;
+                    
+                }
+            }
+            .info-txt {
+                @include flex(column, center, center);
+                h3, p {
+                    text-align: center;
+                }
+                h3 {
+                    margin-top: 3.6rem;
+                    color: $gray-600;
+                }
+                p {
+                    font-size: 1.8rem;
+                    line-height: 150%;
+                    color: $gray-400;
+                    opacity: 0.8;
+                    margin-bottom: 2.6rem;
+                }
+                ul {
+                    li {
+                        &:not(:last-child){
+                            margin-bottom: 2.6rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .right-area {
+        width: 100%;
+        max-width: 80rem;
+        .main-text{
+            margin-bottom: 14.4rem;
+            h2 {
+                max-width: 48.8rem;
+                color: $gray-600;
+                margin-bottom: 4.9rem;
+            }
+            ul {
+                margin-bottom: 3.2rem;
+                li {
+                    border-bottom: 2px solid rgba(255, 224, 231, 0.9);
+                    padding: 3.3rem 0rem;
+                    &:first-child{
+                        padding-top: 0;
+                    }
+                    @include flex(row, center, space-between);
+                    .info {
+                        @include flex(row, center, center);
+                        .txt{
+                            margin-left: 4.3rem;
+                            h3, p {
+                                color: $gray-400;
+                            }
+                            p {
+                                font-size: 1.8rem;
+                                line-height: 150%;
+                            }
+                        }
+                    }
+                }
+            }
+            .btn {
+                display: inline-block;
+                font-family: 'Poppins', sans-serif;
+                color: $brand-blue;
+                font-weight: 500;
+                font-size: 1.6rem;
+                line-height: 112%;
+                letter-spacing: -0.05rem;
+                position: relative;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    right: -1.8rem;
+                    bottom: 0;
+                    width: 1rem;
+                    height: 0.3rem;
+                    background-color: $brand-yellow;
+                }
+            }
+        }
+        .box-card {
+            width: 100%;
+            height: 41rem;
+            background: url('../assets/bg-box-card-neon.svg') no-repeat center center;
+            border-radius: 1.2rem;
+            @include flex(row, center, space-between);
+            padding-left: 5.9rem;
+            .text-area {
+                width: 100%;
+                max-width: 38rem;
+                h2 {
+                    margin-bottom: 1.1rem;
+                }
+                h3 {
+                    max-width: 32.7rem;
+                    margin-bottom: 0.8rem;
+                }
+                p {
+                    font-size: 1.6rem;
+                    line-height: 150%;
+                    margin-bottom: 3.1rem;
+                }
+                h2, h3, p {
+                    color: #FFF;
+                }
+            }
+            .btn-area {
+                display: flex;
+                align-items: center;
+                button {
+                    &:not(:first-child){
+                        margin-left: 1.6rem;
+                    }
+                }
+            }
+            .image {
+                margin-right: -3rem;
+            }
+        }
+    }
+}
+
+.s-depoimentos {
+    padding-top: 13.4rem;
+    .top {
+        @include flex (row, flex-end, space-between);
+        margin-bottom: 4rem;
+        h2 {
+            span {
+                color: $gray-200;
+                display: block;
+                margin-bottom: 1.4rem;
+            }
+        }
+        .swiper-pagination {
+            position: relative;
+            @include flex (row, flex-end, flex-end);
+            &-bullet, &-bullet-active {
+                background: $brand-yellow;
+            }
+            &-bullet {
+                border-radius: 1.2rem;
+                opacity: .5;
+                transition: all .3s;
+                &:not(:first-child) {
+                    margin-left: 0.4rem;
+                }
+
+                &-active {
+                    width: 1.722rem;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .slider-depoimentos {
+        overflow: hidden;
+    }
+}
+
+.s-conta-digital {
+    padding-top: 12.7rem;
+    padding-bottom: 8.5rem;
+    .container {
+        @include flex(row, space-between, center);
+    }
+    .text {
+        width: 100%;
+        max-width: 54.2rem;
+        h2 {
+            color: $gray-600;
+            margin-bottom: 4.5rem;
+            span {
+                display: block;
+                color: rgba(198, 197, 206, 0.8);
+                margin-bottom: 0.9rem;
+            }
+        }
+        ul {
+            margin-bottom: 6.1rem;
+            li {
+                @include flex(row, center, flex-start);
+                &:not(:last-child) {
+                    margin-bottom: 4.5rem;
+                }
+                .icon {
+                    @include flex (row, center, center);
+                    width: 100%;
+                    max-width: 4.5rem;
+                    height: 4.5rem;
+                    background-color: $brand-light-green;
+                    border-radius: 8px;
+                    margin-right: 2.6rem;
+                }
+                .info {
+                    h4 {
+                        margin-bottom: 0.4rem;
+                        color: $gray-400;
+                    }
+                    p {
+                        font-size: 1.8rem;
+                        line-height: 150%;
+                        color: $gray-300;
+                    }
+                }
+            }
+        }
+    }
+    .image {
+        margin-right: -3.8rem;
+        left: 17rem;
+        position: relative;
+        width: 100%;
+        max-width: 71.2rem;
+        height: 59.8rem;
+        img {
+            position: absolute;
+            &.circle {
+                bottom: 0;
+                right: 0;
+            }
+            &.mockup-01{
+                left: 0;
+                bottom: 4.7rem;
+            }
+            &.mockup-02{
+                top: 0.3rem;
+                left: 25.8rem;
+                bottom: 12.9rem;
+                right: 23.8rem;
+            }
+        }
+    }
+}

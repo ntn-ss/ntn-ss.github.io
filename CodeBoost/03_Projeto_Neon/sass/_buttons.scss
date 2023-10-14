@@ -6,6 +6,9 @@
     border-radius: 12.2rem;
     font-weight: 600;
     font-size: 1.6rem;
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .btn-primary {
