@@ -1,0 +1,64 @@
+@mixin flex($dir, $just, $align) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $just;
+    align-items: $align;
+}
+
+body {
+    background-color: #aaa;
+    font-size: 10px;
+    @include flex(column, center, center);
+    margin: 0;
+    
+    * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.6rem;
+        letter-spacing: .1rem;
+    }
+
+    .container {
+        @include flex(column, center, center);
+        width: 100%;
+        max-width: 90vw;
+    }
+
+    .title {
+        text-align: center;
+        padding: 1.5rem;
+        h1, a {
+            font-size: 4rem;
+            color: #222;
+        }
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        flex-wrap: wrap;
+        li {
+            padding: 15px;
+            background-color: #222;
+            transition: all .2s;
+            @include flex(row, center, center);
+            &:not(:last-child) {
+                margin: 1rem;
+            }
+            &:last-child {
+                width: 80%;
+            }
+            &:hover {
+                background-color: rgba(34, 34, 34, 0.8);
+                scale: 1.05;
+            }
+            li, b, a, a i {
+                color: #aaa;
+            }
+        }
+    }
+}

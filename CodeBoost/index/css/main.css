@@ -1,0 +1,62 @@
+body {
+  background-color: #aaa;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+body * {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+}
+body .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 90vw;
+}
+body .title {
+  text-align: center;
+  padding: 1.5rem;
+}
+body .title h1, body .title a {
+  font-size: 4rem;
+  color: #222;
+}
+body ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  flex-wrap: wrap;
+}
+body ul li {
+  padding: 15px;
+  background-color: #222;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+body ul li:not(:last-child) {
+  margin: 1rem;
+}
+body ul li:last-child {
+  width: 80%;
+}
+body ul li:hover {
+  background-color: rgba(34, 34, 34, 0.8);
+  scale: 1.05;
+}
+body ul li li, body ul li b, body ul li a, body ul li a i {
+  color: #aaa;
+}/*# sourceMappingURL=main.css.map */
