@@ -5,7 +5,7 @@
     justify-content: $justify;
 }
 
-@mixin resposnive($screenWidth) {
+@mixin responsive($screenWidth) {
     @media(max-width: $screenWidth) {
         @content;
     }

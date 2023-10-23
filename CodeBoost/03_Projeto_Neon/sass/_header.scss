@@ -3,7 +3,6 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    // background-color: $brand-blue;
     height: 8.8rem;
     display: flex;
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
@@ -32,6 +31,47 @@ header {
                 &:hover {
                     color: $brand-yellow;
                 }
+            }
+        }
+    }
+
+    .btn-mobile {
+        display: none;
+        margin-left: 4rem;
+    }
+
+    @include responsive(1094px) {
+        nav {
+            ul {
+                margin-right: 3rem;
+                li {
+                    &:not(:first-child){
+                        margin-left: 2.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @include responsive(991px) {
+        .logo {
+            max-width: 10.8rem;
+        }
+        nav {
+            ul {
+                display: none;
+            }
+        }
+        .btn-mobile{
+            display: block;
+        }
+    }
+
+    @include responsive(480px) {
+        height: 7.3rem;
+        nav {
+            .btn-secondary {
+                display: none;
             }
         }
     }
