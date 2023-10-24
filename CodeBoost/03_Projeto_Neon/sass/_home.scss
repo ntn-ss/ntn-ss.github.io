@@ -607,6 +607,14 @@
             transform: matrix(1, 0, 0, -1, 0, 0);
         }
     }
+
+    @include responsive(400px) {
+        .container {
+            .right-area {
+                margin-bottom: 10rem;
+            }
+        }
+    }
 }
 
 .s-depoimentos {

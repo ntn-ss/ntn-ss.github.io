@@ -1052,6 +1052,11 @@ footer .msg p {
     transform: matrix(1, 0, 0, -1, 0, 0);
   }
 }
+@media (max-width: 400px) {
+  .s-card-neon .container .right-area {
+    margin-bottom: 10rem;
+  }
+}
 
 .s-depoimentos {
   padding-top: 13.4rem;
