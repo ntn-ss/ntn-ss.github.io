@@ -369,6 +369,99 @@ footer .msg p {
   line-height: 150%;
   color: #FFF;
 }
+@media (max-width: 1050px) {
+  footer .main nav {
+    max-width: 76rem;
+  }
+}
+@media (max-width: 991px) {
+  footer .main, footer nav {
+    width: 100%;
+  }
+  footer .main {
+    padding-bottom: 3.6rem;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+  }
+  footer .main nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  footer .main nav .item {
+    width: 33%;
+    margin-bottom: 5rem;
+  }
+  footer .main .btn-area {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    bottom: 14rem;
+  }
+  footer .msg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  footer .msg p {
+    margin-left: 0;
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+}
+@media (max-width: 600px) {
+  footer .main {
+    margin-bottom: 3rem;
+  }
+  footer .main .btn-area {
+    max-width: 25rem;
+  }
+  footer .main .btn-area button img {
+    display: none;
+  }
+  footer .main .btn-area button .info {
+    margin-left: 0;
+  }
+}
+@media (max-width: 480px) {
+  footer .top {
+    padding-bottom: 4.7rem;
+    margin-bottom: 5.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  footer .top .share {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+  footer .top .share ul {
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+  footer .main nav .item {
+    width: 50%;
+    margin-bottom: 5.3rem;
+  }
+  footer .main .btn-area {
+    bottom: 0;
+    position: relative;
+    max-width: 100%;
+  }
+  footer .main .btn-area button {
+    padding-left: 0;
+    justify-content: center;
+  }
+  footer .main .btn-area button .info strong, footer .main .btn-area button .info span {
+    display: block;
+    text-align: center;
+  }
+}
 
 .s-hero {
   width: 100%;
@@ -1104,4 +1197,101 @@ footer .msg p {
   left: 25.8rem;
   bottom: 12.9rem;
   right: 23.8rem;
+}
+@media (max-width: 1200px) {
+  .s-conta-digital .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .s-conta-digital .text {
+    max-width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .s-conta-digital .text h2 {
+    text-align: center;
+    max-width: 80%;
+  }
+  .s-conta-digital .image {
+    margin-right: 0;
+    left: 0;
+    margin-top: 5rem;
+  }
+}
+@media (max-width: 900px) {
+  .s-conta-digital {
+    padding-top: 8.6rem;
+    padding-bottom: 8.1rem;
+  }
+  .s-conta-digital .text {
+    max-width: 100%;
+  }
+  .s-conta-digital .image {
+    max-width: 58.2rem;
+    height: 63.3rem;
+  }
+  .s-conta-digital .image img.circle {
+    width: 100%;
+  }
+  .s-conta-digital .image img.mockup-01, .s-conta-digital .image img.mockup-02 {
+    z-index: 2;
+  }
+}
+@media (max-width: 480px) {
+  .s-conta-digital {
+    padding-top: 5.7rem;
+    padding-bottom: 7.2rem;
+  }
+  .s-conta-digital .container .text h2, .s-conta-digital .container .text span {
+    font-weight: 60rem;
+  }
+  .s-conta-digital .container .text h2 {
+    font-size: 2.8rem;
+    max-width: 100%;
+    margin-bottom: 3.9rem;
+  }
+  .s-conta-digital .container .text span {
+    font-size: 2.4rem;
+  }
+  .s-conta-digital .container .text ul {
+    margin-bottom: 4.4rem;
+  }
+  .s-conta-digital .container .text ul li {
+    flex-direction: column;
+    align-items: center;
+  }
+  .s-conta-digital .container .text ul li:not(:last-child) {
+    margin-bottom: 5.6rem;
+  }
+  .s-conta-digital .container .text ul li .icon {
+    margin-right: 0;
+    margin-bottom: 1.6rem;
+  }
+  .s-conta-digital .container .text ul li .info h4, .s-conta-digital .container .text ul li .info p {
+    text-align: center;
+    max-width: 24rem;
+  }
+  .s-conta-digital .container .text ul li .info p {
+    font-size: 1.6rem;
+    margin: 0 auto;
+  }
+  .s-conta-digital .container .image {
+    max-width: 35.7rem;
+    height: 46rem;
+  }
+  .s-conta-digital .container .image img.mockup-01, .s-conta-digital .container .image img.mockup-02 {
+    max-width: 16.8rem;
+  }
+  .s-conta-digital .container .image img.mockup-01 {
+    top: 5.8rem;
+    bottom: initial;
+    left: 0;
+  }
+  .s-conta-digital .container .image img.mockup-02 {
+    left: initial;
+    right: 0;
+    top: 0;
+  }
 }/*# sourceMappingURL=main.css.map */
