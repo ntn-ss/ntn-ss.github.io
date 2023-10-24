@@ -538,12 +538,16 @@ footer .msg p {
   position: absolute;
 }
 .s-hero .area-image .image .card-front {
+  -webkit-animation: floating 6s infinite;
+          animation: floating 6s infinite;
   top: 4.1rem;
   left: 0;
   z-index: 2;
   max-width: 43.5rem;
 }
 .s-hero .area-image .image .card-back {
+  -webkit-animation: floating 8s infinite;
+          animation: floating 8s infinite;
   bottom: 4.6rem;
   right: 8.6rem;
   z-index: 1;
@@ -1197,16 +1201,19 @@ footer .msg p {
 .s-conta-digital .image img.circle {
   bottom: 0;
   right: 0;
+  z-index: 0;
 }
 .s-conta-digital .image img.mockup-01 {
   left: 0;
   bottom: 4.7rem;
+  z-index: 2;
 }
 .s-conta-digital .image img.mockup-02 {
   top: 0.3rem;
   left: 25.8rem;
   bottom: 12.9rem;
   right: 23.8rem;
+  z-index: 2;
 }
 @media (max-width: 1200px) {
   .s-conta-digital .container {
@@ -1303,5 +1310,29 @@ footer .msg p {
     left: initial;
     right: 0;
     top: 0;
+  }
+}
+
+@-webkit-keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  66% {
+    transform: translateY(-1.5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  66% {
+    transform: translateY(-1.5rem);
+  }
+  100% {
+    transform: translateY(0);
   }
 }/*# sourceMappingURL=main.css.map */

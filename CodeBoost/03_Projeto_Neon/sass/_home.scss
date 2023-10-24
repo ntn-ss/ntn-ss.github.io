@@ -64,12 +64,14 @@
                 position: absolute;
             }
             .card-front {
+                animation: floating 6s infinite;
                 top: 4.1rem;
                 left: 0;
                 z-index: 2;
                 max-width: 43.5rem;
             }
             .card-back {
+                animation: floating 8s infinite;
                 bottom: 4.6rem;
                 right: 8.6rem;
                 z-index: 1;
@@ -742,16 +744,19 @@
             &.circle {
                 bottom: 0;
                 right: 0;
+                z-index: 0;
             }
             &.mockup-01{
                 left: 0;
                 bottom: 4.7rem;
+                z-index: 2;
             }
             &.mockup-02{
                 top: 0.3rem;
                 left: 25.8rem;
                 bottom: 12.9rem;
                 right: 23.8rem;
+                z-index: 2;
             }
         }
     }
@@ -857,5 +862,17 @@
                 }
             }
         }
+    }
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+    66% {
+        transform: translateY(-1.5rem);
+    }
+    100% {
+        transform: translateY(0);
     }
 }
