@@ -369,6 +369,8 @@ footer .msg p {
   line-height: 150%;
   color: #FFF;
 }
+
+/* responsive footer */
 @media (max-width: 1050px) {
   footer .main nav {
     max-width: 76rem;
