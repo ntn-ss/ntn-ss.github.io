@@ -369,8 +369,6 @@ footer .msg p {
   line-height: 150%;
   color: #FFF;
 }
-
-/* responsive footer */
 @media (max-width: 1050px) {
   footer .main nav {
     max-width: 76rem;
@@ -706,10 +704,8 @@ footer .msg p {
   }
 }
 
-.s-card-neon {
-  padding-top: 12.9rem;
-}
 .s-card-neon .container {
+  padding-top: 12.9rem;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -942,6 +938,11 @@ footer .msg p {
     max-width: 27rem;
   }
 }
+@media (max-width: 675px) {
+  .s-card-neon .container {
+    padding-top: 17rem;
+  }
+}
 @media (max-width: 600px) {
   .s-card-neon .container {
     padding-top: 17rem;
@@ -970,10 +971,17 @@ footer .msg p {
     margin-right: 0;
   }
 }
+@media (max-width: 505px) {
+  .s-card-neon .container {
+    padding-top: 25rem;
+  }
+}
 @media (max-width: 480px) {
   .s-card-neon {
-    padding-top: 8.6rem;
     position: relative;
+  }
+  .s-card-neon .container {
+    padding-top: 8.6rem;
   }
   .s-card-neon .container .right-area {
     margin-bottom: 6.7rem;
