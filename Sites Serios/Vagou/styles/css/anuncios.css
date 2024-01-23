@@ -31,6 +31,9 @@ h1 {
   font-size: 3.4rem;
 }
 
+header {
+  margin-top: 1rem;
+}
 header .container {
   display: flex;
   flex-direction: row;
@@ -125,5 +128,5 @@ footer .container .top .share ul li a .bootstrapInstagram:hover, footer .contain
 }
 .inProgress .container h1 {
   color: white;
-  font-size: 25rem;
+  font-size: 15vw;
 }/*# sourceMappingURL=anuncios.css.map */
