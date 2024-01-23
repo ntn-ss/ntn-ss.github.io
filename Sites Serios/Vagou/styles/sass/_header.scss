@@ -1,0 +1,28 @@
+header {
+    .container {
+        @include flex(row, center, space-between);
+        .nav-bar{
+            nav {
+                @include flex(row, center, center);
+                    ul {
+                        @include flex(row, center, center);
+                        a {
+                            &:not(:last-child){
+                                margin-right: 10rem;
+                            }
+                            li{
+                                font-size: 3rem;
+                                font-weight: 700;
+                                color: $brand-blue;
+                                transition: .2s all;
+                                &:hover{
+                                    color: $brand-blue-hover;
+                                    scale: 1.05;
+                                }
+                            }
+                        }
+                    }
+            }
+        }
+    }
+}

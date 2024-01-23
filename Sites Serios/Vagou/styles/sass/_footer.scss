@@ -1,0 +1,47 @@
+footer {
+    padding: 2rem 0;
+    margin-top: 2rem;
+    background-color: $brand-blue;
+    .container {
+        .top {
+            margin-top: 2rem;
+            img {
+                max-width: 15rem;
+            }
+            @include flex(row, center, space-between);
+            .share {
+                span {
+                    color: $white;
+                    font-weight: 700;
+                    font-size: 2rem;
+                }
+                ul {
+                    @include flex(row, center, center);
+                    margin-top: 2rem;
+                    li {
+                        &:not(:last-child){
+                            margin-right: 2rem;
+                        }
+                        a {
+                            svg.bootstrapInstagram,
+                            svg.bootstrapLinkedin {
+                                transition: .2s all;
+                                
+                                &:hover {
+                                    transform: scale(1.1);
+                                }
+                            }
+
+                            .bootstrapInstagram, .bootstrapLinkedin {
+                                fill: $brand-green;
+                                &:hover {
+                                    fill: $brand-green-hover;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

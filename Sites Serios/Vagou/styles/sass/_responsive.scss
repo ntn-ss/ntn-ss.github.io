@@ -1,0 +1,9 @@
+header {
+    .container {
+        @include responsive(1600px) {
+            .header-image{
+                display: none;
+            }
+        }
+    }
+}

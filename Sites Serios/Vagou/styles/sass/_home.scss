@@ -1,0 +1,15 @@
+.s-hero {
+    margin-top: 1rem;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.0), $brand-blue-hover), url('/assets/background-s-hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    height: 40vw;
+    .container {
+        @include flex(row, center, center);
+        height: 100%;
+        img {
+            width: 30vw;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+.inProgress {
+    .container {
+        max-width: 100%;
+        height: 30vw;
+        background: linear-gradient(0deg, $brand-blue, $brand-green);
+        @include flex(row, center, center);
+        h1 {
+            color: white;
+            font-size: 25rem;
+        }
+    }
+}
