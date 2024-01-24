@@ -28,7 +28,7 @@ a {
 }
 
 h1 {
-  font-size: 3.4rem;
+  font-size: 3.5rem;
 }
 
 header {
@@ -117,16 +117,65 @@ footer .container .top .share ul li a .bootstrapInstagram:hover, footer .contain
   fill: rgba(22, 190, 100, 0.8);
 }
 
-.inProgress .container {
-  max-width: 100%;
-  height: 30vw;
-  background: linear-gradient(0deg, #3A54A2, #16BE64);
+.s-hero .container .info {
+  text-align: center;
+}
+.s-hero .container .info h1 {
+  margin-bottom: 5rem;
+}
+.s-hero .container .info p {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+.s-hero .container .equipe {
+  text-align: center;
+}
+.s-hero .container .equipe .linhaUm, .s-hero .container .equipe .linhaDois {
+  margin: 3rem 0;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
-.inProgress .container h1 {
-  color: white;
-  font-size: 15vw;
+.s-hero .container .equipe .linhaUm .individuo, .s-hero .container .equipe .linhaDois .individuo {
+  transition: all 0.2s;
+}
+.s-hero .container .equipe .linhaUm .individuo a, .s-hero .container .equipe .linhaDois .individuo a {
+  text-decoration: none;
+}
+.s-hero .container .equipe .linhaUm .individuo:hover, .s-hero .container .equipe .linhaDois .individuo:hover {
+  scale: 0.9;
+  opacity: 0.9;
+  cursor: pointer;
+}
+.s-hero .container .equipe .linhaUm .individuo:active, .s-hero .container .equipe .linhaDois .individuo:active {
+  scale: 0.83;
+}
+.s-hero .container .equipe .linhaUm .individuo .foto img, .s-hero .container .equipe .linhaDois .individuo .foto img {
+  border-color: #3A54A2;
+  border-radius: 36rem;
+  border-width: 10px;
+  margin-bottom: 2rem;
+  max-width: 25vw;
+  max-height: 25vh;
+}
+.s-hero .container .equipe .linhaUm .individuo .nome span, .s-hero .container .equipe .linhaUm .individuo .funcao span, .s-hero .container .equipe .linhaDois .individuo .nome span, .s-hero .container .equipe .linhaDois .individuo .funcao span {
+  text-transform: uppercase;
+  font-size: 1.7rem;
+}
+.s-hero .container .equipe .linhaUm .individuo .nome, .s-hero .container .equipe .linhaDois .individuo .nome {
+  padding: 1rem 2rem;
+  border-radius: 36rem;
+  background-color: #3A54A2;
+  margin-bottom: 1rem;
+}
+.s-hero .container .equipe .linhaUm .individuo .nome span, .s-hero .container .equipe .linhaDois .individuo .nome span {
+  color: #EEE;
+  font-weight: 700;
+}
+.s-hero .container .equipe .linhaUm .individuo .funcao span, .s-hero .container .equipe .linhaDois .individuo .funcao span {
+  font-weight: 700;
+  text-decoration: none;
+  color: #111;
 }/*# sourceMappingURL=sobre.css.map */

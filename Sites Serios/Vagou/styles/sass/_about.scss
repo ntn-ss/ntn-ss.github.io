@@ -1,0 +1,71 @@
+.s-hero {
+    .container {
+        .info {
+            text-align: center;
+            h1 {
+                margin-bottom: 5rem;
+            }
+            p {
+                font-size: 3rem;
+                font-weight: 600;
+                margin-bottom: 3rem;
+            }
+        }
+        .equipe {
+            text-align: center;
+            .linhaUm, .linhaDois{
+                margin: 3rem 0;
+                @include flex(row, center, space-around);
+                .individuo{
+                    a {
+                        text-decoration: none;
+                    }
+                    transition: all .2s;
+                    &:hover{
+                        scale: .9;
+                        opacity: .9;
+                        cursor: pointer;
+                    }
+                    &:active {
+                        scale: .83;
+                    }
+                    .foto {
+                        img {
+                            border-color: $brand-blue;
+                            border-radius: 36rem;
+                            border-width: 10px;
+                            margin-bottom: 2rem;
+
+                            max-width: 25vw;
+                            max-height: 25vh;
+                        }
+                    }
+                    .nome, .funcao {
+                        span {
+                            text-transform: uppercase;
+                            font-size: 1.7rem;
+                        }
+                    }
+                    .nome {
+                        padding: 1rem 2rem;
+                        border-radius: 36rem;
+                        background-color: $brand-blue;
+                        span {
+                            color: $white;
+                            font-weight: 700;
+                        }
+
+                        margin-bottom: 1rem;
+                    }
+                    .funcao {
+                        span {
+                            font-weight: 700;
+                            text-decoration: none;
+                            color: $black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+.s-hero {
+    .inProgress {
+        .container {
+            .email, .info {
+                padding: 2.5rem;
+                border-radius: 1.5rem;
+            }
+            .email {
+                background-color: $white;
+                transition: .2s all;
+                &:hover {
+                    scale: .95;
+                    cursor: pointer;
+                    opacity: .9;
+                }
+                &:active {
+                    scale: .9;
+                }
+            }
+            .info {
+                background-color: $brand-blue;
+                @include flex(column, center, center);
+                h1 {
+                    font-size: 3rem;
+                    color: $white;
+                }
+                svg {
+                    fill: $white;
+                }
+            }   
+        }
+    }
+}
