@@ -1,0 +1,268 @@
+// header
+@media (max-width: 550px) {
+    header {
+        height: 8.2rem;
+        .container > a > img {
+            max-width: 12.9rem;
+        }
+    }
+}
+
+@media (max-width: 345px) {
+    header {
+        height: 8.2rem;
+        .container > a > img {
+            max-width: 10rem;
+        }
+        .container > a > p {
+            font-size: 1rem;
+        }
+    }
+}
+
+// slide
+@media (max-width: 768px) {
+    .s-area-slide-hero {
+        height: 95.4rem;
+        .slide-hero {
+            .swiper-slide {
+                &.blue {
+                    .main-area {
+                        .txt {
+                            h1 {
+                                max-width: 38.5rem;
+                                margin: 0 auto;
+                                margin-top: 2.9rem;
+                                margin-bottom: .8rem;
+                            }
+                        }
+                    }
+                }
+                &::after {
+                    height: 25rem;
+                }
+                .main-area {
+                    .area-explore {
+                        display: none;
+                    }
+                    .txt {
+                        .image {
+                            margin-top: 8.2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 560px) {
+    .s-area-slide-hero {
+        overflow: hidden;
+        height: 104.5rem;
+        .slide-hero {
+            .swiper-slide {
+                .main-area {
+                    padding-top: 12rem;
+                    h1 {
+                        font-size: 4.8rem;
+                        line-height: 5.9rem;
+                    }
+                    .image {
+                        @include centerTotalFlex;
+                        img {
+                            max-width: 72rem;
+                        }
+                    }
+                }
+                &::after {
+                    height: 34rem;
+                }
+            }
+        }
+    }
+}
+
+// main
+@media (max-width: 1200px){
+    .s-all-info-pokemon {
+        .top {
+            .search {
+                max-width: 32.3rem;
+            }
+        }
+        .area-all {
+            .left-container {
+                max-width: 15.9rem;
+                padding-top: 4rem;
+            }
+            .right-container {
+                padding-top: 4rem;
+                padding-left: 2.5rem;
+                padding-bottom: 4rem;
+                .top-container {
+                    margin-bottom: 4rem;
+                }
+                .all {
+                    grid-gap: 2rem;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 768px){
+    .s-all-info-pokemon {
+        margin-top: -25.8rem;
+        .top {
+            margin-bottom: 4rem;
+        }
+        .area-all {
+            .left-container {
+                display: none;
+            }
+            .right-container {
+                padding-left: 0;
+                .all {
+                    grid-template-columns: 1fr 1fr;
+                }
+                .select-custom {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 560px){
+    .s-all-info-pokemon {
+        margin-top: -34rem;
+        padding-top: 12rem;
+        padding-bottom: 4rem;
+        .top {
+            display: block;
+            margin-top: -1.4rem;
+            margin-bottom: 7.7rem;
+            h2 {
+                text-align: center;
+                margin: 0 auto;
+                max-width: 100%;
+            }
+            .search {
+                margin: 0 auto;
+                margin-top: 2.5rem;
+            }
+        }
+        .area-all {
+            .right-container {
+                .all {
+                    grid-template-columns: 1fr;
+                    grid-gap: 1.6rem;
+                    max-width: 86%;
+                    margin: 0 auto;
+                    margin-bottom: 4.8rem;
+                }
+            }
+        }
+    }
+}
+
+// footer
+
+@media (max-width: 768px){
+    footer {
+        padding: 4rem 0;
+        .container {
+            flex-direction: column;
+            .txt {
+                h3 {
+                    text-align: center;
+                    margin-bottom: 2rem;
+                }
+                p {
+                    width: 100%;
+                    max-width: 42.914rem;
+                    text-align: center;
+                    margin-bottom: 3rem;
+                }
+            }
+        }
+    }
+}
+
+// modal
+
+@media (max-width: 768px) {
+    .modal {
+        align-items: flex-end;
+        .box {
+            width: 100%;
+            height: 90%;
+            flex-direction: column;
+            .close {
+                top: -3.6rem;
+                width: 5rem;
+                border-radius: .8rem .8rem 0 0;
+                img {
+                    width: 2.5rem
+                }
+            }
+            .left-container {
+                max-width: 100%;
+                background-size: cover;
+                height: 12.5rem;
+                .image {
+                    position: relative;
+                    max-width: 12rem;
+                    left: 35%;
+                    top: 3rem;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .right-container {
+                padding: 4rem 2.4rem;
+                display: flex;
+                flex-direction: column;
+                .name {
+                    justify-content: center;
+                }
+                .type {
+                    justify-content: center;
+                    margin-bottom: 5rem;
+                }
+                .info {
+                    justify-content: center;
+                    justify-content: center;
+                    text-align: center;
+                    margin-bottom: 5rem;
+                }
+                .weaknesses {
+                    h4 {
+                        text-align: center;
+                    }
+                    ul {
+                        justify-content: center;
+                        margin-bottom: 5rem;
+                    }
+                }
+                .stats {
+                    margin-bottom: 5rem;
+                    .all {
+                        .item {
+                            .bar-status {
+                                max-width: 75%;
+                                .separator {
+                                    .li {
+                                        &:not(:first-child) {
+                                            margin-left: 20%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,7 +1,7 @@
 .tag {
     display: flex;
     align-items: center;
-    background-color: #fff;
+    background-color: #FFF;
     border-radius: 24.4rem;
     max-width: 12.1rem;
     padding: .6rem .4rem;
@@ -74,9 +74,9 @@
     button {
         width: 4.2rem;
         height: 4.2rem;
-        background-color: rgba(158, 185, 225, 0.1);
+        background-color: rgba(158, 185, 225, .1);
         border-radius: 50%;
-        border: 1px solid transparent;
+        border: 2px solid transparent;
         transition: border-color .3s;
 
         &:hover {
@@ -94,7 +94,7 @@
     opacity: .6;
     transition: all .3s;
 
-    &:hover{
+    &:hover, &:active{
         filter: grayscale(0);
         opacity: 1;
     }
@@ -109,6 +109,12 @@
         font-size: 1.5rem;
         line-height: 150%;
         color: #ACB9C1;
+    }
+
+    &.all {
+        span {
+            color: var(--blue-primary);
+        }
     }
 
     &.bug {
@@ -227,7 +233,7 @@
     height: 30.4rem;
     max-width: 28rem;
     background-color: #FFF;
-    box-shadow: 0px 10px 51px -5px rgba(183, 189, 193, 0.3);
+    box-shadow: 0px 10px 51px -5px rgba(183, 189, 193, .3);
     border-radius: 1.2rem;
     z-index: 1;
     transition: all .2s;
@@ -262,7 +268,7 @@
     &.bug {
         .image {
             &:after {
-                background-color: rgba(155, 186, 72, 0.2);
+                background-color: rgba(155, 186, 72, .2);
             }
         }
     }
@@ -418,12 +424,15 @@
                 font-size: 1.3rem;
                 line-height: 150%;
                 color: #7A7D80;
-                margin-bottom: 0.6rem;
+                margin-bottom: .6rem;
             }
         }
         .icon {
             margin-bottom: 1rem;
         }
+    }
+    @media (max-width: 1200px){
+        max-width: 100%;
     }
 }
 
@@ -431,7 +440,7 @@
     display: inline-block;
     padding: 0 2.5rem;
     line-height: 2.4rem;
-    border-radius: 0.2rem;
+    border-radius: .2rem;
     font-weight: 600;
     font-size: 1.3rem;
     letter-spacing: -.01em;
@@ -442,12 +451,12 @@
     &:hover {
         cursor: default;
         transform: scale(1.05);
-        box-shadow: 0 0.2rem 1rem -.5rem rgba(90, 96, 100, .3);
+        box-shadow: 0 .2rem 1rem -.5rem rgba(90, 96, 100, .3);
     }
     
     &.bug {
         color: var(--type-bug);
-        background-color: rgba(155, 186, 72, 0.1);
+        background-color: rgba(155, 186, 72, .1);
     }
     
     &.ghost {
@@ -809,7 +818,7 @@
             right: 2rem;
             width: 3.4rem;
             height: 3.4rem;
-            background-color: #fff;
+            background-color: #FFF;
             border-radius: 50%;
             @include centerTotalFlex()
         }
@@ -845,16 +854,40 @@
                 letter-spacing: -.01em;
                 color: #7A7D80;
                 position: relative;
-                margin-left: 0.8rem;
                 top: -.3rem;
+                margin-right: .5rem;
+                &#pokemonsID{
+                    margin-left: 1rem;
+                    margin-right: 2rem;
+                }
+
             }
+            .audio-player {
+                position: relative;
+                width: 30px;
+                height: 30px;
+              }
+              
+              button#playPauseButton {
+                width: 100%;
+                height: 100%;
+                border: none;
+                background-color: transparent;
+                background-image: url('../img/playwithcircularbuttonwithrightarrowofboldroundedfilledtriangle_80162.svg');
+                background-size: cover;
+                transition: background-image .3s;
+              }
+              
+              button#playPauseButton.pause {
+                background-image: url('../img/pausewithcircularbutton_80264.svg');
+              }
         }
         .type {
             display: flex;
             align-items: center;
             width: 100%;
             flex-wrap: wrap;
-            margin-bottom: 3.2rem;
+            margin-bottom: 2rem;
             li {
                 &:not(:first-child) {
                     margin-left: 1rem;
@@ -864,7 +897,7 @@
         .info {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 3.2rem;
+            margin-bottom: 2rem;
             li {
                 &:not(:first-child) {
                     margin-left: 4.8rem;
@@ -888,9 +921,10 @@
             }
         }
         .weaknesses {
-            margin-bottom: 2.2rem;
+            margin-bottom: 1rem;
             width: 100%;
             h4 {
+                margin-bottom: 1rem;
                 font-weight: 600;
                 font-size: 1.3rem;
                 line-height: 1.6rem;
@@ -899,17 +933,17 @@
                 color: #4D5053;
             }
             ul {
-                display: flex;
-                width: 100%;
-                align-items: center;
-                flex-wrap: wrap;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-gap: 1rem;
                 li {
-                    &:not(:last-child) {
-                        margin-bottom: 1rem;
-                    }
                     &:not(:first-child) {
-                        margin-left: 1rem;
+                        margin: 0;
                     }
+                }
+                .tag-type {
+                    width: 100%;
+                    text-align: center;
                 }
             }
         }
@@ -935,7 +969,8 @@
                         line-height: 1.5rem;
                         color: #7A7D80;
                         display: block;
-                        width: 68px;
+                        width: 9rem;
+                        margin-right: 1rem;
                     }
                     .bar-status{
                         position: relative;
@@ -962,7 +997,7 @@
                                 width: 4px;
                                 height: 3px;
                                 min-height: 3px;
-                                background-color: #fff;
+                                background-color: #FFF;
                                 margin-left: 5.4rem;
                             }
                         }

@@ -1,0 +1,308 @@
+﻿ID,Nome
+1,Fedor
+2,Garoa
+3,Aceleração
+4,Armadura
+5,Robustez
+6,Umidade
+7,Elasticidade
+8,Véu de Areia
+9,Estática
+10,Capacitor
+11,Reservatório
+12,Insensível
+13,Nas Nuvens
+14,Olho Composto
+15,Insônia
+16,Troca de Cor
+17,Imunidade
+18,Tocha
+19,Escudo-Pó
+20,Meu Ritmo
+21,Ventosas
+22,Intimidação
+23,Pega-Sombra
+24,Pele Áspera
+25,Superdefesa
+26,Levitação
+27,Esporo Danoso
+28,Sincronia
+29,Corpo Puro
+30,Cura Natural
+31,Para-Raios
+32,Bênção
+33,Nado Rápido
+34,Clorofila
+35,Iluminação
+36,Traço
+37,Fortão
+38,Tóxico ao Toque
+39,Concentração
+40,Armagmadura
+41,Véu D'água
+42,Magnetismo
+43,Antirruído
+44,Papa-Chuva
+45,Fluxo de Areia
+46,Pressão
+47,Gordura Densa
+48,Cedo Madruga
+49,Corpo de Fogo
+50,Dar no Pé
+51,Olho Aguçado
+52,Hipercorte
+53,Recolher
+54,Preguiça
+55,Euforia
+56,Charminho
+57,Mais
+58,Menos
+59,Previsão 
+60,Viscosidade
+61,Troca de Pele
+62,Garra
+63,Escama Rara
+64,Lodo Líquido
+65,Verdejante 
+66,Labareda 
+67,Dilúvio 
+68,Enxame
+69,Cuca Rochosa
+70,Seca
+71,Arapuca 
+72,Disposição 
+73,Fumaça Branca
+74,Força Mental
+75,Concha Dura
+76,Eclusa de Ar
+77,Cambaleante
+78,Eletromotor
+79,Rivalidade
+80,Inabalável
+81,Capa de Neve
+82,Gula
+83,Raivoso
+84,Aliviar
+85,Antifogo
+86,Simplificar
+87,Pele Seca
+88,Baixar
+89,Punho de Aço
+90,Cura Venenosa
+91,Adaptável
+92,Multigolpes
+93,Hidratação
+94,Energia Solar
+95,Passo Rápido
+96,Normalizar
+97,Atirador
+98,Defesa Mágica
+99,Indefeso
+100,Adiar
+101,Técnico
+102,Escudo de Folha
+103,Desajeitado
+104,Rompe-Padrão
+105,Supersorte
+106,Detonação
+107,Presságio
+108,Predição
+109,Ignorância
+110,Lente de Cor
+111,Filtro
+112,Começo Lento
+113,Corajoso
+114,Ralo
+115,Corpo de Gelo
+116,Rocha Sólida
+117,Alerta de Neve
+118,Pega-Mel
+119,Revistar
+120,Imprudente
+121,Multitipo
+122,Dom Floral
+123,Pesadelos
+124,Gatuno
+125,Pura Força
+126,Contrário
+127,Nervosismo
+128,Desafiador
+129,Derrotista
+130,Corpo Maldito
+131,Curador
+132,Defesa Amiga
+133,Armamole
+134,Metal Pesado
+135,Metal Leve
+136,Multiescamas
+137,Fúria Tóxica
+138,Fúria Cálida
+139,Colheita
+140,Telepatia
+141,Mau Humor
+142,Revestimento
+143,Toque Tóxico
+144,Regeneração
+145,Peitoral
+146,Areia-Impulso
+147,Superpele
+148,Analítico
+149,Ilusão
+150,Sósia
+151,Intruso
+152,Múmia
+153,Confiante
+154,Justiceiro
+155,Medroso
+156,Rebote Mágico
+157,Suga-Seiva
+158,Travessura
+159,Força da Areia
+160,Farpas de Aço
+161,Modo Zen
+162,Estrela V
+163,Turbochama
+164,Teravoltagem
+165,Véu Aromático
+166,Véu Floral
+167,Bochechões
+168,Multiforme
+169,Pelo Grosso
+170,Ilusionista
+171,Blindado
+172,Competitivo
+173,Mandíbula Forte
+174,Pele Gelada
+175,Véu Doce
+176,Troca de Postura
+177,Asas-Vendaval
+178,Megalançador
+179,Manto Folhado
+180,Simbiose
+181,Garras Duras
+182,Mãos de Fada
+183,Pegajoso
+184,Aerodinâmica
+185,Laço de Família
+186,Aura Sombria
+187,Aura de Fada
+188,Rompe-Aura
+189,Mar Primordial
+190,Terra Desolada
+191,Fluxo Delta
+192,Vigor
+193,Amarelar
+194,Gestão de Crise
+195,Hidrorreforço
+196,Crueldade
+197,Escudo Limitado
+198,Vigilância
+199,Bolha D'Água
+200,Metalista
+201,Frenesi
+202,Neve-Impulso
+203,Longo Alcance
+204,Voz Fluida
+205,Triagem
+206,Crosta Elétrica
+207,Cauda Surfista
+208,Cardume
+209,Disfarce
+210,Sinergia
+211,Aglomerar
+212,Corrosão
+213,Em Coma
+214,Majestade
+215,Eviscerar
+216,Dançarino
+217,Bateria
+218,Felpudo
+219,Chamativo
+220,Alma-Coração
+221,Cabelo Rebelde
+222,Receptor
+223,Reação Química
+224,Impulso Bestial
+225,Sistema Alfa
+226,Eletrogênese
+227,Psicogênese
+228,Nebulogênese
+229,Herbogênese
+230,Corpo de Aço
+231,Escudo de Sombra
+232,Armadura-Prisma
+233,Neuroforça
+234,Espada Intrépida
+235,Escudo Destemido
+236,Líbero
+237,Pega-Bola
+238,Espalha-Algodão
+239,Cauda-Hélice
+240,Armadura-Espelho
+241,Míssil Glutão
+242,Vontade de Ferro
+243,Motor a Vapor
+244,Som Pesado
+245,Lança-Areia
+246,Escamas de Gelo
+247,Amadurecer
+248,Rosto de Gelo
+249,Fonte de Energia
+250,Mimetismo
+251,Anula-Tela
+252,Espírito de Aço
+253,Corpo Mortal
+254,Espírito Errante
+255,Primatática
+256,Gás Reagente
+257,Véu Pastel
+258,Muda-Apetite
+259,Saque Rápido
+260,Punho Invisível
+261,Remédio Peculiar
+262,Transistor
+263,Mordida-Dragão
+264,Relincho Branco
+265,Relincho Negro
+266,Sinergia Equina
+267,Sinergia Equina
+268,Forte Aroma
+269,Semear
+270,Troca Térmica
+271,Carapaça Brava
+272,Sal Purificador
+273,Bem-Assado
+274,Planador
+275,Cão de Guarda
+276,Carga Rochosa
+277,Energia Eólica
+278,Supermutação
+279,Comandante
+280,Dínamo
+281,Paleosíntese
+282,Carga Quântica
+283,Menino de Ouro
+284,Caldeirão-Revés
+285,Espada-Revés
+286,Tábuas-Revés
+287,Miçangas-Revés
+288,Pulso-Oricalco
+289,Motor Hadrônico
+290,Oportunista
+291,Ruminante
+292,Cortante
+293,General Supremo
+294,Parceria
+295,Detritos Tóxicos
+296,Cauda-Armadura
+297,Geofagia
+298,Força Fúngica
+299,Olho da Mente
+300,Melado
+301,Hospitalidade
+302,Corrente Tóxica
+303,Incorporaspecto
+304,Teratransformar
+305,Teracasco
+306,Teraformação
+307,Mestre Venenoso

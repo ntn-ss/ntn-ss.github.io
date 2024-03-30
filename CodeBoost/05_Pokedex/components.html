@@ -72,7 +72,8 @@
     <div class="container">
       <div class="txt">
         <h3>Módulo JavaScript</h3>
-        <p>Consumindo, exibindo (e tratando/traduzindo) dados de uma API</p>
+        <p>Consumindo, exibindo (e tratando/traduzindo) dados de uma API com base em arquivos de dados CSV</p>
+        <p>Créditos pelos nomes e habilidades localizados: Gamerulez, Dwlipey e Hareon</p>
       </div>
       <a href="https://www.codeboost.com.br" target="_blank">
         <img src="/img/codeboost.svg" alt="Logo CodeBoost">
@@ -97,7 +98,15 @@
         <div class="right-container">
           <div class="name">
             <h2>Bulbassauro</h2>
-            <span>#001</span>
+            <span id="pokemonsID">#001</span>
+            <span>Som:</span>
+            <div class="audio-player">
+              <div class="audio-player">
+                <button id="playPauseButton" class="play"></button>
+                <audio id="pokemonCry" src="https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1.ogg"></audio>
+              </div>
+              <button id="play-icon"></button>
+            </div>
           </div>
           <ul class="type">
             <li>
