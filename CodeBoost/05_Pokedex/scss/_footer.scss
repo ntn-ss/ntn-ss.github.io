@@ -16,8 +16,22 @@ footer {
             font-weight: 500;
             font-size: 1.4rem;
             line-height: 180%;
-            color: #FFF;
-            opacity: .8;
+            color: rgba(255, 255, 255, .6);
+            a {
+                display: inline-block;
+                color: inherit;
+                transition: all .2s;
+                text-decoration-skip-ink: 1rem; /* Adjust the skip distance */
+                &:hover, &:visited, &:active {
+                    color: rgb(255, 255, 255);
+                }
+                &:hover {
+                    text-decoration: underline;
+                }
+                &:active {
+                    transform: scale(.95);
+                }
+            }
         }
     }
 }

@@ -806,6 +806,9 @@ ul {
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   margin-bottom: 2rem;
 }
 .modal .right-container .info li:not(:first-child) {
@@ -1005,8 +1008,26 @@ footer .txt p {
   font-weight: 500;
   font-size: 1.4rem;
   line-height: 180%;
-  color: #FFF;
-  opacity: 0.8;
+  color: rgba(255, 255, 255, 0.6);
+}
+footer .txt p a {
+  display: inline-block;
+  color: inherit;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-text-decoration-skip-ink: 1rem;
+  text-decoration-skip-ink: 1rem;
+  /* Adjust the skip distance */
+}
+footer .txt p a:hover, footer .txt p a:visited, footer .txt p a:active {
+  color: white;
+}
+footer .txt p a:hover {
+  text-decoration: underline;
+}
+footer .txt p a:active {
+  -webkit-transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 .s-area-slide-hero {
