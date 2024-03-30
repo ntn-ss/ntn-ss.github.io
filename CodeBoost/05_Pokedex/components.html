@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./css/plugins.css">
+  <link rel="stylesheet" href="./css/main.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <title>CodeBoost - Pokédex</title>
+</head>
+
+<body>
+
+  <h1>Quem é esse Pokémon?</h1>
+  
+  <h2>Escolha um Pokémon</h2>
+
+  <div class="tag">
+    <div class="icon">
+      <img src="img/bag-red.svg" alt="Mochila Vermelha">
+    </div>
+    <span>Pokédex</span>
+  </div>
+
+  <div class="search">
+    <input type="text" placeholder="Busque por nome ou código">
+    <button type="button">
+      <img src="img/icon-search.svg" alt="Lupa">
+    </button>
+  </div>
+
+  <button class="type-filter fire">
+    <div class="icon">
+      <img src="img/icon-types/fire.svg" alt="Fogo">
+    </div>
+    <span>Fogo</span>
+  </button>
+
+  <button class="card-pokemon js-open-pokemon-details grass">
+    <div class="image">
+      <img src="img/bulbasaur.svg" alt="Bulbassauro">
+    </div>
+    <div class="info">
+      <div class="txt">
+        <span>#001</span>
+        <h3>Bulbassauro</h3>
+      </div>
+      <div class="icon">
+        <img src="/img/icon-types/grass.svg" alt="Grama">
+      </div>
+    </div>
+  </button>
+
+  <div class="tag-type grass">
+    Grama
+  </div>
+
+  <button class="btn-load-more">
+    Carregar mais Pokémon
+  </button>
+
+  <footer>
+    <div class="container">
+      <div class="txt">
+        <h3>Módulo JavaScript</h3>
+        <p>Consumindo, exibindo (e tratando/traduzindo) dados de uma API</p>
+      </div>
+      <a href="https://www.codeboost.com.br" target="_blank">
+        <img src="/img/codeboost.svg" alt="Logo CodeBoost">
+      </a>
+    </div>
+  </footer>
+
+  <div class="modal" typePokemonModal="grass">
+    <div class="overlay close-modal"></div>
+      <div class="box">
+        <button class="close close-modal">
+          <img src="/img/close.svg" alt="Fechar">
+        </button>
+        <div class="left-container">
+            <div class="icon">
+              <img src="./img/icon-types/grass.svg" alt="Fundo Grama">
+            </div>
+            <div class="image">
+              <img src="./img/bulbasaur.svg" alt="Bulbassauro">
+            </div>
+        </div>
+        <div class="right-container">
+          <div class="name">
+            <h2>Bulbassauro</h2>
+            <span>#001</span>
+          </div>
+          <ul class="type">
+            <li>
+              <span class="tag-type grass">Grama</span>
+            </li>
+            <li>
+              <span class="tag-type poison">Veneno</span>
+            </li>
+          </ul>
+          <ul class="info">
+            <li>
+              <span>Altura</span>
+              <strong>0.7 m</strong>
+            </li>
+            <li>
+              <span>Peso</span>
+              <strong>6.9 kg</strong>
+            </li>
+            <li>
+              <span>Habilidades</span>
+              <strong>Overgrow</strong>
+            </li>
+          </ul>
+          <div class="weaknesses">
+            <h4>Fraquezas</h4>
+            <ul>
+              <li>
+                <span class="tag-type fire">
+                  Fogo
+                </span>
+              </li>
+              <li>
+                <span class="tag-type psychic">
+                  Psíquico
+                </span>
+              </li>
+              <li>
+                <span class="tag-type flying">
+                  Voador
+                </span>
+              </li>
+              <li>
+                <span class="tag-type ice">
+                  Gelo
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div class="stats">
+            <h5>Dados</h5>
+            <div class="all">
+              <div class="item">
+                <span>Vida</span>
+                <div class="bar-status">
+                  <div class="bar">
+                    <ul class="separator">
+                      <li>&nbsp;</li>
+                      <li>&nbsp;</li>
+                      <li>&nbsp;</li>
+                      <li>&nbsp;</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <span>Ataque</span>
+                <div class="bar-status">
+                  <div class="bar">
+                    <ul class="separator">
+                      <li>&nbsp;</li>
+                      <li>&nbsp;</li>
+                      <li>&nbsp;</li>
+                      <li>&nbsp;</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <span>Defesa</span>
+                <div class="bar-status">
+                  <div class="bar">
+                    <ul class="separator">
+                      <li>&nbsp;</li>
+                      <li>&nbsp;</li>
+                      <li>&nbsp;</li>
+                      <li>&nbsp;</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <span>Ataque Esp.</span>
+                <div class="bar-status">
+                  <div class="bar">
+                    <ul class="separator">
+                      <li>&nbsp;</li>
+                      <li>&nbsp;</li>
+                      <li>&nbsp;</li>
+                      <li>&nbsp;</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <span>Defesa Esp.</span>
+                <div class="bar-status">
+                  <div class="bar">
+                    <ul class="separator">
+                      <li>&nbsp;</li>
+                      <li>&nbsp;</li>
+                      <li>&nbsp;</li>
+                      <li>&nbsp;</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <span>Velocidade</span>
+                <div class="bar-status">
+                  <div class="bar">
+                    <ul class="separator">
+                      <li>&nbsp;</li>
+                      <li>&nbsp;</li>
+                      <li>&nbsp;</li>
+                      <li>&nbsp;</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <script src="js/plugins.js"></script>
+  <script src="js/all.js"></script>
+</body>
+
+</html>

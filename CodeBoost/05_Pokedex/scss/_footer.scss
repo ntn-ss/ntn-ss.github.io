@@ -1,0 +1,23 @@
+footer {
+    width: 100%;
+    background-color: var(--blue-primary);
+    padding-top: 6.7rem;
+    padding-bottom: 6.5rem;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .txt {
+        h3 {
+            color: #FFF;
+        }
+        p {
+            font-weight: 500;
+            font-size: 1.4rem;
+            line-height: 180%;
+            color: #FFF;
+            opacity: .8;
+        }
+    }
+}
