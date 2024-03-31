@@ -743,11 +743,11 @@ ul {
   position: absolute;
   left: 14px;
   max-width: 20.2rem;
-  max-height: 22rem;
   bottom: 13.1rem;
 }
 .modal .left-container .image img {
   width: 100%;
+  max-height: 22rem;
 }
 .modal .right-container {
   padding: 3rem 7.2rem 2.9rem 7.4rem;
