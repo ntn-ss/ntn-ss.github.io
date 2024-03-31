@@ -79,7 +79,7 @@ const createCardPokemon = (infoCard) => {
     icon.classList='icon'
     
     const imageType = document.createElement('img')
-    imageType.setAttribute('src', `./img/icon-types/${type}.svg`)
+    imageType.setAttribute('src', `/img/icon-types/${type}.svg`)
     imageType.setAttribute('alt', typeBR)
     
     icon.appendChild(imageType)
@@ -103,7 +103,7 @@ const createPokemonTypes = (typeFilter) => {
 
         const imagePoke = document.createElement('img');
 
-        const svgPath = `./img/icon-types/${name}.svg`;
+        const svgPath = `/img/icon-types/${name}.svg`;
 
         imagePoke.setAttribute('src', svgPath);
 
