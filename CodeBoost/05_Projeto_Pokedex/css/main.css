@@ -326,6 +326,7 @@ ul {
 }
 .card-pokemon .image .thumb-img {
   max-width: 14.2rem;
+  max-height: 22rem;
 }
 .card-pokemon .image::after {
   content: "";
