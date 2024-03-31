@@ -162,6 +162,9 @@ const listPokemon = (urlAPI, offset, limit) => {
         const { count, results } = res.data;
         document.getElementById('js-count-pokemon').textContent = count;
         
+        // Sort the array of Pokémon IDs
+        results.sort((a, b) => a.id - b.id);
+
         results.forEach(pokemon => {
             const urlAPIDetails = pokemon.url;
             axios({
