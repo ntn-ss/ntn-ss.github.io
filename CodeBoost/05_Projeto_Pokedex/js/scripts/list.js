@@ -148,14 +148,13 @@ const createPokemonTypes = (typeFilter) => {
 };
 
 
-const listPokemon = (urlAPI, offset, limit) => {
-    axios({
+const listPokemon = async (urlAPI, offset, limit) => {
+    await axios({
         method: 'GET',
         url: urlAPI,
         params: {
             limit: limit,
             offset: offset,
-            order: 'id' // Order by Pokémon ID
         }
     })
     .then((res)=>{
@@ -213,8 +212,8 @@ const listPokemon = (urlAPI, offset, limit) => {
     })
 }
 
-const listPokemonTypes = (urlAPI) => {
-    axios({
+const listPokemonTypes = async (urlAPI) => {
+    await axios({
         method: "GET",
         url: urlAPI
     })
@@ -241,7 +240,7 @@ const listPokemonTypes = (urlAPI) => {
 
 const btnLoadMore = document.getElementById('js-btn-load-more')
 let countPagination = 0;
-const limit = 30;
+const limit = 151;
 
 listPokemon(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${countPagination}`)
 countPagination++;

@@ -3,7 +3,6 @@ const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
-const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 
 
@@ -33,9 +32,6 @@ gulp.task('plugincss', pluginsCSS);
 function gulpJs() {
   return gulp.src('js/scripts/*.js')
   .pipe(concat('all.js'))
-  .pipe(babel({
-      presets: ['@babel/env']
-  }))
   .pipe(uglify())
   .pipe(gulp.dest('js/'))
   .pipe(browserSync.stream());
