@@ -135,8 +135,8 @@
       <div class="top">
         <h2>Escolha um Pokémon</h2>
         <div class="search">
-          <input type="text" placeholder="Busque por nome ou código">
-          <button type="button">
+          <input type="text" placeholder="Busque por nome ou código" id="js-input-search">
+          <button type="button" id="js-btn-search">
             <img src="img/icon-search.svg" alt="Lupa">
           </button>
         </div>
@@ -153,7 +153,7 @@
           </div>
           <ul id="js-list-types">
             <li>
-              <button class="type-filter active all">
+              <button class="type-filter active all" id="special-button">
                 <div class="icon">
                   <img src="img/icon-all.svg" alt="Todos">
                 </div>
@@ -179,12 +179,12 @@
           </div>
           <div class="select-custom">
             <button class="item-selected js-open-select-custom">
-              <span>Mostrar: </span>
+              <span>Mostrando: </span>
               <strong>Todos</strong>
             </button>
             <ul class="dropdown-select">
               <li>
-                <button class="type-filter active">
+                <button class="type-filter active" id="special-button">
                   <div class="icon">
                     <img src="img/icon-all.svg" alt="Todos">
                   </div>

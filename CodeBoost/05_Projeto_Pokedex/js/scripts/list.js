@@ -1,6 +1,17 @@
 const pokemonArea = document.getElementById('js-list-pokemon')
 const typeArea = document.getElementById('js-list-types')
 const typeAreaMobile = document.querySelector('.dropdown-select')
+const pokemonCounter = document.getElementById('js-count-pokemon')
+const typeAllButton = document.getElementById('special-button')
+const sectionAllInfoPokemon = document.querySelector('.s-all-info-pokemon')
+const btnLoadMore = document.getElementById('js-btn-load-more')
+const inputSearch = document.getElementById('js-input-search')
+const btnSearch = document.getElementById('js-btn-search')
+
+let countPagination = 0;
+const limit = 151;
+
+typeAllButton.addEventListener('click', (event)=>filterByTypes(event))
 
 const parseNameBR = (id) => {
     if (dadosNomesPokemon[id]) {
@@ -32,8 +43,6 @@ const createCardPokemon = (infoCard) => {
 
     const card = document.createElement('button')
     card.classList = `card-pokemon js-open-pokemon-details ${type}`
-
-    pokemonArea.appendChild(card)
 
     const image = document.createElement('div')
     image.classList = 'image'
@@ -86,6 +95,8 @@ const createCardPokemon = (infoCard) => {
     info.appendChild(icon)
 
     card.appendChild(info)
+
+    pokemonArea.appendChild(card)
 }
 
 const createPokemonTypes = (typeFilter) => {
@@ -93,7 +104,9 @@ const createPokemonTypes = (typeFilter) => {
 
     const listItem = document.createElement('li');
 
-    if (Number(url.split('/')[6]) !== 10001 && Number(url.split('/')[6]) !== 10002) {
+    const idType = Number(url.split('/')[6])
+
+    if (idType !== 10001 && idType !== 10002) {
         const typeButton = document.createElement('button');
         typeButton.classList = `type-filter ${name}`;
 
@@ -119,7 +132,9 @@ const createPokemonTypes = (typeFilter) => {
         typeButton.appendChild(icon);
         typeButton.appendChild(span);
 
+        typeButton.addEventListener('click', (event)=>filterByTypes(event, idType))
         listItem.appendChild(typeButton);
+        
         typeArea.appendChild(listItem);
 
         // mobile
@@ -144,22 +159,20 @@ const createPokemonTypes = (typeFilter) => {
         
         itemTypeMobile.appendChild(typeButtonMobile)
         typeAreaMobile.appendChild(itemTypeMobile)
+
+        itemTypeMobile.addEventListener('click', (event)=>filterByTypes(event, idType))
     }
 };
 
 
-const listPokemon = async (urlAPI, offset, limit) => {
+const listPokemon = async (urlAPI) => {
     await axios({
         method: 'GET',
         url: urlAPI,
-        params: {
-            limit: limit,
-            offset: offset,
-        }
     })
     .then((res)=>{
         const { count, results } = res.data;
-        document.getElementById('js-count-pokemon').textContent = count;
+        pokemonCounter.textContent = count;
         
         // Sort the array of Pokémon IDs
         results.sort((a, b) => a.id - b.id);
@@ -236,11 +249,107 @@ const listPokemonTypes = async (urlAPI) => {
     })
 }
 
+const filterByTypes = async (event, idType) => {
+    if (idType) {
+        try {
+            const topSection = sectionAllInfoPokemon.offsetTop
+            window.scrollTo({
+                top: topSection+288,
+                behavior: 'smooth'
+            })
+    
+            const allTypes = document.querySelectorAll('.type-filter')
+            allTypes.forEach(type=>{
+                type.classList.remove('active')
+            })
+    
+            event.currentTarget.classList.add('active')
+    
+            pokemonArea.innerHTML=""
+            btnLoadMore.style.display='none'
+            
+            axios({
+                method: 'GET',
+                url: `https://pokeapi.co/api/v2/type/${idType}`
+            })
+            .then(res=>{
+                const { pokemon } = res.data
+                pokemonCounter.textContent=pokemon.length
+                
+                pokemon.forEach(poke=>{
+                    const {url} = poke.pokemon
+                    axios({
+                        method: 'GET',
+                        url: `${url}`
+                    })
+                    .then((res)=>{
+                        const { id, sprites, types, cries } = res.data;
+        
+                        let name = parseNameBR(id);
+                        
+                        if (!name) {
+                            name = capitalizeFirstLetter(res.data.name)
+                        }
+        
+                        const typeBR = parseTypeBR(types);
+        
+                        const infoCard = {
+                            name,
+                            id,
+                            sprite: sprites.other.dream_world.front_default,
+                            spriteReserva: sprites.front_default,
+                            cry: cries.latest,
+                            urlAPIDetails: url,
+                            type: types[0].type.name,
+                            typeBR
+                        }
+                        
+                        createCardPokemon(infoCard)
+        
+                        const cardsPokemon = document.querySelectorAll(".js-open-pokemon-details");
+        
+                        cardsPokemon.forEach(card => {
+                            card.addEventListener('click', toggleDetailsPokemon)
+                        })
+        
+                        const closeModal = document.querySelectorAll(".close-modal")
+        
+                        if (closeModal) {
+                            closeModal.forEach((close)=>{
+                                close.addEventListener('click', toggleDetailsPokemon)
+                            })
+                        }
+                    })
+                })
+            })
+    
+        } catch (error) {
+            console.error(error)
+        }
+    } else {
 
+        const topSection = sectionAllInfoPokemon.offsetTop
+            window.scrollTo({
+                top: topSection+288,
+                behavior: 'smooth'
+            })
 
-const btnLoadMore = document.getElementById('js-btn-load-more')
-let countPagination = 0;
-const limit = 151;
+            const allTypes = document.querySelectorAll('.type-filter')
+            allTypes.forEach(type=>{
+                type.classList.remove('active')
+            })
+
+            event.currentTarget.classList.add('active')
+
+        pokemonArea.innerHTML=""
+        
+        countPagination = 0;
+        
+        btnLoadMore.style.display='block'
+
+        listPokemon(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${countPagination}`)
+    }
+}
 
 listPokemon(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${countPagination}`)
 countPagination++;
@@ -249,9 +358,94 @@ listPokemonTypes('https://pokeapi.co/api/v2/type/')
 
 const loadMorePokemon = () => {
     const offset = countPagination * limit;
-    listPokemon('https://pokeapi.co/api/v2/pokemon/', offset, limit);
+    listPokemon(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`);
 
     countPagination++;
 }
 
 btnLoadMore.addEventListener('click', loadMorePokemon)
+
+const searchPokemon = () => {
+    let valueInput = inputSearch.value.toLowerCase();
+
+    if (!valueInput) {
+        alert('Digite um valor na busca.')
+        pokemonArea.innerHTML=""
+
+        countPagination=0;
+        listPokemon(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${countPagination}`)
+        countPagination++;
+        
+        typeAllButton.classList.add('active')
+
+        btnLoadMore.style.display='block'
+    } else {
+        axios({
+            method: 'GET',
+            url: `https://pokeapi.co/api/v2/pokemon/${valueInput}`
+        })
+        .then(res=>{
+
+            const allTypes = document.querySelectorAll('.type-filter')
+    
+            allTypes.forEach(type=>{
+                type.classList.remove('active')
+            })
+
+            pokemonArea.innerHTML=""
+            btnLoadMore.style.display='none'
+    
+            pokemonCounter.textContent = 1;
+    
+            const { id, sprites, types, cries } = res.data;
+    
+                let name = parseNameBR(id);
+                    
+                if (!name) {
+                    name = capitalizeFirstLetter(pokemon.name)
+                }
+    
+                const typeBR = parseTypeBR(types);
+    
+                const urlAPIDetails = `https://pokeapi.co/api/v2/pokemon/${valueInput}`
+    
+                const infoCard = {
+                    name,
+                    id,
+                    sprite: sprites.other.dream_world.front_default,
+                    spriteReserva: sprites.front_default,
+                    cry: cries.latest,
+                    urlAPIDetails,
+                    type: types[0].type.name,
+                    typeBR
+                }
+                    
+                createCardPokemon(infoCard)
+    
+                const cardsPokemon = document.querySelectorAll(".js-open-pokemon-details");
+    
+                cardsPokemon.forEach(card => {
+                    card.addEventListener('click', toggleDetailsPokemon)
+                })
+    
+                const closeModal = document.querySelectorAll(".close-modal")
+    
+                if (closeModal) {
+                    closeModal.forEach((close)=>{
+                        close.addEventListener('click', toggleDetailsPokemon)
+                    })
+                }
+        })
+        .catch(err=>{
+            alert('Pokémon não encontrado.')
+        }
+        )
+    }
+}
+
+btnSearch.addEventListener('click', searchPokemon)
+inputSearch.addEventListener('keyup', (event)=>{
+    if (event.code==='Enter' || event.code === 'NumpadEnter') {
+        searchPokemon()
+    }
+})
