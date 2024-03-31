@@ -1,5 +1,5 @@
 const playPauseButton = document.getElementById('playPauseButton');
-const audio = document.getElementById('pokemonCry');
+const audio = document.getElementById('js-pokemon-modal-cry');
 
 playPauseButton.addEventListener('click', function() {
   if (audio.paused) {

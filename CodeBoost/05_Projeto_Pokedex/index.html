@@ -179,10 +179,10 @@
               <span><strong id="js-count-pokemon">X</strong> Pokémon</span>
             </div>
           </div>
-          <div class="select-custom">
+          <div class="select-custom" id="js-remove-dropdown">
             <button class="item-selected js-open-select-custom">
               <span>Mostrando: </span>
-              <strong>Todos</strong>
+              <strong id="js-active-type-name-mobile">Todos</strong>
             </button>
             <ul class="dropdown-select">
               <li>
@@ -242,29 +242,29 @@
     </div>
   </footer>
 
-  <div class="modal" typePokemonModal="grass">
+  <div class="modal" typePokemonModal="grass" id="js-pokemon-modal-element">
     <div class="overlay close-modal"></div>
       <div class="box">
         <button class="close close-modal">
           <img src="img/close.svg" alt="Fechar">
         </button>
         <div class="left-container">
-            <div class="icon">
-              <img src="./img/icon-types/grass.svg" alt="Fundo Grama">
+            <div class="icon" id="js-pokemon-modal-icon">
+              <img src="./img/icon-types/grass.svg" alt="Ícone Grama">
             </div>
             <div class="image">
-              <img src="./img/bulbasaur.svg" alt="Bulbassauro">
+              <img src="./img/bulbasaur.svg" alt="Bulbassauro" id="js-pokemon-modal-image">
             </div>
         </div>
         <div class="right-container">
           <div class="name">
-            <h2>Bulbassauro</h2>
-            <span id="pokemonsID">#001</span>
+            <h2 id="js-pokemon-modal-name">Bulbassauro</h2>
+            <span id="js-pokemon-modal-id">#001</span>
             <span>Som:</span>
             <div class="audio-player">
               <div class="audio-player">
                 <button id="playPauseButton" class="play"></button>
-                <audio id="pokemonCry" src="https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1.ogg"></audio>
+                <audio id="js-pokemon-modal-cry" src="https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1.ogg"></audio>
               </div>
               <button id="play-icon"></button>
             </div>

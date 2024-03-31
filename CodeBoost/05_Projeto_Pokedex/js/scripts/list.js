@@ -5,8 +5,18 @@ const pokemonCounter = document.getElementById('js-count-pokemon')
 const typeAllButton = document.getElementById('special-button')
 const sectionAllInfoPokemon = document.querySelector('.s-all-info-pokemon')
 const btnLoadMore = document.getElementById('js-btn-load-more')
+
 const inputSearch = document.getElementById('js-input-search')
 const btnSearch = document.getElementById('js-btn-search')
+
+const pokemonModalImage = document.getElementById('js-pokemon-modal-image')
+const pokemonModalName = document.getElementById('js-pokemon-modal-name')
+const pokemonModalId = document.getElementById('js-pokemon-modal-id')
+const pokemonModalElement = document.getElementById('js-pokemon-modal-element')
+const pokemonModalIcon = document.getElementById('js-pokemon-modal-icon')
+const pokemonModalCry = document.getElementById('js-pokemon-modal-cry')
+const activeTypeNameMobile = document.getElementById('js-active-type-name-mobile')
+const removeDropdown = document.getElementById('js-remove-dropdown')
 
 let countPagination = 0;
 const limit = 151;
@@ -23,7 +33,7 @@ const parseNameBR = (id) => {
 
 const parseTypeBR = (type) => {
     if (type[0].type) {
-        return dadosTiposPokemon[type[0].type.url.split('/')[6]];
+        return dadosTiposPokemon[type[0].type.url.split('/')[6]].trim();
     } else {
         const numeroTipo = type.split('/')[6];
         return dadosTiposPokemon[numeroTipo];
@@ -37,14 +47,36 @@ const capitalizeFirstLetter = (str) => {
 function openDetailsPokemon () {
     document.documentElement.classList.add("open-modal")
 
-    let codePokemon = this.getAttribute('idpoke')
+    let codePokemon = this.getAttribute('idPoke')
+
+    let imagePokemon = this.querySelector('.thumb-img')
+    let srcImage = imagePokemon.getAttribute('src')
+    
+    pokemonModalImage.setAttribute('src', srcImage)    
+    
+    let namePokemon = this.querySelector('#namePoke')
+    pokemonModalName.textContent = namePokemon.textContent
+    
+    let idPokemon = this.querySelector('#idPoke')
+    pokemonModalId.textContent = idPokemon.textContent
+    
+    let type = this.classList[2]
+
+    pokemonModalElement.setAttribute('typePokemonModal', type)
+
+    let modalIcon = pokemonModalIcon.querySelector('img')
+    modalIcon.setAttribute('src', `./img/icon-types/${type}.svg`)
+
+    let altPokemon = this.querySelector('.icon')
+    let altIcon = altPokemon.querySelector('img')
+    
+    modalIcon.setAttribute('alt', altIcon.getAttribute('alt'))
+
+    pokemonModalCry.setAttribute('src', `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${codePokemon}.ogg`)
 
     axios({
         method: 'GET',
         url: `https://pokeapi.co/api/v2/pokemon/${codePokemon}`
-    })
-    .then(res=>{
-        console.log(res.data)
     })
 }
 
@@ -53,11 +85,11 @@ function closeDetailsPokemon() {
 }
 
 const createCardPokemon = (infoCard) => {
-    const { name, id, sprite, spriteReserva, cry, typeBR, type } = infoCard;
+    const { name, id, sprite, spriteReserva, typeBR, type } = infoCard;
 
     const card = document.createElement('button')
     card.classList = `card-pokemon js-open-pokemon-details ${type}`
-    card.setAttribute('idpoke', id)
+    card.setAttribute('idPoke', id)
 
     const image = document.createElement('div')
     image.classList = 'image'
@@ -92,8 +124,11 @@ const createCardPokemon = (infoCard) => {
     }
     
     const namePoke = document.createElement('h3')
+    namePoke.setAttribute('id', 'namePoke')
     namePoke.textContent=`${name}`
     
+    idPoke.setAttribute('id', 'idPoke')
+
     txt.append(idPoke, namePoke)
     
     info.appendChild(txt)
@@ -103,7 +138,7 @@ const createCardPokemon = (infoCard) => {
     
     const imageType = document.createElement('img')
     imageType.setAttribute('src', `./img/icon-types/${type}.svg`)
-    imageType.setAttribute('alt', typeBR)
+    imageType.setAttribute('alt', `Ícone ${typeBR}`)
     
     icon.appendChild(imageType)
     info.appendChild(icon)
@@ -198,7 +233,7 @@ const listPokemon = async (urlAPI) => {
                 url: urlAPIDetails
             })
             .then((res)=>{
-                const { id, sprites, types, cries } = res.data;
+                const { id, sprites, types } = res.data;
 
                 let name = parseNameBR(id);
                 
@@ -213,7 +248,6 @@ const listPokemon = async (urlAPI) => {
                     id,
                     sprite: sprites.other.dream_world.front_default,
                     spriteReserva: sprites.front_default,
-                    cry: cries.latest,
                     type: types[0].type.name,
                     typeBR
                 }
@@ -277,6 +311,8 @@ const filterByTypes = async (event, idType) => {
             })
     
             event.currentTarget.classList.add('active')
+            activeTypeNameMobile.textContent = event.currentTarget.querySelector('span').textContent
+            removeDropdown.classList.remove('active')
     
             pokemonArea.innerHTML=""
             btnLoadMore.style.display='none'
@@ -296,7 +332,7 @@ const filterByTypes = async (event, idType) => {
                         url: `${url}`
                     })
                     .then((res)=>{
-                        const { id, sprites, types, cries } = res.data;
+                        const { id, sprites, types } = res.data;
         
                         let name = parseNameBR(id);
                         
@@ -311,7 +347,6 @@ const filterByTypes = async (event, idType) => {
                             id,
                             sprite: sprites.other.dream_world.front_default,
                             spriteReserva: sprites.front_default,
-                            cry: cries.latest,
                             urlAPIDetails: url,
                             type: types[0].type.name,
                             typeBR
@@ -424,7 +459,7 @@ const searchPokemon = () => {
 
             pokemonCounter.textContent = 1;
 
-            const { id, sprites, types, cries } = res.data;
+            const { id, sprites, types } = res.data;
 
             let name = parseNameBR(id);
 
@@ -441,7 +476,6 @@ const searchPokemon = () => {
                 id,
                 sprite: sprites.other.dream_world.front_default,
                 spriteReserva: sprites.front_default,
-                cry: cries.latest,
                 urlAPIDetails,
                 type: types[0].type.name,
                 typeBR

@@ -603,6 +603,12 @@ ul {
 .modal[typePokemonModal=flying] .box .left-container {
   background-image: url("../img/bg-types/flying.svg");
 }
+.modal[typePokemonModal=water] .box .left-container {
+  background-image: url("../img/bg-types/water.svg");
+}
+.modal[typePokemonModal=fire] .box .left-container {
+  background-image: url("../img/bg-types/fire.svg");
+}
 .modal .overlay {
   position: fixed;
   top: 0;
@@ -761,6 +767,7 @@ ul {
   line-height: 3.4rem;
   letter-spacing: -0.01em;
   color: #2F3133;
+  margin-right: 0.5rem;
 }
 .modal .right-container .name span {
   font-family: "Montserrat", sans-serif;
@@ -770,7 +777,7 @@ ul {
   color: #7A7D80;
   position: relative;
   top: -0.3rem;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
 }
 .modal .right-container .name span#pokemonsID {
   margin-left: 1rem;

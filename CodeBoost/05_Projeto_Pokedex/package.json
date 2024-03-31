@@ -1,9 +1,9 @@
 {
-  "name": "codeboost-gulp",
+  "name": "pokedex-nathan-codeboost",
   "version": "1.0.0",
-  "description": "Um projeto criado par ao codeboost",
+  "description": "Um projeto criado para o Codeboost que localiza a Pokédex com base em arquivos de dados CSV",
   "main": "index.js",
-  "author": "William Moreira",
+  "author": "Nathan Santos",
   "license": "MIT",
   "dependencies": {
     "browser-sync": "^2.27.7",

@@ -731,6 +731,24 @@
                     }
             }
         }
+
+        &[typePokemonModal="water"] {
+
+                .box {
+                    .left-container {
+                        background-image: url("../img/bg-types/water.svg");
+                    }
+            }
+        }
+
+        &[typePokemonModal="fire"] {
+
+                .box {
+                    .left-container {
+                        background-image: url("../img/bg-types/fire.svg");
+                    }
+            }
+        }
     
         .overlay {
             position: fixed;
@@ -854,6 +872,7 @@
                 line-height: 3.4rem;
                 letter-spacing: -.01em;
                 color: #2F3133;
+                margin-right: .5rem;
             }
             span {
                 font-family: 'Montserrat', sans-serif;
@@ -863,7 +882,7 @@
                 color: #7A7D80;
                 position: relative;
                 top: -.3rem;
-                margin-right: .5rem;
+                margin-right: 1rem;
                 &#pokemonsID{
                     margin-left: 1rem;
                     margin-right: 2rem;
