@@ -348,6 +348,8 @@ const filterByTypes = async (event, idType) => {
         btnLoadMore.style.display='block'
 
         listPokemon(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${countPagination}`)
+
+        countPagination++
     }
 }
 
