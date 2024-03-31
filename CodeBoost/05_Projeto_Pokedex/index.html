@@ -42,6 +42,10 @@
 
 <body>
 
+  <script src="js/scripts/pokemon_br/nomes.js"></script>
+  <script src="js/scripts/pokemon_br/tipos.js"></script>
+  <script src="js/scripts/pokemon_br/habilidades.js"></script>
+
   <header>
     <div class="container">
       <a href="https://www.pokemon.com/br" class="logo" target="_blank">
@@ -139,7 +143,15 @@
       </div>
       <div class="area-all" id="area-all">
         <div class="left-container">
-          <ul>
+          <div class="top-container">
+            <div>
+              <img src="https://cdn.dribbble.com/users/1408281/screenshots/3201671/pokeball.gif" alt="Pokébola">
+              <span>
+                <strong id="js-count-types">X</strong> Tipos
+              </span>
+            </div>
+          </div>
+          <ul id="js-list-types">
             <li>
               <button class="type-filter active all">
                 <div class="icon">
@@ -148,38 +160,14 @@
                 <span>Todos</span>
               </button>
             </li>
-            <li>
+            <!-- <li>
               <button class="type-filter fire">
                 <div class="icon">
                   <img src="img/icon-types/fire.svg" alt="Fogo">
                 </div>
                 <span>Fogo</span>
               </button>
-            </li>
-            <li>
-              <button class="type-filter ghost">
-                <div class="icon">
-                  <img src="img/icon-types/ghost.svg" alt="Fantasma">
-                </div>
-                <span>Fantasma</span>
-              </button>
-            </li>
-            <li>
-              <button class="type-filter rock">
-                <div class="icon">
-                  <img src="img/icon-types/rock.svg" alt="Rocha">
-                </div>
-                <span>Rocha</span>
-              </button>
-            </li>
-            <li>
-              <button class="type-filter ground">
-                <div class="icon">
-                  <img src="img/icon-types/ground.svg" alt="Solo">
-                </div>
-                <span>Solo</span>
-              </button>
-
+            </li> -->
           </ul>
         </div>
         <div class="right-container">
@@ -203,38 +191,14 @@
                   <span>Todos</span>
                 </button>
               </li>
-              <li>
+              <!-- <li>
                 <button class="type-filter fire">
                   <div class="icon">
                     <img src="img/icon-types/fire.svg" alt="Fogo">
                   </div>
                   <span>Fogo</span>
                 </button>
-              </li>
-              <li>
-                <button class="type-filter ghost">
-                  <div class="icon">
-                    <img src="img/icon-types/ghost.svg" alt="Fantasma">
-                  </div>
-                  <span>Fantasma</span>
-                </button>
-              </li>
-              <li>
-                <button class="type-filter rock">
-                  <div class="icon">
-                    <img src="img/icon-types/rock.svg" alt="Rocha">
-                  </div>
-                  <span>Rocha</span>
-                </button>
-              </li>
-              <li>
-                <button class="type-filter ground">
-                  <div class="icon">
-                    <img src="img/icon-types/ground.svg" alt="Solo">
-                  </div>
-                  <span>Solo</span>
-                </button>
-              </li>
+              </li> -->
             </ul>
           </div>
           <div class="all" id="js-list-pokemon">
@@ -253,8 +217,8 @@
               </div>
             </button> -->
           </div>
-          <button class="btn-load-more">
-            Carregar mais Pokémon
+          <button class="btn-load-more" id="js-btn-load-more">
+            Ver mais Pokémon
           </button>
         </div>
       </div>
@@ -267,7 +231,7 @@
       <div class="txt">
         <h3>Módulo JavaScript</h3>
         <p>Consumindo, exibindo (e tratando/traduzindo) dados de uma API com base em arquivos de dados CSV</p>
-        <p>Créditos pelos nomes e habilidades localizados: <a href="https://jacutemsabao.bitbucket.io/index.html" target="_blank">Gamerulez</a>, <a href="https://jacutemsabao.bitbucket.io/index.html" target="_blank">Dwlipey</a> e <a href="https://e4t.com.br/" target="_blank">Hareon</a></p>
+        <p>Créditos pelos nomes, habilidades e tipos localizados: <a href="https://jacutemsabao.bitbucket.io/index.html" target="_blank">Gamerulez</a>, <a href="https://jacutemsabao.bitbucket.io/index.html" target="_blank">Dwlipey</a> e <a href="https://e4t.com.br/" target="_blank">Hareon</a></p>
       </div>
       <a href="https://www.codeboost.com.br" target="_blank">
         <img src="img/codeboost.svg" alt="Logo CodeBoost">
@@ -435,10 +399,6 @@
         </div>
       </div>
   </div>
-
-  <script src="js/scripts/pokemon_br/nomes.js"></script>
-  <script src="js/scripts/pokemon_br/tipos.js"></script>
-  <script src="js/scripts/pokemon_br/habilidades.js"></script>
 
   <script src="js/plugins.js"></script>
   <script src="js/all.js"></script>

@@ -1,43 +1,64 @@
-let pokemonArea = document.getElementById('js-list-pokemon')
+const pokemonArea = document.getElementById('js-list-pokemon')
+const typeArea = document.getElementById('js-list-types')
+const typeAreaMobile = document.querySelector('.dropdown-select')
 
-function parseNameBR(id) {
-    return dadosNomesPokemon[id];
+const parseNameBR = (id) => {
+    if (dadosNomesPokemon[id]) {
+        return dadosNomesPokemon[id];
+    } else {
+        return false;
+    }
 }
 
-function parseTypeBR(types) {
-    return dadosTiposPokemon[types[0].type.url.split('/')[6]];
+const parseTypeBR = (type) => {
+    if (type[0].type) {
+        return dadosTiposPokemon[type[0].type.url.split('/')[6]];
+    } else {
+        const numeroTipo = type.split('/')[6];
+        return dadosTiposPokemon[numeroTipo];
+    }
 }
 
-function toggleDetailsPokemon() {
+const capitalizeFirstLetter = (str) => {
+    return `${str.charAt(0).toUpperCase()}${str.slice(1, str.length)}`
+}
+
+const toggleDetailsPokemon = () => {
     document.documentElement.classList.toggle("open-modal")
 }
 
-function createCardPokemon(infoCard) {
-    let { name, id, sprite, cry, typeBR, type } = infoCard;
+const createCardPokemon = (infoCard) => {
+    const { name, id, sprite, spriteReserva, cry, urlAPIDetails, typeBR, type } = infoCard;
 
-    let card = document.createElement('button')
+    const card = document.createElement('button')
     card.classList = `card-pokemon js-open-pokemon-details ${type}`
 
     pokemonArea.appendChild(card)
 
-    let image = document.createElement('div')
+    const image = document.createElement('div')
     image.classList = 'image'
 
     card.appendChild(image)
 
-    let imagePoke = document.createElement('img')
+    const imagePoke = document.createElement('img')
     imagePoke.className = 'thumb-img'
-    imagePoke.setAttribute('src', sprite)
+
+    if (sprite) {
+        imagePoke.setAttribute('src', sprite)
+    } else {
+        imagePoke.setAttribute('src', spriteReserva)
+    }
+
     
     image.appendChild(imagePoke)
     
-    let info = document.createElement('div')
+    const info = document.createElement('div')
     info.classList='info';
     
-    let txt = document.createElement('div')
+    const txt = document.createElement('div')
     txt.classList='txt'
     
-    let idPoke = document.createElement('span')
+    const idPoke = document.createElement('span')
     
     if (id < 10) {
         idPoke.textContent = `#00${id}`
@@ -47,17 +68,17 @@ function createCardPokemon(infoCard) {
         idPoke.textContent = `#${id}`
     }
     
-    let namePoke = document.createElement('h3')
+    const namePoke = document.createElement('h3')
     namePoke.textContent=`${name}`
     
     txt.append(idPoke, namePoke)
     
     info.appendChild(txt)
     
-    let icon = document.createElement('div')
+    const icon = document.createElement('div')
     icon.classList='icon'
     
-    let imageType = document.createElement('img')
+    const imageType = document.createElement('img')
     imageType.setAttribute('src', `../../img/icon-types/${type}.svg`)
     imageType.setAttribute('alt', typeBR)
     
@@ -67,33 +88,104 @@ function createCardPokemon(infoCard) {
     card.appendChild(info)
 }
 
-function listPokemon(urlAPI) {
+const createPokemonTypes = (typeFilter) => {
+    const { name, url, nameBR } = typeFilter;
+
+    const listItem = document.createElement('li');
+
+    if (Number(url.split('/')[6]) !== 10001 && Number(url.split('/')[6]) !== 10002) {
+        const typeButton = document.createElement('button');
+        typeButton.classList = `type-filter ${name}`;
+
+        const icon = document.createElement('div');
+        icon.classList = 'icon';
+        typeButton.appendChild(icon);
+
+        const imagePoke = document.createElement('img');
+
+        const svgPath = `../../img/icon-types/${name}.svg`;
+
+        imagePoke.setAttribute('src', svgPath);
+
+        imagePoke.setAttribute('alt', nameBR);
+
+        pokemonArea.appendChild(typeButton);
+
+        icon.appendChild(imagePoke);
+
+        const span = document.createElement('span');
+        span.textContent = nameBR;
+        
+        typeButton.appendChild(icon);
+        typeButton.appendChild(span);
+
+        listItem.appendChild(typeButton);
+        typeArea.appendChild(listItem);
+
+        // mobile
+        let itemTypeMobile = document.createElement('li')
+        
+        const typeButtonMobile = document.createElement('button');
+        typeButtonMobile.classList = `type-filter ${name}`;
+        
+        const iconMobile = document.createElement('div');
+        iconMobile.classList = 'icon';
+        
+        const imagePokeMobile = document.createElement('img');
+        imagePokeMobile.setAttribute('src', svgPath);
+        imagePokeMobile.setAttribute('alt', nameBR);
+        iconMobile.appendChild(imagePokeMobile)
+
+        const spanMobile = document.createElement('span');
+        spanMobile.textContent = nameBR;
+
+        typeButtonMobile.appendChild(iconMobile);
+        typeButtonMobile.appendChild(spanMobile);
+        
+        itemTypeMobile.appendChild(typeButtonMobile)
+        typeAreaMobile.appendChild(itemTypeMobile)
+    }
+};
+
+
+const listPokemon = (urlAPI, offset, limit) => {
     axios({
         method: 'GET',
-        url: urlAPI
+        url: urlAPI,
+        params: {
+            limit: limit,
+            offset: offset,
+            order: 'id' // Order by Pokémon ID
+        }
     })
     .then((res)=>{
-        const {count, results} = res.data;
+        const { count, results } = res.data;
         document.getElementById('js-count-pokemon').textContent = count;
         
         results.forEach(pokemon => {
-            let urlAPIDetails = pokemon.url;
-            
+            const urlAPIDetails = pokemon.url;
             axios({
                 method: 'GET',
                 url: urlAPIDetails
             })
             .then((res)=>{
-                let { id, sprites, types, cries } = res.data;
+                const { id, sprites, types, cries } = res.data;
 
                 let name = parseNameBR(id);
-                let typeBR = parseTypeBR(types);
+                
+                if (!name) {
+                    name = capitalizeFirstLetter(pokemon.name)
+                }
+
+                const typeBR = parseTypeBR(types);
 
                 const infoCard = {
                     name,
                     id,
                     sprite: sprites.other.dream_world.front_default,
+                    spriteReserva: sprites.front_default,
                     cry: cries.latest,
+                    urlAPIDetails,
                     type: types[0].type.name,
                     typeBR
                 }
@@ -118,4 +210,46 @@ function listPokemon(urlAPI) {
     })
 }
 
-listPokemon('https://pokeapi.co/api/v2/pokemon?limit=12&offset=0')
+const listPokemonTypes = (urlAPI) => {
+    axios({
+        method: "GET",
+        url: urlAPI
+    })
+    .then((res)=>{
+        const { count, results } = res.data;
+        
+        document.getElementById('js-count-types').textContent = count;
+        results.forEach(type=>{
+            const { name, url } = type;
+            const nameBR = parseTypeBR(type.url);
+
+            const typeFilter = {
+                name,
+                url,
+                nameBR,
+            }
+
+            createPokemonTypes(typeFilter)
+        })
+    })
+}
+
+
+
+const btnLoadMore = document.getElementById('js-btn-load-more')
+let countPagination = 0;
+const limit = 30;
+
+listPokemon(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${countPagination}`)
+countPagination++;
+
+listPokemonTypes('https://pokeapi.co/api/v2/type/')
+
+const loadMorePokemon = () => {
+    const offset = countPagination * limit;
+    listPokemon('https://pokeapi.co/api/v2/pokemon/', offset, limit);
+
+    countPagination++;
+}
+
+btnLoadMore.addEventListener('click', loadMorePokemon)

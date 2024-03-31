@@ -191,16 +191,21 @@ ul {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  width: 100%;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   opacity: 0.6;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.type-filter:hover, .type-filter:active {
+.type-filter:hover, .type-filter:active, .type-filter.active {
   -webkit-filter: grayscale(0);
   filter: grayscale(0);
   opacity: 1;
+}
+.type-filter:active {
+  -webkit-transform: scale(0.95);
+  transform: scale(0.95);
 }
 .type-filter .icon {
   width: 2.8rem;
@@ -1201,14 +1206,46 @@ footer .txt p a:active {
   display: -ms-flexbox;
   display: flex;
 }
+.s-all-info-pokemon .area-all .left-container .top-container, .s-all-info-pokemon .area-all .right-container .top-container {
+  margin-bottom: 6.3rem;
+}
+.s-all-info-pokemon .area-all .left-container .top-container > div, .s-all-info-pokemon .area-all .right-container .top-container > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.s-all-info-pokemon .area-all .left-container .top-container > div img, .s-all-info-pokemon .area-all .right-container .top-container > div img {
+  width: 100%;
+  max-width: 2rem;
+}
+.s-all-info-pokemon .area-all .left-container .top-container > div span, .s-all-info-pokemon .area-all .right-container .top-container > div span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 150%;
+  color: #4D5053;
+  margin-left: 0.6rem;
+}
 .s-all-info-pokemon .area-all .left-container {
   width: 100%;
   max-width: 32.9rem;
   border-right: 1px solid #EFF3F6;
   padding-top: 7.1rem;
 }
+.s-all-info-pokemon .area-all .left-container .top-container {
+  margin-bottom: 3.2rem;
+}
+.s-all-info-pokemon .area-all .left-container .top-container > div img {
+  max-width: 4rem;
+}
+.s-all-info-pokemon .area-all .left-container .top-container > div span {
+  margin-left: 0;
+}
 .s-all-info-pokemon .area-all .left-container ul li:not(:last-child) {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 .s-all-info-pokemon .area-all .right-container {
   width: 100%;
@@ -1219,25 +1256,6 @@ footer .txt p a:active {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-.s-all-info-pokemon .area-all .right-container .top-container {
-  margin-bottom: 6.3rem;
-}
-.s-all-info-pokemon .area-all .right-container .top-container > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-.s-all-info-pokemon .area-all .right-container .top-container > div span {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  font-size: 1.8rem;
-  line-height: 150%;
-  color: #4D5053;
-  margin-left: 0.6rem;
 }
 .s-all-info-pokemon .area-all .right-container .select-custom {
   display: none;

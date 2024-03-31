@@ -89,14 +89,18 @@
 .type-filter {
     display: flex;
     align-items: center;
+    width: 100%;
     
     filter: grayscale(100%);
     opacity: .6;
     transition: all .3s;
 
-    &:hover, &:active{
+    &:hover, &:active, &.active{
         filter: grayscale(0);
         opacity: 1;
+    }
+    &:active {
+        transform: scale(.95);
     }
     .icon {
         width: 2.8rem;
