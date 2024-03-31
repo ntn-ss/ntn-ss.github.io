@@ -34,15 +34,30 @@ const capitalizeFirstLetter = (str) => {
     return `${str.charAt(0).toUpperCase()}${str.slice(1, str.length)}`
 }
 
-const toggleDetailsPokemon = () => {
-    document.documentElement.classList.toggle("open-modal")
+function openDetailsPokemon () {
+    document.documentElement.classList.add("open-modal")
+
+    let codePokemon = this.getAttribute('idpoke')
+
+    axios({
+        method: 'GET',
+        url: `https://pokeapi.co/api/v2/pokemon/${codePokemon}`
+    })
+    .then(res=>{
+        console.log(res.data)
+    })
+}
+
+function closeDetailsPokemon() {
+    document.documentElement.classList.remove("open-modal")
 }
 
 const createCardPokemon = (infoCard) => {
-    const { name, id, sprite, spriteReserva, cry, urlAPIDetails, typeBR, type } = infoCard;
+    const { name, id, sprite, spriteReserva, cry, typeBR, type } = infoCard;
 
     const card = document.createElement('button')
     card.classList = `card-pokemon js-open-pokemon-details ${type}`
+    card.setAttribute('idpoke', id)
 
     const image = document.createElement('div')
     image.classList = 'image'
@@ -58,7 +73,6 @@ const createCardPokemon = (infoCard) => {
         imagePoke.setAttribute('src', spriteReserva)
     }
 
-    
     image.appendChild(imagePoke)
     
     const info = document.createElement('div')
@@ -200,7 +214,6 @@ const listPokemon = async (urlAPI) => {
                     sprite: sprites.other.dream_world.front_default,
                     spriteReserva: sprites.front_default,
                     cry: cries.latest,
-                    urlAPIDetails,
                     type: types[0].type.name,
                     typeBR
                 }
@@ -210,14 +223,14 @@ const listPokemon = async (urlAPI) => {
                 const cardsPokemon = document.querySelectorAll(".js-open-pokemon-details");
 
                 cardsPokemon.forEach(card => {
-                    card.addEventListener('click', toggleDetailsPokemon)
+                    card.addEventListener('click', openDetailsPokemon)
                 })
 
                 const closeModal = document.querySelectorAll(".close-modal")
 
                 if (closeModal) {
                     closeModal.forEach((close)=>{
-                        close.addEventListener('click', toggleDetailsPokemon)
+                        close.addEventListener('click', closeDetailsPokemon)
                     })
                 }
             })
@@ -309,14 +322,14 @@ const filterByTypes = async (event, idType) => {
                         const cardsPokemon = document.querySelectorAll(".js-open-pokemon-details");
         
                         cardsPokemon.forEach(card => {
-                            card.addEventListener('click', toggleDetailsPokemon)
+                            card.addEventListener('click', openDetailsPokemon)
                         })
         
                         const closeModal = document.querySelectorAll(".close-modal")
         
                         if (closeModal) {
                             closeModal.forEach((close)=>{
-                                close.addEventListener('click', toggleDetailsPokemon)
+                                close.addEventListener('click', closeDetailsPokemon)
                             })
                         }
                     })
@@ -371,79 +384,92 @@ const searchPokemon = () => {
     let valueInput = inputSearch.value.toLowerCase();
 
     if (!valueInput) {
-        alert('Digite um valor na busca.')
-        pokemonArea.innerHTML=""
+        alert('Digite alguma coisa na busca.')
+        pokemonArea.innerHTML = ""
 
-        countPagination=0;
+        countPagination = 0;
         listPokemon(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${countPagination}`)
         countPagination++;
-        
+
         typeAllButton.classList.add('active')
 
-        btnLoadMore.style.display='block'
+        btnLoadMore.style.display = 'block'
     } else {
+        let englishName = valueInput;
+
+        // Check if the input matches a Brazilian name
+        for (let key in dadosNomesPokemon) {
+            if (key !== 'ID') {
+                const pokemonName = dadosNomesPokemon[key].toLowerCase().trim();
+                if (pokemonName === valueInput) {
+                    englishName = key;
+                    break; // Exit the loop once a match is found
+                }
+            }
+        }
+
         axios({
             method: 'GET',
-            url: `https://pokeapi.co/api/v2/pokemon/${valueInput}`
+            url: `https://pokeapi.co/api/v2/pokemon/${englishName}`
         })
-        .then(res=>{
-
+        .then(res => {
             const allTypes = document.querySelectorAll('.type-filter')
-    
-            allTypes.forEach(type=>{
+
+            allTypes.forEach(type => {
                 type.classList.remove('active')
             })
 
-            pokemonArea.innerHTML=""
-            btnLoadMore.style.display='none'
-    
+            pokemonArea.innerHTML = ""
+            btnLoadMore.style.display = 'none'
+
             pokemonCounter.textContent = 1;
-    
+
             const { id, sprites, types, cries } = res.data;
-    
-                let name = parseNameBR(id);
-                    
-                if (!name) {
-                    name = capitalizeFirstLetter(pokemon.name)
-                }
-    
-                const typeBR = parseTypeBR(types);
-    
-                const urlAPIDetails = `https://pokeapi.co/api/v2/pokemon/${valueInput}`
-    
-                const infoCard = {
-                    name,
-                    id,
-                    sprite: sprites.other.dream_world.front_default,
-                    spriteReserva: sprites.front_default,
-                    cry: cries.latest,
-                    urlAPIDetails,
-                    type: types[0].type.name,
-                    typeBR
-                }
-                    
-                createCardPokemon(infoCard)
-    
-                const cardsPokemon = document.querySelectorAll(".js-open-pokemon-details");
-    
-                cardsPokemon.forEach(card => {
-                    card.addEventListener('click', toggleDetailsPokemon)
+
+            let name = parseNameBR(id);
+
+            if (!name) {
+                name = capitalizeFirstLetter(pokemon.name)
+            }
+
+            const typeBR = parseTypeBR(types);
+
+            const urlAPIDetails = `https://pokeapi.co/api/v2/pokemon/${englishName}`
+
+            const infoCard = {
+                name,
+                id,
+                sprite: sprites.other.dream_world.front_default,
+                spriteReserva: sprites.front_default,
+                cry: cries.latest,
+                urlAPIDetails,
+                type: types[0].type.name,
+                typeBR
+            }
+
+            createCardPokemon(infoCard)
+
+            const cardsPokemon = document.querySelectorAll(".js-open-pokemon-details");
+
+            cardsPokemon.forEach(card => {
+                card.addEventListener('click', openDetailsPokemon)
+            })
+
+            const closeModal = document.querySelectorAll(".close-modal")
+
+            if (closeModal) {
+                closeModal.forEach((close) => {
+                    close.addEventListener('click', closeDetailsPokemon)
                 })
-    
-                const closeModal = document.querySelectorAll(".close-modal")
-    
-                if (closeModal) {
-                    closeModal.forEach((close)=>{
-                        close.addEventListener('click', toggleDetailsPokemon)
-                    })
-                }
+            }
         })
-        .catch(err=>{
+        .catch(err => {
             alert('Pokémon não encontrado.')
-        }
-        )
+        })
     }
 }
+
+
 
 btnSearch.addEventListener('click', searchPokemon)
 inputSearch.addEventListener('keyup', (event)=>{
