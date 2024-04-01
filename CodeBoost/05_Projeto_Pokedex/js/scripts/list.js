@@ -147,6 +147,10 @@ function openDetailsPokemon() {
       pokemonModalTypes.innerHTML = "";
       pokemonModalAbility.innerHTML = "";
 
+      const spanHeader = document.createElement('span')
+      spanHeader.textContent='Habilidades'
+      pokemonModalAbility.appendChild(spanHeader)
+
       const arrayTypes = infoPokemonBR.namesTypes;
       const arrayAbilities = infoPokemonBR.abilitiesBR;
 
@@ -173,6 +177,7 @@ function openDetailsPokemon() {
 
     function listPokemonWeaknesses() {
       pokemonModalWeaknesses.innerHTML = "";
+
       const arrayTipes = infoPokemonBR.namesTypes;
 
       for (let i = 0; i < arrayTipes.length; i++) {
