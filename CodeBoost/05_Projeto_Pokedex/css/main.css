@@ -1550,6 +1550,9 @@ footer .txt p a:active {
     -o-object-fit: cover;
     object-fit: cover;
   }
+  .modal .box .left-container .image img {
+    max-height: 13rem;
+  }
   .modal .box .right-container {
     padding: 4rem 2.4rem;
     display: -webkit-box;
@@ -1569,7 +1572,7 @@ footer .txt p a:active {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
   }
   .modal .box .right-container .info {
     -webkit-box-pack: center;
@@ -1577,7 +1580,7 @@ footer .txt p a:active {
     justify-content: center;
     justify-content: center;
     text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
   }
   .modal .box .right-container .weaknesses h4 {
     text-align: center;
@@ -1586,10 +1589,10 @@ footer .txt p a:active {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
   }
   .modal .box .right-container .stats {
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
   }
   .modal .box .right-container .stats .all .item .bar-status {
     max-width: 75%;
