@@ -6,7 +6,7 @@ const pokemonArea = document.getElementById("js-list-pokemon");
 const typeArea = document.getElementById("js-list-types");
 const typeAreaMobile = document.querySelector(".dropdown-select");
 const pokemonCounter = document.getElementById("js-count-pokemon");
-const typeAllButton = document.getElementById("special-button");
+const typeAllButton = document.querySelectorAll(".special-button");
 const sectionAllInfoPokemon = document.querySelector(".s-all-info-pokemon");
 const btnLoadMore = document.getElementById("js-btn-load-more");
 
@@ -40,7 +40,9 @@ const removeDropdown = document.getElementById("js-remove-dropdown");
 let countPagination = 0;
 const limit = 151;
 
-typeAllButton.addEventListener("click", (event) => filterByTypes(event));
+typeAllButton.forEach(allTypeButtons=>{
+  allTypeButtons.addEventListener("click", (event) => filterByTypes(event));
+})
 
 const parseNameBR = (id) => {
   if (dadosNomesPokemon[id]) {
@@ -513,7 +515,13 @@ const filterByTypes = async (event, idType) => {
       type.classList.remove("active");
     });
 
-    event.currentTarget.classList.add("active");
+    typeAllButton.forEach(allTypeButtons=>{
+      allTypeButtons.classList.add("active");
+    })
+
+    removeDropdown.classList.remove("active");
+
+    activeTypeNameMobile.textContent = "Todos"
 
     pokemonArea.innerHTML = "";
 
@@ -552,7 +560,15 @@ const searchPokemon = () => {
     listPokemon(`pokemon/?limit=${limit}&offset=${countPagination}`);
     countPagination++;
 
-    typeAllButton.classList.add("active");
+    const allTypes = document.querySelectorAll(".type-filter");
+      allTypes.forEach((type) => {
+        type.classList.remove("active");
+      });
+
+    typeAllButton.forEach(allTypeButtons=>{
+      allTypeButtons.classList.add("active");
+    })
+    activeTypeNameMobile.textContent="Todos"
 
     btnLoadMore.style.display = "block";
   } else {
