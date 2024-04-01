@@ -453,7 +453,7 @@
     font-size: 1.3rem;
     letter-spacing: -.01em;
     font-family: 'Montserrat', sans-serif;
-    
+    text-align: center;
     transition: .2s all;
 
     &:hover {
@@ -941,11 +941,14 @@
                     margin-bottom: .4rem;
                 }
                 strong {
+                    display: block;
                     font-weight: 600;
                     font-size: 1.4rem;
                     line-height: 1.7rem;
                     letter-spacing: -.01em;
-                    color: #2F3133;
+                    &:not(:last-child){
+                        margin-bottom: 1rem;
+                    }
                 }
             }
         }

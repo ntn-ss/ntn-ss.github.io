@@ -430,6 +430,7 @@ ul {
   font-size: 1.3rem;
   letter-spacing: -0.01em;
   font-family: "Montserrat", sans-serif;
+  text-align: center;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
 }
@@ -841,11 +842,14 @@ ul {
   margin-bottom: 0.4rem;
 }
 .modal .right-container .info li strong {
+  display: block;
   font-weight: 600;
   font-size: 1.4rem;
   line-height: 1.7rem;
   letter-spacing: -0.01em;
-  color: #2F3133;
+}
+.modal .right-container .info li strong:not(:last-child) {
+  margin-bottom: 1rem;
 }
 .modal .right-container .weaknesses {
   margin-bottom: 1rem;

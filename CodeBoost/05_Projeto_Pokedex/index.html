@@ -269,7 +269,7 @@
               <button id="play-icon"></button>
             </div>
           </div>
-          <ul class="type">
+          <ul class="type" id='js-show-types'>
             <li>
               <span class="tag-type grass">Grama</span>
             </li>
@@ -280,20 +280,21 @@
           <ul class="info">
             <li>
               <span>Altura</span>
-              <strong>0.7 m</strong>
+              <strong id="js-pokemon-height">0.7 m</strong>
             </li>
             <li>
               <span>Peso</span>
-              <strong>6.9 kg</strong>
+              <strong id="js-pokemon-weight">6.9 kg</strong>
             </li>
-            <li>
+            <li id="js-pokemon-abilities">
               <span>Habilidades</span>
-              <strong>Overgrow</strong>
+              <strong class="tag-type grass">Overgrow</strong>
+              <strong class="tag-type grass">Overgrow</strong>
             </li>
           </ul>
           <div class="weaknesses">
             <h4>Fraquezas</h4>
-            <ul>
+            <ul id="js-pokemon-weaknesses">
               <li>
                 <span class="tag-type fire">
                   Fogo
@@ -322,7 +323,7 @@
               <div class="item">
                 <span>Vida</span>
                 <div class="bar-status">
-                  <div class="bar">
+                  <div class="bar" id="js-modal-stats-hp">
                     <ul class="separator">
                       <li>&nbsp;</li>
                       <li>&nbsp;</li>
@@ -335,7 +336,7 @@
               <div class="item">
                 <span>Ataque</span>
                 <div class="bar-status">
-                  <div class="bar">
+                  <div class="bar" id="js-modal-stats-atk">
                     <ul class="separator">
                       <li>&nbsp;</li>
                       <li>&nbsp;</li>
@@ -348,7 +349,7 @@
               <div class="item">
                 <span>Defesa</span>
                 <div class="bar-status">
-                  <div class="bar">
+                  <div class="bar" id="js-modal-stats-def">
                     <ul class="separator">
                       <li>&nbsp;</li>
                       <li>&nbsp;</li>
@@ -361,7 +362,7 @@
               <div class="item">
                 <span>Ataque Esp.</span>
                 <div class="bar-status">
-                  <div class="bar">
+                  <div class="bar" id="js-modal-stats-sp-atk">
                     <ul class="separator">
                       <li>&nbsp;</li>
                       <li>&nbsp;</li>
@@ -374,7 +375,7 @@
               <div class="item">
                 <span>Defesa Esp.</span>
                 <div class="bar-status">
-                  <div class="bar">
+                  <div class="bar" id="js-modal-stats-sp-def">
                     <ul class="separator">
                       <li>&nbsp;</li>
                       <li>&nbsp;</li>
@@ -387,7 +388,7 @@
               <div class="item">
                 <span>Velocidade</span>
                 <div class="bar-status">
-                  <div class="bar">
+                  <div class="bar" id="js-modal-stats-spd">
                     <ul class="separator">
                       <li>&nbsp;</li>
                       <li>&nbsp;</li>

@@ -2,7 +2,7 @@ const dadosHabilidadesPokemon = {};
 
 // Fetch the CSV file
 async function fetchPokeSkills () {
-  fetch('./js/db/Planilha_Habilidades.csv')
+  await fetch('./js/db/Planilha_Habilidades.csv')
     .then(response => response.text())
     .then(data => {
       // Parse the CSV data
