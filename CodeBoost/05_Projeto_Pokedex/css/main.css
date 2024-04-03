@@ -912,6 +912,7 @@ ul {
   max-width: 28.3rem;
   height: 3px;
   background-color: #EFF3F6;
+  overflow: hidden;
 }
 .modal .right-container .stats .all .item .bar-status .bar {
   position: absolute;
