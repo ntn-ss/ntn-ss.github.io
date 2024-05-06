@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.creditos {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 2rem;
+  width: 90%;
+}
+
+.border .text-area .creditos span {
+  color: #000;
+  font-size: 3rem;
+  font-family: "Jomolhari", serif;
+  font-weight: bold;
+}
+
+.creditos-menores {
+  display: flex;
+  width: 80%;
+  justify-content: space-evenly;
+}
+
+.revisores {
+  display: flex;
+  margin-top: 3rem;
+  flex-direction: column;
+  width: 80%;
+  justify-content: space-evenly;
+}
+
+html {
+  font-size: 10px;
+  background-image: url("../assets/Casa_do_Kame.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .border {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  align-items: center;
+
+  background-color: #eee;
+
+  padding-top: 5rem;
+  max-width: 60vw;
+
+  height: 100%;
+}
+
+main .border h1#title,
+main .border h2#title {
+  font-family: "Saiyan Sans", sans-serif;
+  font-weight: 400;
+  font-size: 7rem;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-text-stroke-color: #000;
+  -webkit-text-stroke-width: 2px;
+}
+
+main .border h1#title {
+  background: -webkit-linear-gradient(#f3e603, #d67711);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+main .border h2#title,
+main span#esfera {
+  background: -webkit-linear-gradient(#fa0011, #550000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+main .border h2#title {
+  margin-top: 2rem;
+}
+
+main .border .text-area {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+main .border .text-area span {
+  text-transform: uppercase;
+  display: block;
+  color: #d67711;
+  font-size: 5rem;
+  font-family: "BigSlabHammer", sans-serif;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+main .border .text-area p {
+  font-family: "Jomolhari", serif;
+  font-weight: bold;
+}
+
+main .border .img-area {
+  margin-top: 5rem;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .border .img-area img {
+  width: 100%;
+  max-width: 48%;
+  height: 380px;
+}
+
+#img-div {
+  position: relative;
+  height: 50vh;
+  width: 100%;
+  background: url("../assets/Turma.jpg") center -100px / cover no-repeat;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content button {
+  margin-top: 10%;
+  width: 30%;
+  font-size: 4rem;
+  padding: 15px;
+  border-radius: 15px;
+  border: 2px solid #550000;
+  background-color: #d67711;
+  color: #550000;
+  cursor: pointer;
+  transition: 0.2s all;
+  font-family: "Saiyan Sans";
+  text-transform: uppercase;
+}
+
+.content button:hover {
+  background-color: #550000;
+  border: 4px solid #d67711;
+  color: #d67711;
+  transform: scale(1.1);
+}
+
+.content button:active {
+  transform: scale(0.9);
+}
+
+.aviso {
+  margin-top: 5%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif,
+    Courier, monospace;
+  font-size: 4rem;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  max-width: 80%;
+  color: red;
+  -webkit-text-stroke-color: #000;
+  -webkit-text-stroke-width: 2px;
+}
+
+#kuririn {
+  max-width: 30vw;
+  position: absolute;
+  left: -5.2%;
+  top: 15%;
+  z-index: -1;
+}
+
+#gokuzinho {
+  max-width: 30vw;
+  position: absolute;
+  right: -0px;
+  top: 15%;
+  z-index: -1;
+}
+
+@media screen and (max-width: 1500px) {
+  #kuririn,
+  #gokuzinho {
+    max-width: 50vw;
+  }
+  #gokuzinho {
+    right: -10%;
+  }
+  #kuririn {
+    left: -16%;
+  }
+  .border .title-area h1#title,
+  .border .title-area h2#title {
+    font-size: 6rem;
+  }
+  main .border .img-area {
+    width: 100%;
+    flex-direction: column;
+  }
+  main .border .img-area img {
+    max-width: 80%;
+    width: 100%;
+    height: auto;
+  }
+  main .border .img-area img:first-child {
+    margin-bottom: 3rem;
+  }
+
+  main .border .text-area span {
+    max-width: 70%;
+    font-size: 3rem;
+  }
+
+  main .border .text-area p {
+    max-width: 70%;
+    font-size: 2rem;
+  }
+  main .border .text-area p:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  .creditos {
+    margin-top: -1rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+  }
+
+  .border .text-area .creditos span {
+    font-size: 3rem;
+    max-width: 100%;
+  }
+
+  .creditos-menores {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .revisores {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #img-div {
+    height: 50vw;
+    background: url("../assets/Turma.jpg") center / cover no-repeat;
+  }
+
+  .content {
+    margin-top: 7rem;
+  }
+
+  .content button {
+    margin-top: 10rem;
+  }
+
+  .aviso {
+    font-size: 3rem;
+    -webkit-text-stroke-width: 1px;
+  }
+}

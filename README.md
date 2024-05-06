@@ -9,3 +9,5 @@
 [Curso CodeBoost](http://ntn-ss.github.io/CodeBoost)
 
 [Sites referentes à minha graduação em Design Digital na UFC de Quixadá](http://ntn-ss.github.io/Sites%20Serios)
+
+[Meus projetos voluntários de fã-tradução](http://ntn-ss.github.io/Projetos%20de%20Tradução)
