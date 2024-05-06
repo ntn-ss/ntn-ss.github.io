@@ -112,6 +112,7 @@ main .border .text-area span {
 main .border .text-area p {
   font-family: "Jomolhari", serif;
   font-weight: bold;
+  margin-top: 2rem;
 }
 
 main .border .img-area {
@@ -155,7 +156,7 @@ main .border .img-area img {
 }
 
 .content button {
-  margin-top: 10%;
+  margin-top: 7%;
   width: 30%;
   font-size: 4rem;
   padding: 15px;
@@ -284,11 +285,11 @@ main .border .img-area img {
   }
 
   .content {
-    margin-top: 7rem;
+    margin-top: 5rem;
   }
 
   .content button {
-    margin-top: 10rem;
+    margin-top: 5rem;
   }
 
   .aviso {
