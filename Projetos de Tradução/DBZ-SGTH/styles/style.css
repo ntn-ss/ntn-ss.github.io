@@ -62,22 +62,21 @@ main .border {
 
 main .border h1#title,
 main .border h2#title {
-  font-family: "Saiyan Sans", sans-serif;
   font-weight: 400;
   font-size: 7rem;
   text-align: center;
   text-transform: uppercase;
+}
+
+main .border h1#title {
+  font-family: "Saiyan Sans", sans-serif;
+  background: -webkit-linear-gradient(#f3e603, #d67711);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   -webkit-text-stroke-color: #000;
   -webkit-text-stroke-width: 2px;
 }
 
-main .border h1#title {
-  background: -webkit-linear-gradient(#f3e603, #d67711);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-main .border h2#title,
 main span#logoVermelha {
   background: -webkit-linear-gradient(#fa0011, #550000);
   -webkit-background-clip: text;
@@ -90,7 +89,13 @@ main .border h1#title span#esfera {
 }
 
 main .border h2#title {
+  font-family: 'Mangoli', sans-serif;
+  font-weight: bold;
+  letter-spacing: 3px;
   margin-top: 2rem;
+  z-index: 1;
+  color: #fff;
+  text-shadow: 5px 5px #6318c6;
 }
 
 main .border .text-area {
@@ -132,6 +137,19 @@ main .border .img-area img {
   width: 100%;
   max-width: 48%;
   height: 380px;
+}
+
+main .border .title-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .border .title-area #bg {
+  max-width: 40%;
+  position: relative;
+  bottom: 8.5rem;
 }
 
 #img-div {
@@ -284,6 +302,11 @@ main .border .img-area img {
     align-items: center;
   }
 
+main .border .title-area #bg {
+  max-width: 70%;
+  bottom: 7rem;
+}
+
   #img-div {
     height: 50vw;
     background: url("../assets/Turma.jpg") center / cover no-repeat;
@@ -305,6 +328,15 @@ main .border .img-area img {
 
 @media screen and (max-width: 500px) {
   /* Adjustments for smaller screens */
+
+  main .border .title-area #bg {
+    max-width: 70%;
+    bottom: 5rem;
+  }
+
+  main .border .title-area h2#title {
+    font-size: 4rem;
+  }
 
   main .border {
     max-width: 80vw;
