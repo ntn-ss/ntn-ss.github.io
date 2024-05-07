@@ -297,3 +297,91 @@ main .border .img-area img {
     -webkit-text-stroke-width: 1px;
   }
 }
+
+@media screen and (max-width: 500px) {
+  /* Adjustments for smaller screens */
+
+  main .border {
+    max-width: 80vw;
+  }
+
+  /* Resetting font sizes */
+  html {
+    font-size: 8px;
+  }
+
+  main .border .title-area h1#title,
+  main .border .title-area #title {
+    font-size: 5rem;
+    -webkit-text-stroke-width: 1.3px;
+  }
+
+  main .border .text-area span {
+    font-size: 3rem;
+  }
+
+  main .border .text-area p {
+    font-size: 3rem;
+  }
+
+  .creditos .creditos-menores,
+  .creditos .revisores,
+  .creditos-menores,
+  .revisores {
+    flex-direction: column;
+  }
+
+  .creditos,
+  .creditos-menores,
+  .revisores {
+    width: 85%;
+  }
+
+  /* Adjusting image size and position */
+  #kuririn,
+  #gokuzinho {
+    max-width: 80%;
+  }
+
+  #gokuzinho {
+    right: -30%;
+  }
+
+  #kuririn {
+    left: -40%;
+  }
+
+  /* Adjusting image area */
+  main .border .img-area {
+    flex-direction: column;
+  }
+
+  main .border .img-area img {
+    max-width: 80%;
+    margin-bottom: 0rem;
+  }
+
+  #img-div {
+    height: auto;
+  }
+
+  /* Adjusting download button */
+  .content button {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 60%;
+    font-size: 3rem;
+  }
+
+  /* Adjusting disclaimer */
+  .aviso {
+    font-size: 4rem;
+    max-width: 90%;
+
+  }
+
+  /* Adjusting overlay for download section */
+  #img-div .overlay {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+}
