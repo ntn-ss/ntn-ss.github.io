@@ -78,10 +78,15 @@ main .border h1#title {
 }
 
 main .border h2#title,
-main span#esfera {
+main span#logoVermelha {
   background: -webkit-linear-gradient(#fa0011, #550000);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+main .border h1#title span#esfera {
+  color: #d67711;
+  -webkit-text-fill-color: #d67711;
 }
 
 main .border h2#title {
