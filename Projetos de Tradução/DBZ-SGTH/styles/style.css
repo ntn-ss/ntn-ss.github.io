@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+::selection {
+  color: #f3e603;
+  background: rgb(201, 23, 35);
+}
+
 .creditos {
   display: flex;
   justify-content: space-evenly;
