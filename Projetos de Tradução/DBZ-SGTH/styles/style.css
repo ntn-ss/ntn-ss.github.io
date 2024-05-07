@@ -336,6 +336,7 @@ main .border .title-area #bg {
 
   main .border .title-area h2#title {
     font-size: 4rem;
+    text-shadow: 3px 3px #6318c6;
   }
 
   main .border {
