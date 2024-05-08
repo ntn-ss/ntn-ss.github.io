@@ -218,7 +218,7 @@ main .border .title-area #bg {
   font-weight: bold;
   text-transform: uppercase;
   max-width: 80%;
-  color: red;
+  color: #fa0011;
   -webkit-text-stroke-color: #000;
   -webkit-text-stroke-width: 2px;
 }
@@ -237,6 +237,10 @@ main .border .title-area #bg {
   right: -0px;
   top: 15%;
   z-index: -1;
+}
+
+#dedicatoria {
+  margin-top: 2rem; width: 50%
 }
 
 @media screen and (max-width: 1500px) {
@@ -328,6 +332,10 @@ main .border .title-area #bg {
   .aviso {
     font-size: 3rem;
     -webkit-text-stroke-width: 1px;
+  }
+  
+  #dedicatoria {
+    width: 60%;
   }
 }
 
@@ -426,5 +434,9 @@ main .border .title-area #bg {
   /* Adjusting overlay for download section */
   #img-div .overlay {
     background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  .border .text-area #dedicatoria {
+    width: 70%;
   }
 }
