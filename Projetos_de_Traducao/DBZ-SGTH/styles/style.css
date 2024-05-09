@@ -346,6 +346,10 @@ main .border .title-area #bg {
 @media screen and (max-width: 500px) {
   /* Adjustments for smaller screens */
 
+  .content a {
+    width: 60%;
+  }
+
   main .border .title-area #bg {
     max-width: 70%;
     bottom: 5rem;
@@ -424,7 +428,7 @@ main .border .title-area #bg {
   .content button {
     margin-top: 2rem;
     margin-bottom: 2rem;
-    width: 60%;
+    width: 100%;
     font-size: 4rem;
   }
 
