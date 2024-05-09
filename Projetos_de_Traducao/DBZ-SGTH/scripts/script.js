@@ -1,11 +1,12 @@
 let elImagem = document.getElementById('random');
 
+let numero = 0;
+
 const imagemAleatoria = () => {
-    numero = Math.floor(Math.random() * 33);
+    numero = Math.floor(Math.random() * 35);
     elImagem.setAttribute('src', `./assets/Prints_Randomizadas/${numero}.jpg`);
 }
 
-let numero = 0;
 while (numero === 0) {
     imagemAleatoria()
 }
