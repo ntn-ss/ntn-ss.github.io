@@ -183,9 +183,13 @@ main .border .title-area #bg {
   justify-content: center;
 }
 
-.content button {
+.content a {
   margin-top: 7%;
   width: 30%;
+}
+
+.content button {
+  width: 100%;
   font-size: 4rem;
   padding: 15px;
   border-radius: 15px;
