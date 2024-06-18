@@ -39,7 +39,7 @@ body {
     max-width: 98vw;
     max-height: 100vh;
     margin: auto;
-    top: -5px;
+    top: -10px;
 }
 
 header .current-date {
@@ -92,7 +92,7 @@ header .icons span#prev:hover, span#next:hover {
 .calendar {
     font-size: .8rem;
     position: absolute;
-    left: 21.9rem;
+    left: 37%;
     bottom: 6.3rem;
     padding: 20px;
     max-width: 26.3vw;
