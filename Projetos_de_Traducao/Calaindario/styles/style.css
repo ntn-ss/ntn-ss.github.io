@@ -1,0 +1,151 @@
+/* import Google Font - Poppins */
+
+@font-face{
+    font-family: "Bahnscrift";
+    src: url("../assets/font/BAHNSCHRIFT.TTF") format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bahnscrift', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    min-height: 100vh;
+}
+
+.wrapper {
+    width: 450px;
+    background: #FFF;
+    border-radius: 10px;
+}
+
+.wrapper header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 30px 10px;
+    justify-content: space-between;
+}
+
+.wrapper img {
+    position: absolute;
+    max-width: 98vw;
+    max-height: 100vh;
+    margin: auto;
+    top: -5px;
+}
+
+header .current-date {
+    padding-top: .5rem;
+    font-size: 1.45rem;
+    font-weight: 500;
+    width: 100%;
+    color: #878787;
+}
+
+header .current-date>.small {
+    font-size: 1rem;
+    color: #53535d;
+}
+
+header .current-date>.month {
+    color: #53535d;
+    margin: 0 1.5rem;
+    font-size: 2.4rem;
+}
+
+
+header .icons p .month {
+    font-size: 2.5rem;
+}
+
+header .icons {
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    bottom: 19rem;
+}
+
+header .icons span#prev, span#next {
+    margin: 0 2rem;
+    height: fit-content;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s all;
+    color: #53535f;
+    font-size: 1.9rem;
+    margin: 1rem 4rem;
+}
+
+header .icons span#prev:hover, span#next:hover {
+    background-color: #F2F2F2;
+}
+
+.calendar {
+    font-size: .8rem;
+    position: absolute;
+    left: 21.9rem;
+    bottom: 6.3rem;
+    padding: 20px;
+    max-width: 26.3vw;
+    width: 100%;
+}
+
+.calendar ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
+}
+
+.calendar .weeks li {
+    font-weight: 400;
+    padding-top: .2rem;
+    font-size: 1rem;
+    background-color: #53535f;
+    color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: calc(100% / 9);
+    /* display: none; */
+}
+
+.calendar .weeks li.sat {
+    background-color: blue;
+}
+
+.calendar .weeks li.sun {
+    background-color: red;
+}
+.calendar .days li {
+    color: #53535f;
+    z-index: 1;
+    cursor: pointer;
+    margin-top: .7rem;
+}
+
+.calendar ul li {
+    position: relative;
+    width: calc(100% / 7);
+}
+
+.days li.inactive {
+    color: #AAA;
+}
+
+.days li.active {
+    color: red;
+}
