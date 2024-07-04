@@ -124,11 +124,11 @@ header .icons span#prev:hover, span#next:hover {
 }
 
 .calendar .weeks li.sat {
-    background-color: blue;
+    background-color: #3A5EAA;
 }
 
 .calendar .weeks li.sun {
-    background-color: red;
+    background-color: #EA605E;
 }
 .calendar .days li {
     color: #53535f;

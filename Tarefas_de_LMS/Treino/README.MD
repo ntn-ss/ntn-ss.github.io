@@ -4,6 +4,6 @@
 
 *Projetos:*
 
-[Primeiro Cabeçalho](http://ntn-ss.github.io/Header/Projeto_1)
+[Primeiro Cabeçalho](http://ntn-ss.github.io/Tarefas_de_LMS/Treino/Projeto_1)
 
-[Segundo Cabeçalho](http://ntn-ss.github.io/Header/Projeto_2)
+[Segundo Cabeçalho](http://ntn-ss.github.io/Tarefas_de_LMS/Treino/Projeto_2)
