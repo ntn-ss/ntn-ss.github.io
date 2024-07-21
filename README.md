@@ -10,4 +10,4 @@
 
 [Sites referentes à minha graduação em Design Digital na UFC de Quixadá](http://ntn-ss.github.io/Sites_Serios)
 
-[Meus projetos voluntários de fã-tradução](http://ntn-ss.github.io/Projetos_de_Traducao)
+[Meus projetos de tradução](http://ntn-ss.github.io/Projetos_de_Traducao)
