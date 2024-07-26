@@ -59,6 +59,9 @@ body ul li:hover {
   background-color: rgba(34, 34, 34, 0.8);
   scale: 1.05;
 }
+body ul li:active {
+  transform: scale(.9);
+}
 body ul li li, body ul li b, body ul li a, body ul li a i {
   color: #aaa;
 }/*# sourceMappingURL=main.css.map */
