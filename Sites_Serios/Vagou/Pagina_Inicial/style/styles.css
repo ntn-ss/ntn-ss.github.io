@@ -1,10 +1,10 @@
 :root {
     --brand-blue: #1F75FE;
-    --brand-blue-clear: #5093ff;
+    --brand-blue-clear: #40abff;
     --brand-green: #34C759;
     --brand-green-clear: #5cc777;
     --card-bg: #FFF;
-    --card-text: #1E1E1E;
+    --card-text: #010202;
     --card-border: #D9D9D9;
     --card-shadow: rgba(0, 0, 0, 0.2);
     --white: #FFF;
@@ -79,6 +79,7 @@ body {
 }
 
 .navbar {
+    box-shadow: 0 2px 2px 1px var(--card-text);
     z-index: 5;
     position: fixed;
     width: 100%;
