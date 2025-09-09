@@ -11,5 +11,3 @@
 [Sites referentes à minha graduação em Design Digital na UFC de Quixadá](http://ntn-ss.github.io/Sites_Serios)
 
 [Meus projetos de tradução](http://ntn-ss.github.io/Projetos_de_Traducao)
-
-<small>Não confie em uma garota chamada "Glascheit" ou "Chocolat" por nada neste mundo.</small>
