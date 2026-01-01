@@ -55,6 +55,15 @@ body {
   color: var(--texto); 
 }
 
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--texto);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
 nav {
   position: fixed; top:0; width:100%;
   background: rgba(10,6,18,.85);
@@ -108,12 +117,142 @@ section .conteudo { border-left:1px solid var(--line); padding-left:30px; }
 .competencias .competencia span { color:var(--ciano); font-size:.85rem; display:block; font-style:italic; }
 
 footer { text-align:center; padding:40px; border-top:1px solid var(--line); color:var(--muted); font-size:.75rem; }
+
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
+
+/* Tablets */
+@media (max-width: 900px) {
+  section {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  section .conteudo {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  nav {
+    padding: 12px 20px;
+  }
+
+  .hero {
+    padding: 40px 30px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav span {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  nav {
+    align-items: stretch;
+  }
+
+  nav a {
+    margin-left: 0;
+    font-size: 0.75rem;
+    padding: 6px 8px;
+  }
+
+  #language-selector {
+    margin-left: 0;
+  }
+
+  header {
+    min-height: auto;
+    padding: 100px 15px 40px;
+  }
+
+  .hero {
+    padding: 30px 20px;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  section {
+    padding: 70px 15px;
+  }
+
+  section .conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  section h2 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .filtros {
+    justify-content: center;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card img {
+    height: 180px;
+  }
+
+  .competencias .conteudo {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    padding: 30px 15px;
+    font-size: 0.7rem;
+  }
+}
+
 </style>
 </head>
 <body>
 
 <nav>
   <span id="nav-logo">NATHAN SANTOS - GAMELOC PORTFOLIO</span>
+  <button class="menu-toggle" aria-label="Abrir menu">
+    ☰
+  </button>  
   <div class="nav-links">
     <a href="#oficiais" data-en="Official Projects" data-pt="Projetos Oficiais">Official Projects</a>
     <a href="#voluntarios" data-en="Volunteer Projects" data-pt="Projetos Voluntários">Volunteer Projects</a>
@@ -263,7 +402,7 @@ footer { text-align:center; padding:40px; border-top:1px solid var(--line); colo
       <span data-en="Preserving language nuances" data-pt="Preservação de nuances da língua">Preservação de nuances da língua</span>
     </div>
     <div class="competencia">
-      <span data-en="UI Localization" data-pt="Localização de UI">UI Localization</span>
+      <span data-en="UI Localization" data-pt="Localização de IU">UI Localization</span>
       <span data-en="Immersive menus and dialogue" data-pt="Menus e diálogos imersivos">Immersive menus and dialogue</span>
     </div>
     <div class="competencia">
@@ -307,6 +446,13 @@ footer { text-align:center; padding:40px; border-top:1px solid var(--line); colo
       imgEl.src = (lang === 'pt' && card.dataset.imgpt) ? card.dataset.imgpt : card.dataset.imgen;
     });
   });
+  
+    const toggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
   </script>
   
   </body>
