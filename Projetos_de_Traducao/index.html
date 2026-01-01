@@ -1,44 +1,292 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="bandeira.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NATHAN SANTOS - GAME LOCALIZATION PORTFOLIO</title>
+<link rel="shortcut icon" href="bandeira.png">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<!-- Google Fonts: Inter -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../CodeBoost/index/css/main.css">
+<style>
+:root {
+  --bg: #0a0612;
+  --panel: #120b2d;
+  --line: rgba(127,90,240,.35);
+  --ciano: #2ceef0;
+  --rosa: #ff4fd8;
+  --texto: #eaeaea;
+  --muted: #a8a8c2;
+}
 
-    <title>Projetos de Tradução</title>
+* { 
+  box-sizing: border-box; 
+  margin:0; padding:0; 
+  font-family: 'Inter', Arial, sans-serif; 
+  scroll-behavior: smooth; 
+}
+
+body { 
+  background: radial-gradient(circle at top, #120b2d, var(--bg)); 
+  color: var(--texto); 
+}
+
+nav {
+  position: fixed; top:0; width:100%;
+  background: rgba(10,6,18,.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  padding:14px 30px;
+  display:flex; justify-content:space-between; align-items:center;
+  z-index:1000;
+}
+nav span { color: var(--rosa); font-weight:700; letter-spacing:.15em; }
+.nav-links { display:flex; align-items:center; }
+nav a { margin-left:15px; color: var(--muted); text-decoration:none; font-size:.85rem; padding:6px 10px; border-radius:4px; transition: all .3s ease; font-weight:600; }
+nav a:hover { color: var(--ciano); text-shadow:0 0 10px var(--ciano); }
+#language-selector { margin-left:20px; padding:4px 8px; background:#120b2d; color:var(--texto); border:1px solid var(--line); border-radius:4px; }
+
+header { min-height:80vh; display:grid; place-items:center; padding:120px 20px 60px; text-align:center; }
+.hero { max-width:900px; border:1px solid var(--line); background: linear-gradient(180deg, rgba(18,11,45,.9), rgba(10,6,18,.9)); padding:50px; position: relative; text-align:center; box-shadow: 0 0 12px rgba(44,238,240,0.15); display:flex; flex-direction:column; align-items:center; gap:15px; }
+.hero h1 { font-size:3rem; color:var(--rosa); position: relative; display:inline-block; letter-spacing:.08em; margin-bottom:15px; overflow:visible; z-index:1; } /* Mantém visível */
+.hero h1::before,
+.hero h1::after { content: attr(data-text); position:absolute; top:0; left:0; width:100%; height:100%; mix-blend-mode: screen; opacity:0.8; }
+.hero h1::before { color: var(--ciano); clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%); filter: blur(1px); animation: glitchTop 2s infinite linear alternate-reverse; }
+.hero h1::after { color: var(--rosa); clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%); filter: blur(1px); animation: glitchBottom 2.3s infinite linear alternate-reverse; }
+
+@keyframes glitchTop { 0%{transform:translate(0,0);} 10%{transform:translate(-1px,1px);} 20%{transform:translate(2px,-1px);} 30%{transform:translate(-2px,0.5px);} 40%{transform:translate(1px,-0.5px);} 50%{transform:translate(-1px,1px);} 60%{transform:translate(0.5px,-1px);} 70%{transform:translate(-0.5px,0.5px);} 80%{transform:translate(1px,-1px);} 90%{transform:translate(-1px,0);} 100%{transform:translate(0,0);}}
+@keyframes glitchBottom { 0%{transform:translate(0,0);} 10%{transform:translate(1px,-1px);} 20%{transform:translate(-2px,0.5px);} 30%{transform:translate(1px,-0.5px);} 40%{transform:translate(-1px,1px);} 50%{transform:translate(0.5px,-1px);} 60%{transform:translate(-0.5px,0.5px);} 70%{transform:translate(1px,-1px);} 80%{transform:translate(-1px,0);} 90%{transform:translate(1px,0.5px);} 100%{transform:translate(0,0);}}
+
+.hero p { color: var(--muted); max-width:700px; text-align:center; line-height:1.7; }
+
+section { max-width:1100px; margin:auto; padding:100px 20px; display:grid; grid-template-columns:1fr 2fr; gap:40px; opacity:0; transform:translateY(40px); transition:1s ease;}
+section.show { opacity:1; transform:translateY(0);}
+section h2 { color:var(--rosa); font-size:1.4rem; letter-spacing:.2em; margin-bottom:15px; transition:text-shadow 0.3s ease;}
+section h2:hover { text-shadow: 0 0 8px var(--ciano),0 0 15px var(--ciano); }
+section .conteudo { border-left:1px solid var(--line); padding-left:30px; }
+
+.filtros { display:flex; gap:10px; margin-bottom:25px; flex-wrap:wrap; }
+.filtros select { padding:6px 12px; border-radius:5px; border:1px solid var(--line); background:#120b2d; color:var(--texto); }
+
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:25px;}
+.card { background: linear-gradient(180deg, #1b1436, #120b2d); border:1px solid var(--line); padding:15px; display:flex; flex-direction:column; justify-content:space-between; position:relative; border-radius:6px; transition: transform .3s ease, box-shadow .3s ease;}
+.card img { width:100%; height:150px; object-fit:cover; border:1px solid var(--line);}
+.card h3 { margin-top:12px; color:var(--rosa); font-size:1rem; font-weight:700; } 
+.card span { color:var(--ciano); font-size:.8rem; font-style:italic; } 
+.card p { color:var(--muted); font-size:.9rem; margin:8px 0;}
+.card a { display:inline-block; margin-top:10px; padding:4px 10px; font-size:.7rem; letter-spacing:.05em; text-decoration:none; font-weight:bold; color:var(--bg); border-radius:4px; background:var(--ciano); width:fit-content; transition: transform .2s ease, box-shadow .2s ease;}
+.card:hover { transform:translateY(-4px); box-shadow:0 0 15px 3px rgba(44,238,240,0.1); }
+.card a:hover { transform:scale(1.05); box-shadow:0 0 12px 3px rgba(44,238,240,0.2); }
+
+.competencias .conteudo { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:20px;}
+.competencias .competencia { background: linear-gradient(180deg, #1b1436, #120b2d); padding:15px; border:1px solid var(--line); border-radius:6px; transition: transform .3s ease, box-shadow .3s ease; position:relative; display:flex; flex-direction:column; gap:4px;}
+.competencias .competencia:hover { transform:translateY(-4px); box-shadow:0 0 15px 3px rgba(44,238,240,0.1); }
+.competencias .competencia span { color:var(--ciano); font-size:.85rem; display:block; font-style:italic; }
+
+footer { text-align:center; padding:40px; border-top:1px solid var(--line); color:var(--muted); font-size:.75rem; }
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="title">
-            <h1>Meus projetos de tradução (voluntários e oficiais em que contribuí).</h1>
-        </div>
-        
-        <ul>
-            <li><b><a href="https://store.steampowered.com/app/1476340/The_Adventure_of_NAYU/" target="_blank">A Aventura de Nayu (Steam)</a>.</b></li>
-            <li><b><a href="https://ntn-ss.github.io/CodeBoost/05_Projeto_Pokedex/" target="_blank">Pokédex Localizada</a>.</b></li>
-            <li><b><a href="https://store.steampowered.com/app/1156990/De_volta_a_Ilha_de_Shironagasu/" target="_blank">De Volta à Ilha de Shironagasu (Steam)</a>.</b></li>
-            <li><b><a href="https://ntn-ss.github.io/Projetos_de_Traducao/DBZ-SGTH" target="_blank">Dragon Ball Z - Super Gokuuden: Totsugeki-hen (Super Nintendo)</a>.</b></li>
-            <li><b><a href="https://plaza.one" target="_blank">Nightwave Plaza (webrádio)</a>.</b></li>
-            <li><b><a href="https://app.gensokyoradio.net/" target="_blank">Rádio Gensokyo (webrádio)</a>.</b></li>
-        </ul>
-            <div class="title">
-                <h1>Projetos voluntários de tradução em que contribuo ou contribuí.</h1>
-            </div>
-            <ul>
-                <li><b><a href="https://proxyonescanlator.blogspot.com/" target="_blank">ProxyONE Scanlator (Steel Ball Run)</a>.</b></li>
-                <li><b><a href="https://jacutemsabao.bitbucket.io/" target="_blank">Jacutem Sabão (Ace Attorney)</a>.</b></li>
-                <li><b><a href="https://x.com/Kibou_Project_" target="_blank">Kibou Project (Danganronpa)</a>.</b></li>
-                <li><a href="http://ntn-ss.github.io"><i>Voltar à raiz</i>.</a></li>
-            </ul>
-            <br>
+
+<nav>
+  <span id="nav-logo">NATHAN SANTOS - GAMELOC PORTFOLIO</span>
+  <div class="nav-links">
+    <a href="#oficiais" data-en="Official Projects" data-pt="Projetos Oficiais">Official Projects</a>
+    <a href="#voluntarios" data-en="Volunteer Projects" data-pt="Projetos Voluntários">Volunteer Projects</a>
+    <a href="#competencias" data-en="Skills" data-pt="Competências">Skills</a>
+    <select id="language-selector">
+      <option value="en" selected>EN</option>
+      <option value="pt">PT</option>
+    </select>
+  </div>
+</nav>
+
+<header>
+  <div class="hero">
+    <h1 data-text="MY TRANSLATION AND LOCALIZATION PROJECTS" data-en="MY TRANSLATION AND LOCALIZATION PROJECTS" data-pt="MEUS PROJETOS DE TRADUÇÃO E LOCALIZAÇÃO">MY TRANSLATION AND LOCALIZATION PROJECTS</h1>
+    <p data-en="Localization of games from English and Japanese to Brazilian Portuguese, focusing on narrative and player experience." 
+       data-pt="Localização de jogos do inglês e japonês para o português brasileiro, com foco em narrativa e experiência do jogador.">
+       Localization of games from English and Japanese to Portuguese, focusing on narrative and player experience.
+    </p>
+  </div>
+</header>
+
+<section id="oficiais">
+  <h2 data-en="OFFICIAL PROJECTS" data-pt="PROJETOS OFICIAIS">OFFICIAL PROJECTS</h2>
+  <div class="conteudo">
+    <div class="filtros">
+      <select class="filtro-idioma">
+        <option value="todos" data-en="All Languages" data-pt="Todos os Idiomas">All Languages</option>
+        <option value="ingles" data-en="English → PT" data-pt="Inglês → PT">English → PT</option>
+        <option value="japones" data-en="Japanese → PT" data-pt="Japonês → PT">Japanese → PT</option>
+      </select>
     </div>
-</body>
-</html>
+    <div class="cards">
+      <div class="card" data-idioma="ingles">
+        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1476340/header.jpg?t=1675675671" 
+             alt="Capa Nayu">
+        <h3 data-en="The Adventure of NAYU" data-pt="A Aventura de NAYU">The Adventure of NAYU</h3>
+        <span data-en="EN → PT-BR • Official" data-pt="EN → PT-BR • Oficial">EN → PT-BR • Official</span>
+        <p data-en="Dialogue translation." data-pt="Tradução de diálogos.">Dialogue translation.</p>
+        <a href="https://store.steampowered.com/app/1476340/The_Adventure_of_NAYU" target="_blank" data-en="VIEW" data-pt="VER">VIEW</a>
+      </div>
+
+      <div class="card" data-idioma="todos" 
+           data-imgen="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1156990/header.jpg?t=1743423069" 
+           data-imgpt="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1156990/header_brazilian.jpg?t=1743423069">
+        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1156990/header.jpg?t=1743423069" alt="">
+        <h3 data-en="Return to Shironagasu Island" data-pt="De Volta à Ilha de Shironagasu">Return to Shironagasu Island</h3>
+        <span data-en="JP+EN → PT-BR • Official" data-pt="JP+EN → PT-BR • Oficial">JP+EN → PT-BR • Official</span>
+        <p data-en="Dialogue translation." data-pt="Tradução de diálogos.">Dialogue translation.</p>
+        <a href="https://store.steampowered.com/app/1156990/De_volta__Ilha_de_Shironagasu/" target="_blank" data-en="VIEW" data-pt="VER">VIEW</a>
+      </div>
+
+      <div class="card" data-idioma="ingles">
+        <img src="https://play-lh.googleusercontent.com/yQ5dsEFxa285b-uFOTkjwRjpuu-wdbSKLJbWrU-PtYNAOtNB7zuCIB1fAub_6Y8w8LU" alt="Marca Nightwave Plaza">
+        <h3 data-en="Nightwave Plaza (Webradio)" data-pt="Nightwave Plaza (Webrádio)">Nightwave Plaza (Webradio)</h3>
+        <span data-en="EN → PT-BR • Official" data-pt="EN → PT-BR • Oficial">EN → PT-BR • Official</span>
+        <p data-en="Full interface and text localization." data-pt="Localização completa de interface e textos.">Full interface and text localization.</p>
+        <a href="https://plaza.one" target="_blank" data-en="VIEW" data-pt="VER">VIEW</a>
+      </div>
+
+      <div class="card" data-idioma="ingles">
+        <img src="https://cdn-profiles.tunein.com/s156954/images/logog.png?t=153571" alt="Logo Gensokyo Radio">
+        <h3 data-en="Gensokyo Radio (Webradio)" data-pt="Rádio Gensokyo (Webrádio)">Gensokyo Radio (Webradio)</h3>
+        <span data-en="EN → PT-BR • Official" data-pt="EN → PT-BR • Oficial">EN → PT-BR • Official</span>
+        <p data-en="Full interface and text localization." data-pt="Localização completa de interface e textos.">Full interface and text localization.</p>
+        <a href="https://app.gensokyoradio.net/intro" target="_blank" data-en="VIEW" data-pt="VER">VIEW</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="voluntarios">
+  <h2 data-en="VOLUNTEER PROJECTS" data-pt="PROJETOS VOLUNTÁRIOS">VOLUNTEER PROJECTS</h2>
+  <div class="conteudo">
+    <div class="filtros">
+      <select class="filtro-idioma">
+        <option value="todos" data-en="All Languages" data-pt="Todos os Idiomas">All Languages</option>
+        <option value="ingles" data-en="English → PT" data-pt="Inglês → PT">English → PT</option>
+        <option value="japones" data-en="Japanese → PT" data-pt="Japonês → PT">Japanese → PT</option>
+      </select>
+    </div>
+    <div class="cards">
+        <div class="card" data-idioma="ingles">
+          <img src="https://ntn-ss.github.io/CodeBoost/05_Projeto_Pokedex/img/cover.png" alt="Capa Pokédex Brasileira">
+          <h3 data-en="Brazilian Pokédex (CodeBoost Course)" data-pt="Pokédex Brasileira (Curso CodeBoost)">Brazilian Pokédex (CodeBoost Course)</h3>
+          <span data-en="EN → PT-BR • Volunteer" data-pt="EN → PT-BR • Voluntário">EN → PT-BR • Volunteer</span>
+          <p data-en="Web page implementation." data-pt="Implementação de página web.">Web page implementation.</p>
+          <a href="https://ntn-ss.github.io/CodeBoost/05_Projeto_Pokedex/" target="_blank" data-en="VIEW" data-pt="VER">VIEW</a>
+        </div>
+
+        <div class="card" data-idioma="japones">
+            <img src="https://ntn-ss.github.io/Projetos_de_Traducao/DBZ-SGTH/assets/T%C3%ADtulo.png" alt="Tela de Título de Dragon Ball Z - Super Gokuuden: Totsugeki-hen (Super Famicom)">
+            <h3 data-en="Dragon Ball Z - Super Gokuuden: Totsugeki-hen (Super Famicom)" data-pt="Dragon Ball Z - Super Gokuuden: Totsugeki-hen (Super Famicom)">Dragon Ball Z - Super Gokuuden: Totsugeki-hen (Super Famicom)</h3>
+            <span data-en="JP → PT-BR • Volunteer" data-pt="JP → PT-BR • Voluntário">JP → PT-BR • Volunteer</span>
+            <p data-en="Full interface and dialogue localization and web page implementation." data-pt="Localização completa de interface e diálogos e implementação de página web.">Full interface and text localization and web page implementation.</p>
+            <a href="https://ntn-ss.github.io/Projetos_de_Traducao/DBZ-SGTH/" target="_blank" data-en="VIEW" data-pt="VER">VIEW</a>
+            <a href="https://www.youtube.com/watch?v=D-45Korqn70" 
+               target="_blank" 
+               data-en="VIEW GAMEPLAY (GebirgeBR)" 
+               data-pt="VER JOGATINA (GebirgeBR)" 
+               style="background:#ff3b3b;">
+               VIEW GAMEPLAY (GebirgeBR)
+            </a>
+          </div>
+
+      <div class="card" data-idioma="todos"
+        data-imgen="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6lIyDyVJGJbPuSuSM7bZczaekKPbQJIOVWA&s"
+        data-imgpt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6lIyDyVJGJbPuSuSM7bZczaekKPbQJIOVWA&s"
+      >
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6lIyDyVJGJbPuSuSM7bZczaekKPbQJIOVWA&s" alt="Capa Jacutem Sabão">
+        <h3 data-en="Jacutem Sabão (Ace Attorney)" data-pt="Jacutem Sabão (Advogados de Primeira)">Jacutem Sabão (Ace Attorney)</h3>
+        <span data-en="JP+EN → PT-BR • Volunteer" data-pt="JP+EN → PT-BR • Voluntário">JP+EN → PT-BR • Volunteer</span>
+        <p data-en="Full interface and dialogue localization, proofreading and project management on various games." data-pt="Localização completa de interface e diálogos, revisão e gerenciamento de projeto em diversos jogos.">Full interface and dialogue localization, proofreading and project management on various games.</p>
+        <a href="https://jacutemsabao.bitbucket.io/" target="_blank" data-en="VIEW" data-pt="VER">VIEW</a>
+      </div>
+
+      <div class="card" data-idioma="ingles">
+        <img src="https://pbs.twimg.com/profile_images/1277361417822375936/YMUkj_JB_400x400.jpg" alt="Capa Kibou Project">
+        <h3 data-en="Kibou Project (Danganronpa)" data-pt="Kibou Project (Danganronpa)">Kibou Project (Danganronpa)</h3>
+        <span data-en="EN → PT-BR • Volunteer" data-pt="EN → PT-BR • Voluntário">EN → PT-BR • Volunteer</span>
+        <p data-en="Dialogue translation." data-pt="Tradução de diálogos.">Dialogue translation.</p>
+        <a href="https://x.com/Kibou_Project_" target="_blank" data-en="VIEW" data-pt="VER">VIEW</a>
+      </div>
+
+      <div class="card" data-idioma="todos"
+        data-imgen="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDmSdRX5u3UtVXXJm-0kclSrZ1j1eJvQKC3uOlT-kn7jxNCBCQV93e5vyIA3DxaEk2RtyXPVFu7PmdPr7VCAPPwvMK-nwloUZZpLE6gt914d3L2glZzMK0iWZM4Bluae6zdiAlGHAXxQdC/s1600/SBR.png"
+        data-imgpt="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDmSdRX5u3UtVXXJm-0kclSrZ1j1eJvQKC3uOlT-kn7jxNCBCQV93e5vyIA3DxaEk2RtyXPVFu7PmdPr7VCAPPwvMK-nwloUZZpLE6gt914d3L2glZzMK0iWZM4Bluae6zdiAlGHAXxQdC/s1600/SBR.png"
+      >
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDmSdRX5u3UtVXXJm-0kclSrZ1j1eJvQKC3uOlT-kn7jxNCBCQV93e5vyIA3DxaEk2RtyXPVFu7PmdPr7VCAPPwvMK-nwloUZZpLE6gt914d3L2glZzMK0iWZM4Bluae6zdiAlGHAXxQdC/s1600/SBR.png" alt="">
+        <h3 data-en="ProxyONE Scanlator (Steel Ball Run)" data-pt="ProxyONE Scanlator (Steel Ball Run)">ProxyONE Scanlator (Steel Ball Run)</h3>
+        <span data-en="JP+EN → PT-BR • Volunteer" data-pt="JP+EN → PT-BR • Voluntário">JP+EN → PT-BR • Volunteer</span>
+        <p data-en="Typesetting, layout and proofreading." data-pt="Editoração.">Typesetting, layout and proofreading.</p>
+        <a href="https://proxyonescanlator.blogspot.com/" target="_blank" data-en="VIEW" data-pt="VER">VIEW</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="competencias" class="competencias">
+  <h2 data-en="SKILLS" data-pt="COMPETÊNCIAS">SKILLS</h2>
+  <div class="conteudo">
+    <div class="competencia">
+      <span data-en="EN → PT Translation" data-pt="Tradução EN → PT">EN → PT Translation</span>
+      <span data-en="Fluency and cultural adaptation" data-pt="Fluência e adaptação cultural">Fluency and cultural adaptation</span>
+    </div>
+    <div class="competencia">
+      <span data-en="JP → PT Translation" data-pt="Tradução JP → PT">JP → PT Translation</span>
+      <span data-en="Preserving language nuances" data-pt="Preservação de nuances da língua">Preservação de nuances da língua</span>
+    </div>
+    <div class="competencia">
+      <span data-en="UI Localization" data-pt="Localização de UI">UI Localization</span>
+      <span data-en="Immersive menus and dialogue" data-pt="Menus e diálogos imersivos">Immersive menus and dialogue</span>
+    </div>
+    <div class="competencia">
+      <span data-en="QA & Proofreading" data-pt="Revisão e QA">QA & Proofreading</span>
+      <span data-en="Consistency checks" data-pt="Checagem de consistência">Consistency checks</span>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+    &copy; <span id="current-year"></span> <span data-en="Game Localization | All Rights Reserved" data-pt="Localização de Jogos | Todos os Direitos Reservados">Game Localization | All Rights Reserved</span>
+  </footer>
+  
+  <script>
+  const yearEl = document.getElementById("current-year");
+  yearEl.textContent = new Date().getFullYear();
+  
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(e=> { if(e.isIntersecting){ e.target.classList.add("show"); }});
+  }, { threshold:0.15 });
+  document.querySelectorAll("section").forEach(s => observer.observe(s));
+  
+  document.querySelectorAll(".filtro-idioma").forEach(select => {
+    const container = select.closest(".conteudo").querySelector(".cards");
+    select.addEventListener("change", ()=> {
+      const idioma = select.value;
+      container.querySelectorAll(".card").forEach(card=>{
+        card.style.display = (idioma==="todos" || card.dataset.idioma===idioma || card.dataset.idioma==="todos") ? "flex" : "none";
+      });
+    });
+  });
+  
+  const languageSelector = document.getElementById("language-selector");
+  languageSelector.addEventListener("change", ()=> {
+    const lang = languageSelector.value;
+    document.querySelectorAll("[data-en]").forEach(el => { el.textContent = el.dataset[lang]; });
+    const heroTitle = document.querySelector(".hero h1");
+    heroTitle.setAttribute("data-text", heroTitle.dataset[lang]);
+    document.querySelectorAll('.card[data-idioma="todos"]').forEach(card=>{
+      const imgEl = card.querySelector('img');
+      imgEl.src = (lang === 'pt' && card.dataset.imgpt) ? card.dataset.imgpt : card.dataset.imgen;
+    });
+  });
+  </script>
+  
+  </body>
+  </html>
